@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RNAmodR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.10</span>
       </span>
     </div>
 
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>Since similar pattern can be observed from some of these techniques, overlaps of the bioinformatical pipeline already are and will become more frequent with new emerging sequencing techniques.</p>
 <p><code>RNAmodR</code> implements classes and a workflow to detect post-transcriptional RNA modifications in high throughput sequencing data. It is easily adaptable to new methods and can help during the phase of initial method development as well as more complex screenings.</p>
 <p>Briefly, from the <code>SequenceData</code>, specific subclasses are derived for accessing specific aspects of aligned reads, e.g. 5’-end positions or pileup data. With this a <code>Modifier</code> class can be used to detect specific patterns for individual types of modifications. The <code>SequenceData</code> classes can be shared by different <code>Modifier</code> classes allowing easy adaptation to new methods.</p>
-<pre><code>## using temporary cache /tmp/RtmpKJMa52/BiocFileCache</code></pre>
+<pre><code>## using temporary cache /tmp/Rtmp06BoRl/BiocFileCache</code></pre>
 <pre><code>## snapshotDate(): 2020-02-26</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(rtracklayer)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(Rsamtools)</a>
@@ -317,9 +317,9 @@ document.addEventListener("DOMContentLoaded", function() {
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">msi[[<span class="dv">1</span>]]</a></code></pre></div>
 <pre><code>## A ModInosine object containing PileupSequenceData with 11 elements.
 ## | Input files:
-##    - treated: /tmp/RtmpKJMa52/BiocFileCache/45e721a7c080_2544
-##    - treated: /tmp/RtmpKJMa52/BiocFileCache/45e72a460ba1_2546
-##    - treated: /tmp/RtmpKJMa52/BiocFileCache/45e77e54a12a_2548
+##    - treated: /tmp/Rtmp06BoRl/BiocFileCache/45606685467f_2544
+##    - treated: /tmp/Rtmp06BoRl/BiocFileCache/45601d630d0_2546
+##    - treated: /tmp/Rtmp06BoRl/BiocFileCache/45606646bd34_2548
 ## | Nucleotide - Modification type(s):  RNA  -  I 
 ## | Modifications found: yes (6) 
 ## | Settings:
@@ -485,7 +485,7 @@ TPR vs. FPR plot.
 ## [8] methods   base     
 ## 
 ## other attached packages:
-##  [1] RNAmodR_1.1.9            Modstrings_1.3.6         RNAmodR.Data_1.1.2      
+##  [1] RNAmodR_1.1.10           Modstrings_1.3.6         RNAmodR.Data_1.1.2      
 ##  [4] ExperimentHubData_1.13.0 AnnotationHubData_1.17.2 futile.logger_1.4.3     
 ##  [7] ExperimentHub_1.13.5     AnnotationHub_2.19.7     BiocFileCache_1.11.4    
 ## [10] dbplyr_1.4.2             GenomicFeatures_1.39.5   AnnotationDbi_1.49.1    
