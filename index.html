@@ -91,6 +91,7 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#rnamodr-build-status-codecov" class="anchor"></a>RNAmodR <a href="https://travis-ci.com/FelixErnst/RNAmodR"><img src="https://travis-ci.com/FelixErnst/RNAmodR.svg?branch=master" alt="Build Status"></a> <a href="https://codecov.io/gh/FelixErnst/RNAmodR"><img src="https://codecov.io/gh/FelixErnst/RNAmodR/branch/master/graph/badge.svg" alt="codecov"></a>
 </h1></div>
+<p><img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/RNAmodR/RNAmodR.png" height="300" align="right"></p>
 <p>Post-transcriptional modifications can be found abundantly in rRNA and tRNA and can be detected classically via several strategies. However, difficulties arise if the identity and the position of the modified nucleotides is to be determined at the same time. Classically, a primer extension, a form of reverse transcription (RT), would allow certain modifications to be accessed by blocks during the RT changes or changes in the cDNA sequences. Other modification would need to be selectively treated by chemical reactions to influence the outcome of the reverse transcription.</p>
 <p>With the increased availability of high throughput sequencing, these classical methods were adapted to high throughput methods allowing more RNA molecules to be accessed at the same time. With these advances post-transcriptional modifications were also detected on mRNA. Among these high throughput techniques are for example Pseudo-Seq (<a href="#Literature">Carlile et al. 2014</a>), RiboMethSeq (<a href="#Literature">Birkedal et al. 2015</a>) and AlkAnilineSeq (<a href="#Literature">Marchand et al. 2018</a>) each able to detect a specific type of modification from footprints in RNA-Seq data prepared with the selected methods.</p>
 <p>Since similar pattern can be observed from some of these techniques, overlaps of the bioinformatical pipeline already are and will become more frequent with new emerging sequencing techniques.</p>
@@ -98,7 +99,7 @@
 <div id="installation" class="section level1">
 <h1 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h1>
-<p>The current version of the RNAmodR package is available from Bioconductor.</p>
+<p>The current version of the <code>RNAmodR</code> package is available from Bioconductor.</p>
 <pre><code>if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
