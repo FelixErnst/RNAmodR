@@ -108,12 +108,12 @@ document.addEventListener("DOMContentLoaded", function() {
 </script><div id="introduction" class="section level1">
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
-<p>Post-transcriptional modifications can be found abundantly in rRNA and tRNA and can be detected classically via several strategies. However, difficulties arise if the identity and the position of the modified nucleotides is to be determined at the same time. Classically, a primer extension, a form of reverse transcription (RT), would allow certain modifications to be accessed by blocks during the RT changes or changes in the cDNA sequences. Other modification would need to be selectively treated by chemical reactions to influence the outcome of the reverse transcription.</p>
+<p>Post-transcriptional modifications can be found abundantly in rRNA and tRNA and can be detected classically via several strategies. However, difficulties arise if the identity and the position of the modified nucleotides is to be determined at the same time. Classically, a primer extension, a form of reverse transcription (RT), would allow certain modifications to be accessed by blocks during the RT or changes in the cDNA sequences. Other modification would need to be selectively treated by chemical reactions to influence the outcome of the reverse transcription.</p>
 <p>With the increased availability of high throughput sequencing, these classical methods were adapted to high throughput methods allowing more RNA molecules to be accessed at the same time. With these advances post-transcriptional modifications were also detected on mRNA. Among these high throughput techniques are for example Pseudo-Seq <a href="#References"><span class="citation">(Carlile et al. 2014)</span></a>, RiboMethSeq <a href="#References"><span class="citation">(Birkedal et al. 2015)</span></a> and AlkAnilineSeq <a href="#References"><span class="citation">(Marchand et al. 2018)</span></a> each able to detect a specific type of modification from footprints in RNA-Seq data prepared with the selected methods.</p>
 <p>Since similar pattern can be observed from some of these techniques, overlaps of the bioinformatical pipeline already are and will become more frequent with new emerging sequencing techniques.</p>
 <p><code>RNAmodR</code> implements classes and a workflow to detect post-transcriptional RNA modifications in high throughput sequencing data. It is easily adaptable to new methods and can help during the phase of initial method development as well as more complex screenings.</p>
 <p>Briefly, from the <code>SequenceData</code>, specific subclasses are derived for accessing specific aspects of aligned reads, e.g. 5’-end positions or pileup data. With this a <code>Modifier</code> class can be used to detect specific patterns for individual types of modifications. The <code>SequenceData</code> classes can be shared by different <code>Modifier</code> classes allowing easy adaptation to new methods.</p>
-<pre><code>## using temporary cache /tmp/RtmpKqS3rc/BiocFileCache</code></pre>
+<pre><code>## using temporary cache /tmp/RtmpzsGkpN/BiocFileCache</code></pre>
 <pre><code>## snapshotDate(): 2020-02-26</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(rtracklayer)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(Rsamtools)</a>
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <div id="modifier" class="section level2">
 <h2 class="hasAnchor">
 <a href="#modifier" class="anchor"></a>Modifier</h2>
-<p>Whereas, the <code>SequenceData</code> classes are used to hold the data, <code>Modifier</code> classes are used to detect certain features within high throughput sequencing data to assign the presence of specific modifications for an established pattern. The <code>Modifier</code> class (and it nucleotide specific subclasses <code>RNAModifier</code> and <code>DNAModifier</code>) is virtual and can be addapted to individual methods. For example mapped reads can be analyzed using the <code>ModInosine</code> class to reveal the presence of I by detecting a A to G conversion in normal RNA-Seq data. Therefore, <code>ModInosine</code> inherits from <code>RNAModifier</code>.</p>
+<p>Whereas, the <code>SequenceData</code> classes are used to hold the data, <code>Modifier</code> classes are used to detect certain features within high throughput sequencing data to assign the presence of specific modifications for an established pattern. The <code>Modifier</code> class (and its nucleotide specific subclasses <code>RNAModifier</code> and <code>DNAModifier</code>) is virtual and can be addapted to individual methods. For example mapped reads can be analyzed using the <code>ModInosine</code> class to reveal the presence of I by detecting a A to G conversion in normal RNA-Seq data. Therefore, <code>ModInosine</code> inherits from <code>RNAModifier</code>.</p>
 <p>To fix the data processing and detection strategy, for each type of sequencing method a <code>Modifier</code> class can be developed alongside to detect modifications. For more information on how to develop such a class and potentially a new corresponding <code>SequenceData</code> class, please have a look at the <a href="RNAmodR.creation.html">vignette for creating a new analysis</a>.</p>
 <p>For now three <code>Modifier</code> classes are available:</p>
 <ul>
@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <code>ModAlkAnilineSeq</code> from the <code>RNAmodR.AlkAnilineSeq</code> package</li>
 </ul>
 <p><code>Modifier</code> objects can use and wrap multiple <code>SequenceData</code> objects as elements of a <code>SequenceDataSet</code> class. The elements of this class are different types of <code>SequenceData</code>, which are required by the specific <code>Modifier</code> class. However, they are required to contain data for the same annotation and sequence data.</p>
-<p><code>Modifier</code> objects are created with the same arguments as <code>SequenceData</code> objects and will start loading the necessary <code>SequenceData</code> objects from these. In addition they will start automatically start to calculate any additional scores (aggregation) and then start to search for modifications, if the optional argument <code>find.mod</code> is not set to <code>FALSE</code>.</p>
+<p><code>Modifier</code> objects are created with the same arguments as <code>SequenceData</code> objects and will start loading the necessary <code>SequenceData</code> objects from these. In addition they will automatically start to calculate any additional scores (aggregation) and then start to search for modifications, if the optional argument <code>find.mod</code> is not set to <code>FALSE</code>.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">mi &lt;-<span class="st"> </span><span class="kw"><a href="../reference/ModInosine.html">ModInosine</a></span>(files, <span class="dt">annotation =</span> annotation, <span class="dt">sequences =</span> sequences)</a></code></pre></div>
 <pre><code>## Import genomic features from the file as a GRanges object ... OK
 ## Prepare the 'metadata' data frame ... OK
@@ -311,15 +311,15 @@ document.addEventListener("DOMContentLoaded", function() {
 ## 3. ModInosine analysis 'SampleSet3':
 ## Loading Pileup data from BAM files ... OK
 ## Aggregating data and calculating scores ... Starting to search for 'Inosine' ... done.</code></pre>
-<p>The creation of the <code>ModifierSet</code> will itself trigger the creation of a <code>Modifier</code> object each containing data from one sample set. This step is parallelized using the functions from the <code>BiocParallel</code> package. If a <code>Modifier</code> class itself uses parallel computing for its analysis, it is switched off unless <code>internalBP = TRUE</code> is set. In this case each <code>Modifier</code> object is created in sequence, allowing parallel computing during of the creation of each object.</p>
+<p>The creation of the <code>ModifierSet</code> will itself trigger the creation of a <code>Modifier</code> object each containing data from one sample set. This step is parallelized using the <code>BiocParallel</code> package. If a <code>Modifier</code> class itself uses parallel computing for its analysis, it is switched off unless <code>internalBP = TRUE</code> is set. In this case each <code>Modifier</code> object is created in sequence, allowing parallel computing during the creation of each object.</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/names.html">names</a></span>(msi)</a></code></pre></div>
 <pre><code>## [1] "SampleSet1" "SampleSet2" "SampleSet3"</code></pre>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">msi[[<span class="dv">1</span>]]</a></code></pre></div>
 <pre><code>## A ModInosine object containing PileupSequenceData with 11 elements.
 ## | Input files:
-##    - treated: /tmp/RtmpKqS3rc/BiocFileCache/48623a6a0965_2544
-##    - treated: /tmp/RtmpKqS3rc/BiocFileCache/48626bbf420f_2546
-##    - treated: /tmp/RtmpKqS3rc/BiocFileCache/48627e3bdc02_2548
+##    - treated: /tmp/RtmpzsGkpN/BiocFileCache/47d837fa5567_2544
+##    - treated: /tmp/RtmpzsGkpN/BiocFileCache/47d85ba818ec_2546
+##    - treated: /tmp/RtmpzsGkpN/BiocFileCache/47d852f227ea_2548
 ## | Nucleotide - Modification type(s):  RNA  -  I 
 ## | Modifications found: yes (6) 
 ## | Settings:
@@ -336,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <div id="analysis-of-detected-modifications" class="section level1">
 <h1 class="hasAnchor">
 <a href="#analysis-of-detected-modifications" class="anchor"></a>Analysis of detected modifications</h1>
-<p>Found modifications can be retrieved from a <code>Modifier</code> or <code>ModifierSet</code> object via the <code><a href="../reference/modify.html">modifications()</a></code> function. The function returns a <code>GRanges</code> or <code>GRangesList</code> object, respectively, which contains the coordinates of the modifications with respect to the genome used. For example if a transcript starts at position 100 and contains a modified nucleotide at position 50, the returned coordinate will 149.</p>
+<p>Found modifications can be retrieved from a <code>Modifier</code> or <code>ModifierSet</code> object via the <code><a href="../reference/modify.html">modifications()</a></code> function. The function returns a <code>GRanges</code> or <code>GRangesList</code> object, respectively, which contains the coordinates of the modifications with respect to the genome used. For example if a transcript starts at position 100 and contains a modified nucleotide at position 50 of the transcript, the returned coordinate will 150.</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">mod &lt;-<span class="st"> </span><span class="kw"><a href="../reference/modify.html">modifications</a></span>(msi)</a>
 <a class="sourceLine" id="cb36-2" data-line-number="2">mod[[<span class="dv">1</span>]]</a></code></pre></div>
 <pre><code>## GRanges object with 6 ranges and 5 metadata columns:
