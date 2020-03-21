@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RNAmodR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.13</span>
       </span>
     </div>
 
@@ -85,7 +85,7 @@
       <h1>RNAmodR: creating classes for additional modification detection from high throughput sequencing.</h1>
                         <h4 class="author">Felix G.M. Ernst</h4>
             
-            <h4 class="date">2020-03-05</h4>
+            <h4 class="date">2020-03-21</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/FelixErnst/RNAmodR/blob/master/vignettes/RNAmodR.creation.Rmd"><code>vignettes/RNAmodR.creation.Rmd</code></a></small>
       <div class="hidden name"><code>RNAmodR.creation.Rmd</code></div>
@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <h1 class="hasAnchor">
 <a href="#sessioninfo" class="anchor"></a>Sessioninfo</h1>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()</a></code></pre></div>
-<pre><code>## R Under development (unstable) (2020-03-05 r77907)
+<pre><code>## R Under development (unstable) (2020-03-13 r77948)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 16.04.6 LTS
 ## 
@@ -290,55 +290,55 @@ document.addEventListener("DOMContentLoaded", function() {
 ## [8] methods   base     
 ## 
 ## other attached packages:
-##  [1] RNAmodR_1.1.10       Modstrings_1.3.10    Biostrings_2.55.4   
-##  [4] XVector_0.27.0       GenomicRanges_1.39.2 GenomeInfoDb_1.23.13
-##  [7] IRanges_2.21.3       S4Vectors_0.25.12    BiocGenerics_0.33.0 
+##  [1] RNAmodR_1.1.13       Modstrings_1.3.11    Biostrings_2.55.6   
+##  [4] XVector_0.27.1       GenomicRanges_1.39.2 GenomeInfoDb_1.23.13
+##  [7] IRanges_2.21.5       S4Vectors_0.25.13    BiocGenerics_0.33.2 
 ## [10] BiocStyle_2.15.6    
 ## 
 ## loaded via a namespace (and not attached):
 ##   [1] assertive.base_0.0-7        colorspace_1.4-1           
 ##   [3] colorRamps_2.3              rprojroot_1.3-2            
 ##   [5] htmlTable_1.13.3            biovizBase_1.35.1          
-##   [7] base64enc_0.1-3             fs_1.3.1                   
+##   [7] base64enc_0.1-3             fs_1.3.2                   
 ##   [9] dichromat_2.0-0             rstudioapi_0.11            
 ##  [11] assertive.sets_0.0-3        bit64_0.9-7                
 ##  [13] AnnotationDbi_1.49.1        assertive.data.uk_0.0-2    
 ##  [15] codetools_0.2-16            splines_4.0.0              
 ##  [17] knitr_1.28                  Formula_1.2-3              
 ##  [19] assertive_0.3-5             assertive.data.us_0.0-2    
-##  [21] Rsamtools_2.3.5             cluster_2.1.0              
+##  [21] Rsamtools_2.3.7             cluster_2.1.0              
 ##  [23] dbplyr_1.4.2                png_0.1-7                  
 ##  [25] BiocManager_1.30.10         compiler_4.0.0             
 ##  [27] httr_1.4.1                  backports_1.1.5            
-##  [29] assertthat_0.2.1            Matrix_1.2-18              
-##  [31] lazyeval_0.2.2              acepack_1.4.1              
+##  [29] lazyeval_0.2.2              assertthat_0.2.1           
+##  [31] Matrix_1.2-18               acepack_1.4.1              
 ##  [33] htmltools_0.4.0             prettyunits_1.1.1          
 ##  [35] tools_4.0.0                 gtable_0.3.0               
-##  [37] glue_1.3.1                  GenomeInfoDbData_1.2.2     
-##  [39] reshape2_1.4.3              dplyr_0.8.4                
-##  [41] rappdirs_0.3.1              Rcpp_1.0.3                 
-##  [43] Biobase_2.47.2              pkgdown_1.4.1              
-##  [45] vctrs_0.2.3                 gdata_2.18.0               
+##  [37] glue_1.3.2                  GenomeInfoDbData_1.2.2     
+##  [39] reshape2_1.4.3              dplyr_0.8.5                
+##  [41] rappdirs_0.3.1              Rcpp_1.0.4                 
+##  [43] Biobase_2.47.3              pkgdown_1.4.1              
+##  [45] vctrs_0.2.4                 gdata_2.18.0               
 ##  [47] rtracklayer_1.47.0          assertive.files_0.0-2      
 ##  [49] assertive.datetimes_0.0-2   assertive.models_0.0-2     
 ##  [51] xfun_0.12                   stringr_1.4.0              
-##  [53] lifecycle_0.1.0             ensembldb_2.11.3           
+##  [53] lifecycle_0.2.0             ensembldb_2.11.3           
 ##  [55] gtools_3.8.1                XML_3.99-0.3               
 ##  [57] zlibbioc_1.33.1             MASS_7.3-51.5              
-##  [59] scales_1.1.0                BSgenome_1.55.3            
-##  [61] VariantAnnotation_1.33.0    ProtGenerics_1.19.3        
+##  [59] scales_1.1.0                BSgenome_1.55.4            
+##  [61] VariantAnnotation_1.33.2    ProtGenerics_1.19.3        
 ##  [63] hms_0.5.3                   SummarizedExperiment_1.17.3
 ##  [65] AnnotationFilter_1.11.0     RColorBrewer_1.1-2         
 ##  [67] assertive.matrices_0.0-2    assertive.strings_0.0-3    
 ##  [69] yaml_2.2.1                  curl_4.3                   
 ##  [71] gridExtra_2.3               memoise_1.1.0              
-##  [73] ggplot2_3.2.1               rpart_4.1-15               
+##  [73] ggplot2_3.3.0               rpart_4.1-15               
 ##  [75] biomaRt_2.43.3              latticeExtra_0.6-29        
 ##  [77] stringi_1.4.6               RSQLite_2.2.0              
 ##  [79] desc_1.2.0                  checkmate_2.0.0            
-##  [81] caTools_1.18.0              GenomicFeatures_1.39.5     
+##  [81] caTools_1.18.0              GenomicFeatures_1.39.7     
 ##  [83] BiocParallel_1.21.2         rlang_0.4.5                
-##  [85] pkgconfig_2.0.3             matrixStats_0.55.0         
+##  [85] pkgconfig_2.0.3             matrixStats_0.56.0         
 ##  [87] bitops_1.0-6                evaluate_0.14              
 ##  [89] lattice_0.20-40             assertive.data_0.0-3       
 ##  [91] ROCR_1.0-7                  purrr_0.3.3                
@@ -348,10 +348,10 @@ document.addEventListener("DOMContentLoaded", function() {
 ##  [99] plyr_1.8.6                  magrittr_1.5               
 ## [101] bookdown_0.18               R6_2.4.1                   
 ## [103] gplots_3.0.3                Hmisc_4.3-1                
-## [105] DelayedArray_0.13.4         DBI_1.1.0                  
-## [107] foreign_0.8-76              pillar_1.4.3               
+## [105] DelayedArray_0.13.7         DBI_1.1.0                  
+## [107] pillar_1.4.3                foreign_0.8-76             
 ## [109] assertive.numbers_0.0-2     nnet_7.3-13                
-## [111] survival_3.1-8              RCurl_1.98-1.1             
+## [111] survival_3.1-11             RCurl_1.98-1.1             
 ## [113] tibble_2.1.3                crayon_1.3.4               
 ## [115] assertive.types_0.0-3       KernSmooth_2.23-16         
 ## [117] BiocFileCache_1.11.4        rmarkdown_2.1              
@@ -359,7 +359,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ## [121] grid_4.0.0                  data.table_1.12.8          
 ## [123] blob_1.2.1                  digest_0.6.25              
 ## [125] openssl_1.4.1               munsell_0.5.0              
-## [127] assertive.reflection_0.0-4  Gviz_1.31.11               
+## [127] assertive.reflection_0.0-4  Gviz_1.31.12               
 ## [129] askpass_1.1</code></pre>
 </div>
   </div>

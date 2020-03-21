@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RNAmodR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.13</span>
       </span>
     </div>
 
@@ -85,7 +85,7 @@
       <h1>RNAmodR: analyzing high throughput sequencing data for post-transcriptional RNA modification footprints</h1>
                         <h4 class="author">Felix G.M. Ernst and Denis L.J. Lafontaine</h4>
             
-            <h4 class="date">2020-03-05</h4>
+            <h4 class="date">2020-03-21</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/FelixErnst/RNAmodR/blob/master/vignettes/RNAmodR.Rmd"><code>vignettes/RNAmodR.Rmd</code></a></small>
       <div class="hidden name"><code>RNAmodR.Rmd</code></div>
@@ -113,8 +113,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>Since similar pattern can be observed from some of these techniques, overlaps of the bioinformatical pipeline already are and will become more frequent with new emerging sequencing techniques.</p>
 <p><code>RNAmodR</code> implements classes and a workflow to detect post-transcriptional RNA modifications in high throughput sequencing data. It is easily adaptable to new methods and can help during the phase of initial method development as well as more complex screenings.</p>
 <p>Briefly, from the <code>SequenceData</code>, specific subclasses are derived for accessing specific aspects of aligned reads, e.g. 5’-end positions or pileup data. With this a <code>Modifier</code> class can be used to detect specific patterns for individual types of modifications. The <code>SequenceData</code> classes can be shared by different <code>Modifier</code> classes allowing easy adaptation to new methods.</p>
-<pre><code>## using temporary cache /tmp/RtmpzsGkpN/BiocFileCache</code></pre>
-<pre><code>## snapshotDate(): 2020-02-26</code></pre>
+<pre><code>## using temporary cache /tmp/Rtmpa8sDwb/BiocFileCache</code></pre>
+<pre><code>## snapshotDate(): 2020-03-12</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(rtracklayer)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(Rsamtools)</a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(GenomicFeatures)</a>
@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ##   seqinfo: 60 sequences from an unspecified genome; no seqlengths
 ## 
 ## and a 1649-letter RNAString object
-## seq: GUAAAAAAUUUAUAAGAAUAUGAUGUUGGUUCAGAUU…CUGCGGUGGGCUUAUAAAUAUCUUAAAUAUUCUUACA</code></pre>
+## seq: GUAAAAAAUUUAUAAGAAUAUGAUGUUGGUUCAGAU...UGCGGUGGGCUUAUAAAUAUCUUAAAUAUUCUUACA</code></pre>
 <p>The <code>SequenceDataFrame</code> objects retains some accessor functions from the <code>SequenceData</code> class.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/names.html">names</a></span>(sdf) <span class="co"># this returns the columns names of the data</span></a>
 <a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw">ranges</span>(sdf)</a>
@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ##   seqinfo: 60 sequences from an unspecified genome; no seqlengths
 ## 
 ## and a 1649-letter RNAString object
-## seq: GUAAAAAAUUUAUAAGAAUAUGAUGUUGGUUCAGAUU…CUGCGGUGGGCUUAUAAAUAUCUUAAAUAUUCUUACA</code></pre>
+## seq: GUAAAAAAUUUAUAAGAAUAUGAUGUUGGUUCAGAU...UGCGGUGGGCUUAUAAAUAUCUUAAAUAUUCUUACA</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">sdf[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,]</a></code></pre></div>
 <pre><code>## DataFrame with 3 rows and 3 columns
 ##   end5.treated.1 end5.treated.2 end5.treated.3
@@ -317,9 +317,9 @@ document.addEventListener("DOMContentLoaded", function() {
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">msi[[<span class="dv">1</span>]]</a></code></pre></div>
 <pre><code>## A ModInosine object containing PileupSequenceData with 11 elements.
 ## | Input files:
-##    - treated: /tmp/RtmpzsGkpN/BiocFileCache/47d837fa5567_2544
-##    - treated: /tmp/RtmpzsGkpN/BiocFileCache/47d85ba818ec_2546
-##    - treated: /tmp/RtmpzsGkpN/BiocFileCache/47d852f227ea_2548
+##    - treated: /tmp/Rtmpa8sDwb/BiocFileCache/45ec43b674e6_2544
+##    - treated: /tmp/Rtmpa8sDwb/BiocFileCache/45ec62b9983a_2546
+##    - treated: /tmp/Rtmpa8sDwb/BiocFileCache/45ec6563a94e_2548
 ## | Nucleotide - Modification type(s):  RNA  -  I 
 ## | Modifications found: yes (6) 
 ## | Settings:
@@ -464,7 +464,7 @@ TPR vs. FPR plot.
 <h1 class="hasAnchor">
 <a href="#sessioninfo" class="anchor"></a>Sessioninfo</h1>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()</a></code></pre></div>
-<pre><code>## R Under development (unstable) (2020-03-05 r77907)
+<pre><code>## R Under development (unstable) (2020-03-13 r77948)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 16.04.6 LTS
 ## 
@@ -485,14 +485,14 @@ TPR vs. FPR plot.
 ## [8] methods   base     
 ## 
 ## other attached packages:
-##  [1] RNAmodR_1.1.10           Modstrings_1.3.10        RNAmodR.Data_1.1.2      
+##  [1] RNAmodR_1.1.13           Modstrings_1.3.11        RNAmodR.Data_1.1.2      
 ##  [4] ExperimentHubData_1.13.1 AnnotationHubData_1.17.4 futile.logger_1.4.3     
 ##  [7] ExperimentHub_1.13.5     AnnotationHub_2.19.7     BiocFileCache_1.11.4    
-## [10] dbplyr_1.4.2             GenomicFeatures_1.39.5   AnnotationDbi_1.49.1    
-## [13] Biobase_2.47.2           Rsamtools_2.3.5          Biostrings_2.55.4       
-## [16] XVector_0.27.0           rtracklayer_1.47.0       GenomicRanges_1.39.2    
-## [19] GenomeInfoDb_1.23.13     IRanges_2.21.3           S4Vectors_0.25.12       
-## [22] BiocGenerics_0.33.0      BiocStyle_2.15.6        
+## [10] dbplyr_1.4.2             GenomicFeatures_1.39.7   AnnotationDbi_1.49.1    
+## [13] Biobase_2.47.3           Rsamtools_2.3.7          Biostrings_2.55.6       
+## [16] XVector_0.27.1           rtracklayer_1.47.0       GenomicRanges_1.39.2    
+## [19] GenomeInfoDb_1.23.13     IRanges_2.21.5           S4Vectors_0.25.13       
+## [22] BiocGenerics_0.33.2      BiocStyle_2.15.6        
 ## 
 ## loaded via a namespace (and not attached):
 ##   [1] RUnit_0.4.32                  tidyselect_1.0.0             
@@ -505,14 +505,14 @@ TPR vs. FPR plot.
 ##  [15] assertive.base_0.0-7          labeling_0.3                 
 ##  [17] optparse_1.6.4                GenomeInfoDbData_1.2.2       
 ##  [19] farver_2.0.3                  bit64_0.9-7                  
-##  [21] rprojroot_1.3-2               vctrs_0.2.3                  
+##  [21] rprojroot_1.3-2               vctrs_0.2.4                  
 ##  [23] lambda.r_1.2.4                xfun_0.12                    
 ##  [25] biovizBase_1.35.1             R6_2.4.1                     
 ##  [27] assertive.sets_0.0-3          AnnotationFilter_1.11.0      
-##  [29] bitops_1.0-6                  DelayedArray_0.13.4          
+##  [29] bitops_1.0-6                  DelayedArray_0.13.7          
 ##  [31] assertthat_0.2.1              promises_1.1.0               
 ##  [33] scales_1.1.0                  nnet_7.3-13                  
-##  [35] gtable_0.3.0                  biocViews_1.55.4             
+##  [35] gtable_0.3.0                  biocViews_1.55.6             
 ##  [37] ensembldb_2.11.3              rlang_0.4.5                  
 ##  [39] splines_4.0.0                 lazyeval_0.2.2               
 ##  [41] acepack_1.4.1                 dichromat_2.0-0              
@@ -521,19 +521,19 @@ TPR vs. FPR plot.
 ##  [47] backports_1.1.5               httpuv_1.5.2                 
 ##  [49] Hmisc_4.3-1                   RBGL_1.63.1                  
 ##  [51] tools_4.0.0                   bookdown_0.18                
-##  [53] ggplot2_3.2.1                 gplots_3.0.3                 
+##  [53] ggplot2_3.3.0                 gplots_3.0.3                 
 ##  [55] assertive.strings_0.0-3       RColorBrewer_1.1-2           
 ##  [57] plyr_1.8.6                    assertive.reflection_0.0-4   
-##  [59] Rcpp_1.0.3                    base64enc_0.1-3              
+##  [59] Rcpp_1.0.4                    base64enc_0.1-3              
 ##  [61] progress_1.2.2                zlibbioc_1.33.1              
 ##  [63] purrr_0.3.3                   RCurl_1.98-1.1               
 ##  [65] prettyunits_1.1.1             rpart_4.1-15                 
 ##  [67] openssl_1.4.1                 SummarizedExperiment_1.17.3  
 ##  [69] cluster_2.1.0                 colorRamps_2.3               
-##  [71] fs_1.3.1                      assertive.models_0.0-2       
+##  [71] fs_1.3.2                      assertive.models_0.0-2       
 ##  [73] magrittr_1.5                  data.table_1.12.8            
 ##  [75] assertive.data_0.0-3          futile.options_1.0.1         
-##  [77] ProtGenerics_1.19.3           matrixStats_0.55.0           
+##  [77] ProtGenerics_1.19.3           matrixStats_0.56.0           
 ##  [79] hms_0.5.3                     mime_0.9                     
 ##  [81] evaluate_0.14                 xtable_1.8-4                 
 ##  [83] XML_3.99-0.3                  jpeg_0.1-8.1                 
@@ -548,28 +548,28 @@ TPR vs. FPR plot.
 ## [101] assertive.numbers_0.0-2       Matrix_1.2-18                
 ## [103] getopt_1.20.3                 assertive.types_0.0-3        
 ## [105] assertive.matrices_0.0-2      assertive.data.uk_0.0-2      
-## [107] gdata_2.18.0                  Gviz_1.31.11                 
+## [107] gdata_2.18.0                  Gviz_1.31.12                 
 ## [109] pkgconfig_2.0.3               pkgdown_1.4.1                
 ## [111] GenomicAlignments_1.23.1      foreign_0.8-76               
 ## [113] assertive.data.us_0.0-2       stringdist_0.9.5.5           
 ## [115] AnnotationForge_1.29.2        BiocCheck_1.23.1             
-## [117] stringr_1.4.0                 VariantAnnotation_1.33.0     
-## [119] digest_0.6.25                 graph_1.65.1                 
+## [117] stringr_1.4.0                 VariantAnnotation_1.33.2     
+## [119] digest_0.6.25                 graph_1.65.2                 
 ## [121] assertive.code_0.0-3          rmarkdown_2.1                
 ## [123] htmlTable_1.13.3              curl_4.3                     
-## [125] shiny_1.4.0                   gtools_3.8.1                 
-## [127] lifecycle_0.1.0               jsonlite_1.6.1               
+## [125] shiny_1.4.0.2                 gtools_3.8.1                 
+## [127] lifecycle_0.2.0               jsonlite_1.6.1               
 ## [129] desc_1.2.0                    askpass_1.1                  
-## [131] BSgenome_1.55.3               pillar_1.4.3                 
+## [131] BSgenome_1.55.4               pillar_1.4.3                 
 ## [133] lattice_0.20-40               fastmap_1.0.1                
-## [135] httr_1.4.1                    survival_3.1-8               
-## [137] interactiveDisplayBase_1.25.0 glue_1.3.1                   
+## [135] httr_1.4.1                    survival_3.1-11              
+## [137] interactiveDisplayBase_1.25.0 glue_1.3.2                   
 ## [139] png_0.1-7                     BiocVersion_3.11.1           
 ## [141] bit_1.1-15.2                  assertive.properties_0.0-4   
 ## [143] stringi_1.4.6                 blob_1.2.1                   
 ## [145] latticeExtra_0.6-29           caTools_1.18.0               
 ## [147] memoise_1.1.0                 rBiopaxParser_2.27.0         
-## [149] dplyr_0.8.4</code></pre>
+## [149] dplyr_0.8.5</code></pre>
 <p><a name="References"></a></p>
 </div>
 <div id="references" class="section level1 unnumbered">
