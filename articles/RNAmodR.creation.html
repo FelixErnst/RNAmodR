@@ -6,19 +6,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RNAmodR: creating classes for additional modification detection from high throughput sequencing. • RNAmodR</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="RNAmodR: creating classes for additional modification detection from high throughput sequencing.">
-<meta property="og:description" content="">
-<meta name="twitter:card" content="summary">
+<meta property="og:description" content="RNAmodR">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RNAmodR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.13</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.15</span>
       </span>
     </div>
 
@@ -64,7 +64,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/FelixErnst/RNAmodR">
+  <a href="https://github.com/FelixErnst/RNAmodR/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -82,10 +82,10 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>RNAmodR: creating classes for additional modification detection from high throughput sequencing.</h1>
+      <h1 data-toc-skip>RNAmodR: creating classes for additional modification detection from high throughput sequencing.</h1>
                         <h4 class="author">Felix G.M. Ernst</h4>
             
-            <h4 class="date">2020-03-21</h4>
+            <h4 class="date">2020-04-09</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/FelixErnst/RNAmodR/blob/master/vignettes/RNAmodR.creation.Rmd"><code>vignettes/RNAmodR.creation.Rmd</code></a></small>
       <div class="hidden name"><code>RNAmodR.creation.Rmd</code></div>
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <a href="#introduction" class="anchor"></a>Introduction</h1>
 <p>For users interested in the general aspect of any <code>RNAmodR</code> based package please have a look at the <a href="RNAmodR.html">main vignette</a> of the package.</p>
 <p>This vignette is aimed at developers and researchers, who want to use the functionality of the <code>RNAmodR</code> package to develop a new modification strategy based on high throughput sequencing data.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(RNAmodR)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">RNAmodR</span>)</pre></body></html></div>
 <p>Two classes have to be considered to establish a new analysis pipeline using <code>RNAmodR</code>. These are the <code>SequenceData</code> and the <code>Modifier</code> class.</p>
 </div>
 <div id="a-new-sequencedata-class" class="section level1">
@@ -128,136 +128,136 @@ document.addEventListener("DOMContentLoaded", function() {
 <li><code>NormEnd3SequenceData</code></li>
 </ul>
 <p>If these cannot be reused, a new class can be implemented quite easily. First the DataFrame class, the Data class and a constructor has to defined. The only value, which has to be provided, is a default <code>minQuality</code> integer value and some basic information.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">setClass</span>(<span class="dt">Class =</span> <span class="st">"ExampleSequenceDataFrame"</span>,</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">         <span class="dt">contains =</span> <span class="st">"SequenceDFrame"</span>)</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">ExampleSequenceDataFrame &lt;-<span class="st"> </span><span class="cf">function</span>(df, ranges, sequence, replicate,</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">                                      condition, bamfiles, seqinfo){</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5">  RNAmodR<span class="op">:::</span><span class="kw">.SequenceDataFrame</span>(<span class="st">"Example"</span>,df, ranges, sequence, replicate,</a>
-<a class="sourceLine" id="cb2-6" data-line-number="6">                               condition, bamfiles, seqinfo)</a>
-<a class="sourceLine" id="cb2-7" data-line-number="7">}</a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="kw">setClass</span>(<span class="dt">Class =</span> <span class="st">"ExampleSequenceData"</span>,</a>
-<a class="sourceLine" id="cb2-9" data-line-number="9">         <span class="dt">contains =</span> <span class="st">"SequenceData"</span>,</a>
-<a class="sourceLine" id="cb2-10" data-line-number="10">         <span class="dt">slots =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dt">unlistData =</span> <span class="st">"ExampleSequenceDataFrame"</span>),</a>
-<a class="sourceLine" id="cb2-11" data-line-number="11">         <span class="dt">prototype =</span> <span class="kw"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="dt">unlistData =</span> <span class="kw">ExampleSequenceDataFrame</span>(),</a>
-<a class="sourceLine" id="cb2-12" data-line-number="12">                          <span class="dt">unlistType =</span> <span class="st">"ExampleSequenceDataFrame"</span>,</a>
-<a class="sourceLine" id="cb2-13" data-line-number="13">                          <span class="dt">minQuality =</span> 5L,</a>
-<a class="sourceLine" id="cb2-14" data-line-number="14">                          <span class="dt">dataDescription =</span> <span class="st">"Example data"</span>))</a>
-<a class="sourceLine" id="cb2-15" data-line-number="15">ExampleSequenceData &lt;-<span class="st"> </span><span class="cf">function</span>(bamfiles, annotation, sequences, seqinfo, ...){</a>
-<a class="sourceLine" id="cb2-16" data-line-number="16">  RNAmodR<span class="op">:::</span><span class="kw"><a href="../reference/SequenceData-class.html">SequenceData</a></span>(<span class="st">"Example"</span>, <span class="dt">bamfiles =</span> bamfiles, </a>
-<a class="sourceLine" id="cb2-17" data-line-number="17">                         <span class="dt">annotation =</span> annotation, <span class="dt">sequences =</span> sequences,</a>
-<a class="sourceLine" id="cb2-18" data-line-number="18">                         <span class="dt">seqinfo =</span> seqinfo, ...)</a>
-<a class="sourceLine" id="cb2-19" data-line-number="19">}</a></code></pre></div>
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu">setClass</span>(<span class="kw">Class</span> <span class="kw">=</span> <span class="st">"ExampleSequenceDataFrame"</span>,
+         <span class="kw">contains</span> <span class="kw">=</span> <span class="st">"SequenceDFrame"</span>)
+<span class="no">ExampleSequenceDataFrame</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">df</span>, <span class="no">ranges</span>, <span class="no">sequence</span>, <span class="no">replicate</span>,
+                                      <span class="no">condition</span>, <span class="no">bamfiles</span>, <span class="no">seqinfo</span>){
+  <span class="kw pkg">RNAmodR</span><span class="kw ns">:::</span><span class="fu">.SequenceDataFrame</span>(<span class="st">"Example"</span>,<span class="no">df</span>, <span class="no">ranges</span>, <span class="no">sequence</span>, <span class="no">replicate</span>,
+                               <span class="no">condition</span>, <span class="no">bamfiles</span>, <span class="no">seqinfo</span>)
+}
+<span class="fu">setClass</span>(<span class="kw">Class</span> <span class="kw">=</span> <span class="st">"ExampleSequenceData"</span>,
+         <span class="kw">contains</span> <span class="kw">=</span> <span class="st">"SequenceData"</span>,
+         <span class="kw">slots</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="kw">unlistData</span> <span class="kw">=</span> <span class="st">"ExampleSequenceDataFrame"</span>),
+         <span class="kw">prototype</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">unlistData</span> <span class="kw">=</span> <span class="fu">ExampleSequenceDataFrame</span>(),
+                          <span class="kw">unlistType</span> <span class="kw">=</span> <span class="st">"ExampleSequenceDataFrame"</span>,
+                          <span class="kw">minQuality</span> <span class="kw">=</span> <span class="fl">5L</span>,
+                          <span class="kw">dataDescription</span> <span class="kw">=</span> <span class="st">"Example data"</span>))
+<span class="no">ExampleSequenceData</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">bamfiles</span>, <span class="no">annotation</span>, <span class="no">sequences</span>, <span class="no">seqinfo</span>, <span class="no">...</span>){
+  <span class="kw pkg">RNAmodR</span><span class="kw ns">:::</span><span class="fu"><a href="../reference/SequenceData-class.html">SequenceData</a></span>(<span class="st">"Example"</span>, <span class="kw">bamfiles</span> <span class="kw">=</span> <span class="no">bamfiles</span>,
+                         <span class="kw">annotation</span> <span class="kw">=</span> <span class="no">annotation</span>, <span class="kw">sequences</span> <span class="kw">=</span> <span class="no">sequences</span>,
+                         <span class="kw">seqinfo</span> <span class="kw">=</span> <span class="no">seqinfo</span>, <span class="no">...</span>)
+}</pre></body></html></div>
 <p>Second, the <code>getData</code> function has to be implemented. This is used to load the data from a bam file and must return a named list <code>IntegerList</code>, <code>NumericList</code> or <code>CompressedSplitDataFrameList</code> per file.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">setMethod</span>(<span class="st">"getData"</span>,</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">          <span class="dt">signature =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dt">x =</span> <span class="st">"ExampleSequenceData"</span>,</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">                        <span class="dt">bamfiles =</span> <span class="st">"BamFileList"</span>,</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">                        <span class="dt">grl =</span> <span class="st">"GRangesList"</span>,</a>
-<a class="sourceLine" id="cb3-5" data-line-number="5">                        <span class="dt">sequences =</span> <span class="st">"XStringSet"</span>,</a>
-<a class="sourceLine" id="cb3-6" data-line-number="6">                        <span class="dt">param =</span> <span class="st">"ScanBamParam"</span>),</a>
-<a class="sourceLine" id="cb3-7" data-line-number="7">          <span class="dt">definition =</span> <span class="cf">function</span>(x, bamfiles, grl, sequences, param, args){</a>
-<a class="sourceLine" id="cb3-8" data-line-number="8">            ###</a>
-<a class="sourceLine" id="cb3-9" data-line-number="9">          }</a>
-<a class="sourceLine" id="cb3-10" data-line-number="10">)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu">setMethod</span>(<span class="st">"getData"</span>,
+          <span class="kw">signature</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"ExampleSequenceData"</span>,
+                        <span class="kw">bamfiles</span> <span class="kw">=</span> <span class="st">"BamFileList"</span>,
+                        <span class="kw">grl</span> <span class="kw">=</span> <span class="st">"GRangesList"</span>,
+                        <span class="kw">sequences</span> <span class="kw">=</span> <span class="st">"XStringSet"</span>,
+                        <span class="kw">param</span> <span class="kw">=</span> <span class="st">"ScanBamParam"</span>),
+          <span class="kw">definition</span> <span class="kw">=</span> <span class="kw">function</span>(<span class="no">x</span>, <span class="no">bamfiles</span>, <span class="no">grl</span>, <span class="no">sequences</span>, <span class="no">param</span>, <span class="no">args</span>){
+            <span class="co">###</span>
+          }
+)</pre></body></html></div>
 <p>Third, the <code>aggregate</code> function has to be implemented. This function is used to aggregate data over replicates for all or one of the conditions. The resulting data is passed on to the <code>Modifier</code> class.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">setMethod</span>(<span class="st">"aggregateData"</span>,</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">          <span class="dt">signature =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dt">x =</span> <span class="st">"ExampleSequenceData"</span>),</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">          <span class="cf">function</span>(x, <span class="dt">condition =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Both"</span>,<span class="st">"Treated"</span>,<span class="st">"Control"</span>)){</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4">            ###</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5">          }</a>
-<a class="sourceLine" id="cb4-6" data-line-number="6">)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu">setMethod</span>(<span class="st">"aggregateData"</span>,
+          <span class="kw">signature</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"ExampleSequenceData"</span>),
+          <span class="kw">function</span>(<span class="no">x</span>, <span class="no">condition</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Both"</span>,<span class="st">"Treated"</span>,<span class="st">"Control"</span>)){
+            <span class="co">###</span>
+          }
+)</pre></body></html></div>
 </div>
 <div id="a-new-modifier-class" class="section level1">
 <h1 class="hasAnchor">
 <a href="#a-new-modifier-class" class="anchor"></a>A new <code>Modifier</code> class</h1>
 <p>A new <code>Modifier</code> class is probably the main class, which needs to be implemented. Three variable have to be set. <code>mod</code> must be a single element from the <code><a href="https://rdrr.io/pkg/Modstrings/man/alphabet.html">Modstrings::shortName(Modstrings::ModRNAString())</a></code>. <code>score</code> is the default score, which is used for several function. A column with this name should be returned from the <code>aggregate</code> function. <code>dataType</code> defines the <code>SequenceData</code> class to be used. <code>dataType</code> can contain multiple names of a <code>SequenceData</code> class, which are then combined to form a <code>SequenceDataSet</code>.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">setClass</span>(<span class="st">"ModExample"</span>,</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">         <span class="dt">contains =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"RNAModifier"</span>),</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">         <span class="dt">prototype =</span> <span class="kw"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="dt">mod =</span> <span class="st">"X"</span>,</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">                          <span class="dt">score =</span> <span class="st">"score"</span>,</a>
-<a class="sourceLine" id="cb5-5" data-line-number="5">                          <span class="dt">dataType =</span> <span class="st">"ExampleSequenceData"</span>))</a>
-<a class="sourceLine" id="cb5-6" data-line-number="6">ModExample &lt;-<span class="st"> </span><span class="cf">function</span>(x, annotation, sequences, seqinfo, ...){</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7">  RNAmodR<span class="op">:::</span><span class="kw"><a href="../reference/Modifier-class.html">Modifier</a></span>(<span class="st">"ModExample"</span>, <span class="dt">x =</span> x, <span class="dt">annotation =</span> annotation,</a>
-<a class="sourceLine" id="cb5-8" data-line-number="8">                     <span class="dt">sequences =</span> sequences, <span class="dt">seqinfo =</span> seqinfo, ...)</a>
-<a class="sourceLine" id="cb5-9" data-line-number="9">}</a></code></pre></div>
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu">setClass</span>(<span class="st">"ModExample"</span>,
+         <span class="kw">contains</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"RNAModifier"</span>),
+         <span class="kw">prototype</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">mod</span> <span class="kw">=</span> <span class="st">"X"</span>,
+                          <span class="kw">score</span> <span class="kw">=</span> <span class="st">"score"</span>,
+                          <span class="kw">dataType</span> <span class="kw">=</span> <span class="st">"ExampleSequenceData"</span>))
+<span class="no">ModExample</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">x</span>, <span class="no">annotation</span>, <span class="no">sequences</span>, <span class="no">seqinfo</span>, <span class="no">...</span>){
+  <span class="kw pkg">RNAmodR</span><span class="kw ns">:::</span><span class="fu"><a href="../reference/Modifier-class.html">Modifier</a></span>(<span class="st">"ModExample"</span>, <span class="kw">x</span> <span class="kw">=</span> <span class="no">x</span>, <span class="kw">annotation</span> <span class="kw">=</span> <span class="no">annotation</span>,
+                     <span class="kw">sequences</span> <span class="kw">=</span> <span class="no">sequences</span>, <span class="kw">seqinfo</span> <span class="kw">=</span> <span class="no">seqinfo</span>, <span class="no">...</span>)
+}</pre></body></html></div>
 <p><code>dataType</code> can also be a <code>list</code> of <code>character</code> vectors, which leads then to the creation of <code>SequenceDataList</code>. However, for now this is a hypothetical case and should only be used, if the detection of a modification requires bam files from two or more different methods to be used to detect one modification.</p>
 <p>The <code>settings&lt;-</code> function can be amended to save specifc settings ( <code>.norm_example_args</code> must be defined seperatly to normalize input arguments in any way one sees fit).</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">setReplaceMethod</span>(<span class="dt">f =</span> <span class="st">"settings"</span>, </a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">                 <span class="dt">signature =</span> <span class="kw">signature</span>(<span class="dt">x =</span> <span class="st">"ModExample"</span>),</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3">                 <span class="dt">definition =</span> <span class="cf">function</span>(x, value){</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">                   x &lt;-<span class="st"> </span><span class="kw">callNextMethod</span>()</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5">                   <span class="co"># validate special setting here</span></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6">                   x<span class="op">@</span>settings[<span class="kw"><a href="https://rdrr.io/r/base/names.html">names</a></span>(value)] &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/unname.html">unname</a></span>(<span class="kw">.norm_example_args</span>(value))</a>
-<a class="sourceLine" id="cb6-7" data-line-number="7">                   x</a>
-<a class="sourceLine" id="cb6-8" data-line-number="8">                 })</a></code></pre></div>
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="fu">setReplaceMethod</span>(<span class="kw">f</span> <span class="kw">=</span> <span class="st">"settings"</span>,
+                 <span class="kw">signature</span> <span class="kw">=</span> <span class="fu">signature</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"ModExample"</span>),
+                 <span class="kw">definition</span> <span class="kw">=</span> <span class="kw">function</span>(<span class="no">x</span>, <span class="no">value</span>){
+                   <span class="no">x</span> <span class="kw">&lt;-</span> <span class="fu">callNextMethod</span>()
+                   <span class="co"># validate special setting here</span>
+                   <span class="no">x</span>@<span class="kw">settings</span>[<span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="no">value</span>)] <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unname.html">unname</a></span>(<span class="fu">.norm_example_args</span>(<span class="no">value</span>))
+                   <span class="no">x</span>
+                 })</pre></body></html></div>
 <p>The <code>aggregateData</code> function is used to take the aggregated data from the <code>SequenceData</code> object and to calculate the specific scores, which are then stored in the <code>aggregate</code> slot.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">setMethod</span>(<span class="dt">f =</span> <span class="st">"aggregateData"</span>, </a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">          <span class="dt">signature =</span> <span class="kw">signature</span>(<span class="dt">x =</span> <span class="st">"ModExample"</span>),</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3">          <span class="dt">definition =</span> </a>
-<a class="sourceLine" id="cb7-4" data-line-number="4">            <span class="cf">function</span>(x, <span class="dt">force =</span> <span class="ot">FALSE</span>){</a>
-<a class="sourceLine" id="cb7-5" data-line-number="5">              <span class="co"># Some data with element per transcript</span></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6">            }</a>
-<a class="sourceLine" id="cb7-7" data-line-number="7">)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="fu">setMethod</span>(<span class="kw">f</span> <span class="kw">=</span> <span class="st">"aggregateData"</span>,
+          <span class="kw">signature</span> <span class="kw">=</span> <span class="fu">signature</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"ModExample"</span>),
+          <span class="kw">definition</span> <span class="kw">=</span>
+            <span class="kw">function</span>(<span class="no">x</span>, <span class="no">force</span> <span class="kw">=</span> <span class="fl">FALSE</span>){
+              <span class="co"># Some data with element per transcript</span>
+            }
+)</pre></body></html></div>
 <p>The <code>findMod</code> function takes the aggregate data and searches for modifications, which are then returned as a GRanges object and stored in the <code>modifications</code> slot.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">setMethod</span>(<span class="st">"findMod"</span>,</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2">          <span class="dt">signature =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dt">x =</span> <span class="st">"ModExample"</span>),</a>
-<a class="sourceLine" id="cb8-3" data-line-number="3">          <span class="cf">function</span>(x){</a>
-<a class="sourceLine" id="cb8-4" data-line-number="4">            <span class="co"># an element per modification found.</span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5">          }</a>
-<a class="sourceLine" id="cb8-6" data-line-number="6">)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu">setMethod</span>(<span class="st">"findMod"</span>,
+          <span class="kw">signature</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"ModExample"</span>),
+          <span class="kw">function</span>(<span class="no">x</span>){
+            <span class="co"># an element per modification found.</span>
+          }
+)</pre></body></html></div>
 <div id="a-new-modifierset-class" class="section level2">
 <h2 class="hasAnchor">
 <a href="#a-new-modifierset-class" class="anchor"></a>A new <code>ModifierSet</code> class</h2>
 <p>The <code>ModifierSet</code> class is implemented very easily by defining the class and the constructor. The functionality is defined by the <code>Modifier</code> class.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">setClass</span>(<span class="st">"ModSetExample"</span>,</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">         <span class="dt">contains =</span> <span class="st">"ModifierSet"</span>,</a>
-<a class="sourceLine" id="cb9-3" data-line-number="3">         <span class="dt">prototype =</span> <span class="kw"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="dt">elementType =</span> <span class="st">"ModExample"</span>))</a>
-<a class="sourceLine" id="cb9-4" data-line-number="4">ModSetExample &lt;-<span class="st"> </span><span class="cf">function</span>(x, annotation, sequences, seqinfo, ...){</a>
-<a class="sourceLine" id="cb9-5" data-line-number="5">  RNAmodR<span class="op">:::</span><span class="kw"><a href="../reference/ModifierSet-class.html">ModifierSet</a></span>(<span class="st">"ModExample"</span>, <span class="dt">x =</span> x, <span class="dt">annotation =</span> annotation,</a>
-<a class="sourceLine" id="cb9-6" data-line-number="6">                        <span class="dt">sequences =</span> sequences, <span class="dt">seqinfo =</span> seqinfo, ...)</a>
-<a class="sourceLine" id="cb9-7" data-line-number="7">}</a></code></pre></div>
+<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="fu">setClass</span>(<span class="st">"ModSetExample"</span>,
+         <span class="kw">contains</span> <span class="kw">=</span> <span class="st">"ModifierSet"</span>,
+         <span class="kw">prototype</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">elementType</span> <span class="kw">=</span> <span class="st">"ModExample"</span>))
+<span class="no">ModSetExample</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">x</span>, <span class="no">annotation</span>, <span class="no">sequences</span>, <span class="no">seqinfo</span>, <span class="no">...</span>){
+  <span class="kw pkg">RNAmodR</span><span class="kw ns">:::</span><span class="fu"><a href="../reference/ModifierSet-class.html">ModifierSet</a></span>(<span class="st">"ModExample"</span>, <span class="kw">x</span> <span class="kw">=</span> <span class="no">x</span>, <span class="kw">annotation</span> <span class="kw">=</span> <span class="no">annotation</span>,
+                        <span class="kw">sequences</span> <span class="kw">=</span> <span class="no">sequences</span>, <span class="kw">seqinfo</span> <span class="kw">=</span> <span class="no">seqinfo</span>, <span class="no">...</span>)
+}</pre></body></html></div>
 </div>
 </div>
 <div id="visualization-functions" class="section level1">
 <h1 class="hasAnchor">
 <a href="#visualization-functions" class="anchor"></a>Visualization functions</h1>
 <p>Additional functions, which need to be implemented, are <code>getDataTrack</code> for the new <code>SequenceData</code> and new <code>Modifier</code> classes and <code>plotData</code>/<code>plotDataByCoord</code> for the new <code>Modifier</code> and <code>ModifierSet</code> classes. <code>name</code> defines a transcript name found in <code><a href="https://rdrr.io/r/base/names.html">names(ranges(x))</a></code> and <code>type</code> is the data type typically found as a column in the <code>aggregate</code> slot.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">setMethod</span>(</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">  <span class="dt">f =</span> <span class="st">"getDataTrack"</span>,</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">  <span class="dt">signature =</span> <span class="kw">signature</span>(<span class="dt">x =</span> <span class="st">"ExampleSequenceData"</span>),</a>
-<a class="sourceLine" id="cb10-4" data-line-number="4">  <span class="dt">definition =</span> <span class="cf">function</span>(x, name, ...) {</a>
-<a class="sourceLine" id="cb10-5" data-line-number="5">    ###</a>
-<a class="sourceLine" id="cb10-6" data-line-number="6">  }</a>
-<a class="sourceLine" id="cb10-7" data-line-number="7">)</a>
-<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="kw">setMethod</span>(</a>
-<a class="sourceLine" id="cb10-9" data-line-number="9">  <span class="dt">f =</span> <span class="st">"getDataTrack"</span>,</a>
-<a class="sourceLine" id="cb10-10" data-line-number="10">  <span class="dt">signature =</span> <span class="kw">signature</span>(<span class="dt">x =</span> <span class="st">"ModExample"</span>),</a>
-<a class="sourceLine" id="cb10-11" data-line-number="11">  <span class="dt">definition =</span> <span class="cf">function</span>(x, name, type, ...) {</a>
-<a class="sourceLine" id="cb10-12" data-line-number="12">  }</a>
-<a class="sourceLine" id="cb10-13" data-line-number="13">)</a>
-<a class="sourceLine" id="cb10-14" data-line-number="14"><span class="kw">setMethod</span>(</a>
-<a class="sourceLine" id="cb10-15" data-line-number="15">  <span class="dt">f =</span> <span class="st">"plotDataByCoord"</span>,</a>
-<a class="sourceLine" id="cb10-16" data-line-number="16">  <span class="dt">signature =</span> <span class="kw">signature</span>(<span class="dt">x =</span> <span class="st">"ModExample"</span>, <span class="dt">coord =</span> <span class="st">"GRanges"</span>),</a>
-<a class="sourceLine" id="cb10-17" data-line-number="17">  <span class="dt">definition =</span> <span class="cf">function</span>(x, coord, <span class="dt">type =</span> <span class="st">"score"</span>, <span class="dt">window.size =</span> 15L, ...) {</a>
-<a class="sourceLine" id="cb10-18" data-line-number="18">  }</a>
-<a class="sourceLine" id="cb10-19" data-line-number="19">)</a>
-<a class="sourceLine" id="cb10-20" data-line-number="20"><span class="kw">setMethod</span>(</a>
-<a class="sourceLine" id="cb10-21" data-line-number="21">  <span class="dt">f =</span> <span class="st">"plotData"</span>,</a>
-<a class="sourceLine" id="cb10-22" data-line-number="22">  <span class="dt">signature =</span> <span class="kw">signature</span>(<span class="dt">x =</span> <span class="st">"ModExample"</span>),</a>
-<a class="sourceLine" id="cb10-23" data-line-number="23">  <span class="dt">definition =</span> <span class="cf">function</span>(x, name, from, to, <span class="dt">type =</span> <span class="st">"score"</span>, ...) {</a>
-<a class="sourceLine" id="cb10-24" data-line-number="24">  }</a>
-<a class="sourceLine" id="cb10-25" data-line-number="25">)</a>
-<a class="sourceLine" id="cb10-26" data-line-number="26"><span class="kw">setMethod</span>(</a>
-<a class="sourceLine" id="cb10-27" data-line-number="27">  <span class="dt">f =</span> <span class="st">"plotDataByCoord"</span>,</a>
-<a class="sourceLine" id="cb10-28" data-line-number="28">  <span class="dt">signature =</span> <span class="kw">signature</span>(<span class="dt">x =</span> <span class="st">"ModSetExample"</span>, <span class="dt">coord =</span> <span class="st">"GRanges"</span>),</a>
-<a class="sourceLine" id="cb10-29" data-line-number="29">  <span class="dt">definition =</span> <span class="cf">function</span>(x, coord, <span class="dt">type =</span> <span class="st">"score"</span>, <span class="dt">window.size =</span> 15L, ...) {</a>
-<a class="sourceLine" id="cb10-30" data-line-number="30">  }</a>
-<a class="sourceLine" id="cb10-31" data-line-number="31">)</a>
-<a class="sourceLine" id="cb10-32" data-line-number="32"><span class="kw">setMethod</span>(</a>
-<a class="sourceLine" id="cb10-33" data-line-number="33">  <span class="dt">f =</span> <span class="st">"plotData"</span>,</a>
-<a class="sourceLine" id="cb10-34" data-line-number="34">  <span class="dt">signature =</span> <span class="kw">signature</span>(<span class="dt">x =</span> <span class="st">"ModSetExample"</span>),</a>
-<a class="sourceLine" id="cb10-35" data-line-number="35">  <span class="dt">definition =</span> <span class="cf">function</span>(x, name, from, to, <span class="dt">type =</span> <span class="st">"score"</span>, ...) {</a>
-<a class="sourceLine" id="cb10-36" data-line-number="36">  }</a>
-<a class="sourceLine" id="cb10-37" data-line-number="37">)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="fu">setMethod</span>(
+  <span class="kw">f</span> <span class="kw">=</span> <span class="st">"getDataTrack"</span>,
+  <span class="kw">signature</span> <span class="kw">=</span> <span class="fu">signature</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"ExampleSequenceData"</span>),
+  <span class="kw">definition</span> <span class="kw">=</span> <span class="kw">function</span>(<span class="no">x</span>, <span class="no">name</span>, <span class="no">...</span>) {
+    <span class="co">###</span>
+  }
+)
+<span class="fu">setMethod</span>(
+  <span class="kw">f</span> <span class="kw">=</span> <span class="st">"getDataTrack"</span>,
+  <span class="kw">signature</span> <span class="kw">=</span> <span class="fu">signature</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"ModExample"</span>),
+  <span class="kw">definition</span> <span class="kw">=</span> <span class="kw">function</span>(<span class="no">x</span>, <span class="no">name</span>, <span class="no">type</span>, <span class="no">...</span>) {
+  }
+)
+<span class="fu">setMethod</span>(
+  <span class="kw">f</span> <span class="kw">=</span> <span class="st">"plotDataByCoord"</span>,
+  <span class="kw">signature</span> <span class="kw">=</span> <span class="fu">signature</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"ModExample"</span>, <span class="kw">coord</span> <span class="kw">=</span> <span class="st">"GRanges"</span>),
+  <span class="kw">definition</span> <span class="kw">=</span> <span class="kw">function</span>(<span class="no">x</span>, <span class="no">coord</span>, <span class="no">type</span> <span class="kw">=</span> <span class="st">"score"</span>, <span class="no">window.size</span> <span class="kw">=</span> <span class="fl">15L</span>, <span class="no">...</span>) {
+  }
+)
+<span class="fu">setMethod</span>(
+  <span class="kw">f</span> <span class="kw">=</span> <span class="st">"plotData"</span>,
+  <span class="kw">signature</span> <span class="kw">=</span> <span class="fu">signature</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"ModExample"</span>),
+  <span class="kw">definition</span> <span class="kw">=</span> <span class="kw">function</span>(<span class="no">x</span>, <span class="no">name</span>, <span class="no">from</span>, <span class="no">to</span>, <span class="no">type</span> <span class="kw">=</span> <span class="st">"score"</span>, <span class="no">...</span>) {
+  }
+)
+<span class="fu">setMethod</span>(
+  <span class="kw">f</span> <span class="kw">=</span> <span class="st">"plotDataByCoord"</span>,
+  <span class="kw">signature</span> <span class="kw">=</span> <span class="fu">signature</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"ModSetExample"</span>, <span class="kw">coord</span> <span class="kw">=</span> <span class="st">"GRanges"</span>),
+  <span class="kw">definition</span> <span class="kw">=</span> <span class="kw">function</span>(<span class="no">x</span>, <span class="no">coord</span>, <span class="no">type</span> <span class="kw">=</span> <span class="st">"score"</span>, <span class="no">window.size</span> <span class="kw">=</span> <span class="fl">15L</span>, <span class="no">...</span>) {
+  }
+)
+<span class="fu">setMethod</span>(
+  <span class="kw">f</span> <span class="kw">=</span> <span class="st">"plotData"</span>,
+  <span class="kw">signature</span> <span class="kw">=</span> <span class="fu">signature</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"ModSetExample"</span>),
+  <span class="kw">definition</span> <span class="kw">=</span> <span class="kw">function</span>(<span class="no">x</span>, <span class="no">name</span>, <span class="no">from</span>, <span class="no">to</span>, <span class="no">type</span> <span class="kw">=</span> <span class="st">"score"</span>, <span class="no">...</span>) {
+  }
+)</pre></body></html></div>
 <p>If unsure, how to modify these functions, have a look a the code in the <code>Modifier-Inosine-viz.R</code> file of this package.</p>
 </div>
 <div id="summary" class="section level1">
@@ -268,8 +268,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <div id="sessioninfo" class="section level1">
 <h1 class="hasAnchor">
 <a href="#sessioninfo" class="anchor"></a>Sessioninfo</h1>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()</a></code></pre></div>
-<pre><code>## R Under development (unstable) (2020-03-13 r77948)
+<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()</pre></body></html></div>
+<pre><code>## R Under development (unstable) (2020-04-09 r78184)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 16.04.6 LTS
 ## 
@@ -290,99 +290,86 @@ document.addEventListener("DOMContentLoaded", function() {
 ## [8] methods   base     
 ## 
 ## other attached packages:
-##  [1] RNAmodR_1.1.13       Modstrings_1.3.11    Biostrings_2.55.6   
-##  [4] XVector_0.27.1       GenomicRanges_1.39.2 GenomeInfoDb_1.23.13
-##  [7] IRanges_2.21.5       S4Vectors_0.25.13    BiocGenerics_0.33.2 
+##  [1] RNAmodR_1.1.15       Modstrings_1.3.12    Biostrings_2.55.7   
+##  [4] XVector_0.27.2       GenomicRanges_1.39.3 GenomeInfoDb_1.23.16
+##  [7] IRanges_2.21.8       S4Vectors_0.25.15    BiocGenerics_0.33.3 
 ## [10] BiocStyle_2.15.6    
 ## 
 ## loaded via a namespace (and not attached):
-##   [1] assertive.base_0.0-7        colorspace_1.4-1           
-##   [3] colorRamps_2.3              rprojroot_1.3-2            
-##   [5] htmlTable_1.13.3            biovizBase_1.35.1          
-##   [7] base64enc_0.1-3             fs_1.3.2                   
-##   [9] dichromat_2.0-0             rstudioapi_0.11            
-##  [11] assertive.sets_0.0-3        bit64_0.9-7                
-##  [13] AnnotationDbi_1.49.1        assertive.data.uk_0.0-2    
-##  [15] codetools_0.2-16            splines_4.0.0              
-##  [17] knitr_1.28                  Formula_1.2-3              
-##  [19] assertive_0.3-5             assertive.data.us_0.0-2    
-##  [21] Rsamtools_2.3.7             cluster_2.1.0              
-##  [23] dbplyr_1.4.2                png_0.1-7                  
-##  [25] BiocManager_1.30.10         compiler_4.0.0             
-##  [27] httr_1.4.1                  backports_1.1.5            
-##  [29] lazyeval_0.2.2              assertthat_0.2.1           
-##  [31] Matrix_1.2-18               acepack_1.4.1              
-##  [33] htmltools_0.4.0             prettyunits_1.1.1          
-##  [35] tools_4.0.0                 gtable_0.3.0               
-##  [37] glue_1.3.2                  GenomeInfoDbData_1.2.2     
-##  [39] reshape2_1.4.3              dplyr_0.8.5                
-##  [41] rappdirs_0.3.1              Rcpp_1.0.4                 
-##  [43] Biobase_2.47.3              pkgdown_1.4.1              
-##  [45] vctrs_0.2.4                 gdata_2.18.0               
-##  [47] rtracklayer_1.47.0          assertive.files_0.0-2      
-##  [49] assertive.datetimes_0.0-2   assertive.models_0.0-2     
-##  [51] xfun_0.12                   stringr_1.4.0              
-##  [53] lifecycle_0.2.0             ensembldb_2.11.3           
-##  [55] gtools_3.8.1                XML_3.99-0.3               
-##  [57] zlibbioc_1.33.1             MASS_7.3-51.5              
-##  [59] scales_1.1.0                BSgenome_1.55.4            
-##  [61] VariantAnnotation_1.33.2    ProtGenerics_1.19.3        
-##  [63] hms_0.5.3                   SummarizedExperiment_1.17.3
-##  [65] AnnotationFilter_1.11.0     RColorBrewer_1.1-2         
-##  [67] assertive.matrices_0.0-2    assertive.strings_0.0-3    
-##  [69] yaml_2.2.1                  curl_4.3                   
-##  [71] gridExtra_2.3               memoise_1.1.0              
-##  [73] ggplot2_3.3.0               rpart_4.1-15               
-##  [75] biomaRt_2.43.3              latticeExtra_0.6-29        
-##  [77] stringi_1.4.6               RSQLite_2.2.0              
-##  [79] desc_1.2.0                  checkmate_2.0.0            
-##  [81] caTools_1.18.0              GenomicFeatures_1.39.7     
-##  [83] BiocParallel_1.21.2         rlang_0.4.5                
-##  [85] pkgconfig_2.0.3             matrixStats_0.56.0         
-##  [87] bitops_1.0-6                evaluate_0.14              
-##  [89] lattice_0.20-40             assertive.data_0.0-3       
-##  [91] ROCR_1.0-7                  purrr_0.3.3                
-##  [93] htmlwidgets_1.5.1           GenomicAlignments_1.23.1   
-##  [95] assertive.properties_0.0-4  bit_1.1-15.2               
-##  [97] tidyselect_1.0.0            assertive.code_0.0-3       
-##  [99] plyr_1.8.6                  magrittr_1.5               
-## [101] bookdown_0.18               R6_2.4.1                   
-## [103] gplots_3.0.3                Hmisc_4.3-1                
-## [105] DelayedArray_0.13.7         DBI_1.1.0                  
-## [107] pillar_1.4.3                foreign_0.8-76             
-## [109] assertive.numbers_0.0-2     nnet_7.3-13                
-## [111] survival_3.1-11             RCurl_1.98-1.1             
-## [113] tibble_2.1.3                crayon_1.3.4               
-## [115] assertive.types_0.0-3       KernSmooth_2.23-16         
-## [117] BiocFileCache_1.11.4        rmarkdown_2.1              
-## [119] jpeg_0.1-8.1                progress_1.2.2             
-## [121] grid_4.0.0                  data.table_1.12.8          
-## [123] blob_1.2.1                  digest_0.6.25              
-## [125] openssl_1.4.1               munsell_0.5.0              
-## [127] assertive.reflection_0.0-4  Gviz_1.31.12               
-## [129] askpass_1.1</code></pre>
+##   [1] backports_1.1.6             Hmisc_4.4-0                
+##   [3] BiocFileCache_1.11.4        plyr_1.8.6                 
+##   [5] assertive.files_0.0-2       lazyeval_0.2.2             
+##   [7] splines_4.1.0               BiocParallel_1.21.2        
+##   [9] ggplot2_3.3.0               digest_0.6.25              
+##  [11] ensembldb_2.11.3            htmltools_0.4.0            
+##  [13] gdata_2.18.0                fansi_0.4.1                
+##  [15] magrittr_1.5                checkmate_2.0.0            
+##  [17] memoise_1.1.0               BSgenome_1.55.4            
+##  [19] assertive.datetimes_0.0-2   assertive.numbers_0.0-2    
+##  [21] cluster_2.1.0               ROCR_1.0-7                 
+##  [23] matrixStats_0.56.0          askpass_1.1                
+##  [25] pkgdown_1.5.1               prettyunits_1.1.1          
+##  [27] jpeg_0.1-8.1                colorspace_1.4-1           
+##  [29] blob_1.2.1                  rappdirs_0.3.1             
+##  [31] assertive.strings_0.0-3     xfun_0.12                  
+##  [33] dplyr_0.8.5                 crayon_1.3.4               
+##  [35] RCurl_1.98-1.1              survival_3.1-11            
+##  [37] VariantAnnotation_1.33.2    glue_1.4.0                 
+##  [39] gtable_0.3.0                zlibbioc_1.33.1            
+##  [41] DelayedArray_0.13.10        scales_1.1.0               
+##  [43] DBI_1.1.0                   assertive.data.uk_0.0-2    
+##  [45] assertive.models_0.0-2      Rcpp_1.0.4.6               
+##  [47] assertive.code_0.0-3        progress_1.2.2             
+##  [49] htmlTable_1.13.3            foreign_0.8-77             
+##  [51] bit_1.1-15.2                assertive.data.us_0.0-2    
+##  [53] Formula_1.2-3               htmlwidgets_1.5.1          
+##  [55] httr_1.4.1                  gplots_3.0.3               
+##  [57] RColorBrewer_1.1-2          acepack_1.4.1              
+##  [59] ellipsis_0.3.0              pkgconfig_2.0.3            
+##  [61] XML_3.99-0.3                Gviz_1.31.12               
+##  [63] nnet_7.3-13                 dbplyr_1.4.2               
+##  [65] reshape2_1.4.4              tidyselect_1.0.0           
+##  [67] rlang_0.4.5                 AnnotationDbi_1.49.1       
+##  [69] munsell_0.5.0               tools_4.1.0                
+##  [71] cli_2.0.2                   RSQLite_2.2.0              
+##  [73] assertive.reflection_0.0-4  evaluate_0.14              
+##  [75] stringr_1.4.0               yaml_2.2.1                 
+##  [77] knitr_1.28                  bit64_0.9-7                
+##  [79] fs_1.3.2                    assertive.matrices_0.0-2   
+##  [81] caTools_1.18.0              purrr_0.3.3                
+##  [83] AnnotationFilter_1.11.0     assertive.sets_0.0-3       
+##  [85] biomaRt_2.43.5              compiler_4.1.0             
+##  [87] rstudioapi_0.11             curl_4.3                   
+##  [89] png_0.1-7                   tibble_3.0.0               
+##  [91] stringi_1.4.6               GenomicFeatures_1.39.7     
+##  [93] desc_1.2.0                  lattice_0.20-41            
+##  [95] assertive.base_0.0-7        ProtGenerics_1.19.3        
+##  [97] Matrix_1.2-18               assertive.data_0.0-3       
+##  [99] vctrs_0.2.4                 pillar_1.4.3               
+## [101] lifecycle_0.2.0             BiocManager_1.30.10        
+## [103] data.table_1.12.8           bitops_1.0-6               
+## [105] colorRamps_2.3              rtracklayer_1.47.0         
+## [107] assertive.types_0.0-3       R6_2.4.1                   
+## [109] latticeExtra_0.6-29         bookdown_0.18              
+## [111] assertive.properties_0.0-4  KernSmooth_2.23-16         
+## [113] gridExtra_2.3               codetools_0.2-16           
+## [115] dichromat_2.0-0             MASS_7.3-51.5              
+## [117] gtools_3.8.2                assertthat_0.2.1           
+## [119] SummarizedExperiment_1.17.5 openssl_1.4.1              
+## [121] rprojroot_1.3-2             GenomicAlignments_1.23.2   
+## [123] Rsamtools_2.3.7             GenomeInfoDbData_1.2.2     
+## [125] hms_0.5.3                   grid_4.1.0                 
+## [127] rpart_4.1-15                rmarkdown_2.1              
+## [129] biovizBase_1.35.1           Biobase_2.47.3             
+## [131] base64enc_0.1-3             assertive_0.3-5</code></pre>
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#introduction">Introduction</a></li>
-      <li><a href="#a-new-sequencedata-class">A new <code>SequenceData</code> class</a></li>
-      <li>
-<a href="#a-new-modifier-class">A new <code>Modifier</code> class</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#a-new-modifierset-class">A new <code>ModifierSet</code> class</a></li>
-      </ul>
-</li>
-      <li><a href="#visualization-functions">Visualization functions</a></li>
-      <li><a href="#summary">Summary</a></li>
-      <li><a href="#sessioninfo">Sessioninfo</a></li>
-      </ul>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
 </div>
-      </div>
 
 </div>
 
@@ -393,7 +380,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

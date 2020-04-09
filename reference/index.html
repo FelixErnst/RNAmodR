@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -53,7 +57,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-index">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -67,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RNAmodR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.13</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.15</span>
       </span>
     </div>
 
@@ -100,7 +104,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/FelixErnst/RNAmodR">
+  <a href="https://github.com/FelixErnst/RNAmodR/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -136,6 +140,11 @@
           <p class="section-desc"></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
@@ -151,7 +160,7 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="ModInosine-functions.html">`settings<-`(<i>&lt;ModInosine&gt;</i>)</a></code> <code><a href="ModInosine-functions.html">aggregateData(<i>&lt;ModInosine&gt;</i>)</a></code> <code><a href="ModInosine-functions.html">findMod(<i>&lt;ModInosine&gt;</i>)</a></code> <code><a href="ModInosine-functions.html">getDataTrack(<i>&lt;ModInosine&gt;</i>)</a></code> <code><a href="ModInosine-functions.html">plotDataByCoord(<i>&lt;ModInosine&gt;</i>,<i>&lt;GRanges&gt;</i>)</a></code> <code><a href="ModInosine-functions.html">plotData(<i>&lt;ModInosine&gt;</i>)</a></code> <code><a href="ModInosine-functions.html">plotDataByCoord(<i>&lt;ModSetInosine&gt;</i>,<i>&lt;GRanges&gt;</i>)</a></code> <code><a href="ModInosine-functions.html">plotData(<i>&lt;ModSetInosine&gt;</i>)</a></code> </p>
+          <p><code><a href="ModInosine-functions.html">`settings&lt;-`(<i>&lt;ModInosine&gt;</i>)</a></code> <code><a href="ModInosine-functions.html">aggregateData(<i>&lt;ModInosine&gt;</i>)</a></code> <code><a href="ModInosine-functions.html">findMod(<i>&lt;ModInosine&gt;</i>)</a></code> <code><a href="ModInosine-functions.html">getDataTrack(<i>&lt;ModInosine&gt;</i>)</a></code> <code><a href="ModInosine-functions.html">plotDataByCoord(<i>&lt;ModInosine&gt;</i>,<i>&lt;GRanges&gt;</i>)</a></code> <code><a href="ModInosine-functions.html">plotData(<i>&lt;ModInosine&gt;</i>)</a></code> <code><a href="ModInosine-functions.html">plotDataByCoord(<i>&lt;ModSetInosine&gt;</i>,<i>&lt;GRanges&gt;</i>)</a></code> <code><a href="ModInosine-functions.html">plotData(<i>&lt;ModSetInosine&gt;</i>)</a></code> </p>
         </td>
         <td><p>Functions for ModInosine</p></td>
       </tr><tr>
@@ -229,7 +238,7 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="SequenceData-functions.html">replicates()</a></code> <code><a href="SequenceData-functions.html">show(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">conditions(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">bamfiles(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">dataType(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">ranges(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqinfo(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqinfo(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqtype(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">`seqtype<-`(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">sequences(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">show(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">getData(<i>&lt;SequenceData&gt;</i>,<i>&lt;BamFileList&gt;</i>,<i>&lt;GRangesList&gt;</i>,<i>&lt;XStringSet&gt;</i>,<i>&lt;ScanBamParam&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">bamfiles(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">conditions(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">ranges(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqinfo(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">sequences(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqtype(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">`seqtype<-`(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">dataType(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">show(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">bamfiles(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">conditions(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">names(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">ranges(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqinfo(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqtype(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">`seqtype<-`(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">sequences(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">show(<i>&lt;SequenceDataList&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">bamfiles(<i>&lt;SequenceDataList&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">conditions(<i>&lt;SequenceDataList&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">names(<i>&lt;SequenceDataList&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">ranges(<i>&lt;SequenceDataList&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqinfo(<i>&lt;SequenceDataList&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqtype(<i>&lt;SequenceDataList&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">`seqtype<-`(<i>&lt;SequenceDataList&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">sequences(<i>&lt;SequenceDataList&gt;</i>)</a></code> </p>
+          <p><code><a href="SequenceData-functions.html">replicates()</a></code> <code><a href="SequenceData-functions.html">show(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">conditions(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">bamfiles(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">dataType(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">ranges(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqinfo(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqinfo(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqtype(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">`seqtype&lt;-`(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">sequences(<i>&lt;SequenceDataFrame&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">show(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">getData(<i>&lt;SequenceData&gt;</i>,<i>&lt;BamFileList&gt;</i>,<i>&lt;GRangesList&gt;</i>,<i>&lt;XStringSet&gt;</i>,<i>&lt;ScanBamParam&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">bamfiles(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">conditions(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">ranges(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqinfo(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">sequences(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqtype(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">`seqtype&lt;-`(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">dataType(<i>&lt;SequenceData&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">show(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">bamfiles(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">conditions(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">names(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">ranges(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqinfo(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqtype(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">`seqtype&lt;-`(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">sequences(<i>&lt;SequenceDataSet&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">show(<i>&lt;SequenceDataList&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">bamfiles(<i>&lt;SequenceDataList&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">conditions(<i>&lt;SequenceDataList&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">names(<i>&lt;SequenceDataList&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">ranges(<i>&lt;SequenceDataList&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqinfo(<i>&lt;SequenceDataList&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">seqtype(<i>&lt;SequenceDataList&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">`seqtype&lt;-`(<i>&lt;SequenceDataList&gt;</i>)</a></code> <code><a href="SequenceData-functions.html">sequences(<i>&lt;SequenceDataList&gt;</i>)</a></code> </p>
         </td>
         <td><p>SequenceData/SequenceDataSet/SequenceDataList/SequenceDataFrame 
 functions</p></td>
@@ -298,7 +307,7 @@ functions</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="settings.html">settings()</a></code> <code><a href="settings.html">`settings<-`()</a></code> </p>
+          <p><code><a href="settings.html">settings()</a></code> <code><a href="settings.html">`settings&lt;-`()</a></code> </p>
         </td>
         <td><p>Settings for <code>Modifier</code> objects</p></td>
       </tr><tr>
@@ -313,11 +322,10 @@ functions</p></td>
     </table>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
-    </ul>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -328,7 +336,7 @@ functions</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>
