@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RNAmodR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.5</span>
       </span>
     </div>
 
@@ -85,7 +85,7 @@
       <h1 data-toc-skip>RNAmodR: analyzing high throughput sequencing data for post-transcriptional RNA modification footprints</h1>
                         <h4 class="author">Felix G.M. Ernst and Denis L.J. Lafontaine</h4>
             
-            <h4 class="date">2020-08-01</h4>
+            <h4 class="date">2020-08-30</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/FelixErnst/RNAmodR/blob/master/vignettes/RNAmodR.Rmd"><code>vignettes/RNAmodR.Rmd</code></a></small>
       <div class="hidden name"><code>RNAmodR.Rmd</code></div>
@@ -118,8 +118,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <pre><code>## BiocCheck' you'll need to copy it yourself to a directory on your PATH,</code></pre>
 <pre><code>## making sure it is executable. See the BiocCheck vignette for more</code></pre>
 <pre><code>## information.</code></pre>
-<pre><code>## using temporary cache /tmp/RtmpFsHcid/BiocFileCache</code></pre>
-<pre><code>## snapshotDate(): 2020-07-29</code></pre>
+<pre><code>## using temporary cache /tmp/RtmpkfAKLN/BiocFileCache</code></pre>
+<pre><code>## snapshotDate(): 2020-08-26</code></pre>
 <div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">rtracklayer</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">Rsamtools</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">GenomicFeatures</span>)
@@ -322,9 +322,9 @@ document.addEventListener("DOMContentLoaded", function() {
 <div class="sourceCode" id="cb38"><html><body><pre class="r"><span class="no">msi</span><span class="kw">[[</span><span class="fl">1</span>]]</pre></body></html></div>
 <pre><code>## A ModInosine object containing PileupSequenceData with 11 elements.
 ## | Input files:
-##    - treated: /tmp/RtmpFsHcid/BiocFileCache/a32c19ada845_2544
-##    - treated: /tmp/RtmpFsHcid/BiocFileCache/a32c7353fa75_2546
-##    - treated: /tmp/RtmpFsHcid/BiocFileCache/a32c55f8036_2548
+##    - treated: /tmp/RtmpkfAKLN/BiocFileCache/65834c0b7093_2544
+##    - treated: /tmp/RtmpkfAKLN/BiocFileCache/6583a7fe2e7_2546
+##    - treated: /tmp/RtmpkfAKLN/BiocFileCache/6583e953f0b_2548
 ## | Nucleotide - Modification type(s):  RNA  -  I 
 ## | Modifications found: yes (6) 
 ## | Settings:
@@ -504,7 +504,7 @@ Distribution of lengths for reads used in the analysis
 <div class="sourceCode" id="cb61"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()</pre></body></html></div>
 <pre><code>## R version 4.0.2 (2020-06-22)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
-## Running under: Ubuntu 18.04.4 LTS
+## Running under: Ubuntu 18.04.5 LTS
 ## 
 ## Matrix products: default
 ## BLAS:   /usr/lib/x86_64-linux-gnu/openblas/libblas.so.3
@@ -521,17 +521,17 @@ Distribution of lengths for reads used in the analysis
 ## [8] methods   base     
 ## 
 ## other attached packages:
-##  [1] RNAmodR_1.3.4            Modstrings_1.5.1         RNAmodR.Data_1.3.0      
-##  [4] ExperimentHubData_1.15.0 AnnotationHubData_1.19.2 futile.logger_1.4.3     
-##  [7] ExperimentHub_1.15.0     AnnotationHub_2.21.1     BiocFileCache_1.13.0    
+##  [1] RNAmodR_1.3.5            Modstrings_1.5.1         RNAmodR.Data_1.3.0      
+##  [4] ExperimentHubData_1.15.1 AnnotationHubData_1.19.3 futile.logger_1.4.3     
+##  [7] ExperimentHub_1.15.3     AnnotationHub_2.21.5     BiocFileCache_1.13.1    
 ## [10] dbplyr_1.4.4             GenomicFeatures_1.41.2   AnnotationDbi_1.51.3    
 ## [13] Biobase_2.49.0           Rsamtools_2.5.3          Biostrings_2.57.2       
-## [16] XVector_0.29.3           rtracklayer_1.49.4       GenomicRanges_1.41.5    
-## [19] GenomeInfoDb_1.25.8      IRanges_2.23.10          S4Vectors_0.27.12       
+## [16] XVector_0.29.3           rtracklayer_1.49.5       GenomicRanges_1.41.6    
+## [19] GenomeInfoDb_1.25.10     IRanges_2.23.10          S4Vectors_0.27.12       
 ## [22] BiocGenerics_0.35.4      BiocStyle_2.17.0        
 ## 
 ## loaded via a namespace (and not attached):
-##   [1] backports_1.1.8               Hmisc_4.4-0                  
+##   [1] backports_1.1.9               Hmisc_4.4-1                  
 ##   [3] plyr_1.8.6                    lazyeval_0.2.2               
 ##   [5] splines_4.0.2                 BiocParallel_1.23.2          
 ##   [7] ggplot2_3.3.2                 digest_0.6.25                
@@ -543,59 +543,59 @@ Distribution of lengths for reads used in the analysis
 ##  [19] pkgdown_1.5.1                 prettyunits_1.1.1            
 ##  [21] jpeg_0.1-8.1                  colorspace_1.4-1             
 ##  [23] blob_1.2.1                    rappdirs_0.3.1               
-##  [25] xfun_0.16                     dplyr_1.0.1                  
+##  [25] xfun_0.16                     dplyr_1.0.2                  
 ##  [27] crayon_1.3.4                  RCurl_1.98-1.2               
 ##  [29] jsonlite_1.7.0                graph_1.67.1                 
 ##  [31] VariantAnnotation_1.35.3      survival_3.1-12              
-##  [33] glue_1.4.1                    gtable_0.3.0                 
+##  [33] glue_1.4.2                    gtable_0.3.0                 
 ##  [35] zlibbioc_1.35.0               DelayedArray_0.15.7          
 ##  [37] scales_1.1.1                  futile.options_1.0.1         
 ##  [39] DBI_1.1.0                     Rcpp_1.0.5                   
 ##  [41] htmlTable_2.0.1               xtable_1.8-4                 
 ##  [43] progress_1.2.2                foreign_0.8-80               
-##  [45] bit_4.0.3                     OrganismDbi_1.31.0           
+##  [45] bit_4.0.4                     OrganismDbi_1.31.0           
 ##  [47] Formula_1.2-3                 AnnotationForge_1.31.2       
 ##  [49] htmlwidgets_1.5.1             httr_1.4.2                   
 ##  [51] getopt_1.20.3                 RColorBrewer_1.1-2           
-##  [53] acepack_1.4.1                 ellipsis_0.3.1               
-##  [55] farver_2.0.3                  pkgconfig_2.0.3              
-##  [57] XML_3.99-0.5                  Gviz_1.33.2                  
-##  [59] nnet_7.3-14                   labeling_0.3                 
-##  [61] reshape2_1.4.4                tidyselect_1.1.0             
-##  [63] rlang_0.4.7                   later_1.1.0.1                
-##  [65] munsell_0.5.0                 biocViews_1.57.3             
-##  [67] BiocVersion_3.12.0            tools_4.0.2                  
-##  [69] generics_0.0.2                RSQLite_2.2.0                
-##  [71] evaluate_0.14                 stringr_1.4.0                
-##  [73] fastmap_1.0.1                 yaml_2.2.1                   
-##  [75] knitr_1.29                    bit64_4.0.2                  
-##  [77] fs_1.5.0                      purrr_0.3.4                  
-##  [79] AnnotationFilter_1.13.0       RBGL_1.65.0                  
-##  [81] mime_0.9                      formatR_1.7                  
-##  [83] biomaRt_2.45.2                rstudioapi_0.11              
-##  [85] compiler_4.0.2                curl_4.3                     
-##  [87] png_0.1-7                     interactiveDisplayBase_1.27.5
-##  [89] tibble_3.0.3                  stringi_1.4.6                
-##  [91] highr_0.8                     desc_1.2.0                   
-##  [93] lattice_0.20-41               ProtGenerics_1.21.0          
-##  [95] Matrix_1.2-18                 vctrs_0.3.2                  
-##  [97] stringdist_0.9.6              pillar_1.4.6                 
-##  [99] BiocCheck_1.25.4              lifecycle_0.2.0              
-## [101] RUnit_0.4.32                  optparse_1.6.6               
-## [103] BiocManager_1.30.10           data.table_1.13.0            
-## [105] bitops_1.0-6                  colorRamps_2.3               
-## [107] httpuv_1.5.4                  R6_2.4.1                     
-## [109] latticeExtra_0.6-29           bookdown_0.20                
-## [111] promises_1.1.1                gridExtra_2.3                
-## [113] codetools_0.2-16              dichromat_2.0-0              
-## [115] lambda.r_1.2.4                MASS_7.3-51.6                
-## [117] assertthat_0.2.1              SummarizedExperiment_1.19.6  
-## [119] openssl_1.4.2                 rprojroot_1.3-2              
-## [121] rBiopaxParser_2.29.1          GenomicAlignments_1.25.3     
-## [123] GenomeInfoDbData_1.2.3        hms_0.5.3                    
-## [125] grid_4.0.2                    rpart_4.1-15                 
-## [127] rmarkdown_2.3                 biovizBase_1.37.0            
-## [129] shiny_1.5.0                   base64enc_0.1-3</code></pre>
+##  [53] ellipsis_0.3.1                farver_2.0.3                 
+##  [55] pkgconfig_2.0.3               XML_3.99-0.5                 
+##  [57] Gviz_1.33.2                   nnet_7.3-14                  
+##  [59] labeling_0.3                  reshape2_1.4.4               
+##  [61] tidyselect_1.1.0              rlang_0.4.7                  
+##  [63] later_1.1.0.1                 munsell_0.5.0                
+##  [65] biocViews_1.57.3              BiocVersion_3.12.0           
+##  [67] tools_4.0.2                   generics_0.0.2               
+##  [69] RSQLite_2.2.0                 evaluate_0.14                
+##  [71] stringr_1.4.0                 fastmap_1.0.1                
+##  [73] yaml_2.2.1                    knitr_1.29                   
+##  [75] bit64_4.0.5                   fs_1.5.0                     
+##  [77] purrr_0.3.4                   AnnotationFilter_1.13.0      
+##  [79] RBGL_1.65.0                   mime_0.9                     
+##  [81] formatR_1.7                   biomaRt_2.45.2               
+##  [83] rstudioapi_0.11               compiler_4.0.2               
+##  [85] curl_4.3                      png_0.1-7                    
+##  [87] interactiveDisplayBase_1.27.5 tibble_3.0.3                 
+##  [89] stringi_1.4.6                 highr_0.8                    
+##  [91] desc_1.2.0                    lattice_0.20-41              
+##  [93] ProtGenerics_1.21.0           Matrix_1.2-18                
+##  [95] vctrs_0.3.4                   stringdist_0.9.6             
+##  [97] pillar_1.4.6                  BiocCheck_1.25.5             
+##  [99] lifecycle_0.2.0               RUnit_0.4.32                 
+## [101] optparse_1.6.6                BiocManager_1.30.10          
+## [103] data.table_1.13.0             bitops_1.0-6                 
+## [105] colorRamps_2.3                httpuv_1.5.4                 
+## [107] R6_2.4.1                      latticeExtra_0.6-29          
+## [109] bookdown_0.20                 promises_1.1.1               
+## [111] gridExtra_2.3                 codetools_0.2-16             
+## [113] dichromat_2.0-0               lambda.r_1.2.4               
+## [115] MASS_7.3-51.6                 assertthat_0.2.1             
+## [117] SummarizedExperiment_1.19.6   openssl_1.4.2                
+## [119] rprojroot_1.3-2               rBiopaxParser_2.29.1         
+## [121] GenomicAlignments_1.25.3      GenomeInfoDbData_1.2.3       
+## [123] hms_0.5.3                     grid_4.0.2                   
+## [125] rpart_4.1-15                  rmarkdown_2.3                
+## [127] biovizBase_1.37.0             shiny_1.5.0                  
+## [129] base64enc_0.1-3</code></pre>
 <p><a name="References"></a></p>
 </div>
 <div id="references" class="section level1 unnumbered">
