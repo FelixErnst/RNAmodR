@@ -80,7 +80,7 @@ names." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RNAmodR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.2</span>
       </span>
     </div>
 
@@ -88,7 +88,7 @@ names." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -114,7 +114,7 @@ names." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/FelixErnst/RNAmodR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -148,31 +148,31 @@ case of a <code>GRangesList</code> the element names must match the transcript
 names.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>compare</span>(<span class='no'>x</span>, <span class='no'>name</span>, <span class='kw'>pos</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>compare</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>name</span>, pos <span class='op'>=</span> <span class='fl'>1L</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>compareByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>compareByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>plotCompare</span>(<span class='no'>x</span>, <span class='no'>name</span>, <span class='kw'>pos</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='no'>normalize</span>, <span class='no'>...</span>)
+<span class='fu'>plotCompare</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>name</span>, pos <span class='op'>=</span> <span class='fl'>1L</span>, <span class='va'>normalize</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>plotCompareByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>normalize</span>, <span class='no'>...</span>)
-
-<span class='co'># S4 method for ModifierSet</span>
-<span class='fu'>compare</span>(<span class='no'>x</span>, <span class='no'>name</span>, <span class='kw'>pos</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='no'>normalize</span>, <span class='no'>...</span>)
-
-<span class='co'># S4 method for ModifierSet,GRanges</span>
-<span class='fu'>compareByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>normalize</span>, <span class='no'>...</span>)
-
-<span class='co'># S4 method for ModifierSet,GRangesList</span>
-<span class='fu'>compareByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>normalize</span>, <span class='no'>...</span>)
+<span class='fu'>plotCompareByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>normalize</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'>plotCompare</span>(<span class='no'>x</span>, <span class='no'>name</span>, <span class='kw'>pos</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='no'>normalize</span>, <span class='no'>...</span>)
+<span class='fu'>compare</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>name</span>, pos <span class='op'>=</span> <span class='fl'>1L</span>, <span class='va'>normalize</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet,GRanges</span>
-<span class='fu'>plotCompareByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>normalize</span>, <span class='no'>...</span>)
+<span class='fu'>compareByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>normalize</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet,GRangesList</span>
-<span class='fu'>plotCompareByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>normalize</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>compareByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>normalize</span>, <span class='va'>...</span><span class='op'>)</span>
+
+<span class='co'># S4 method for ModifierSet</span>
+<span class='fu'>plotCompare</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>name</span>, pos <span class='op'>=</span> <span class='fl'>1L</span>, <span class='va'>normalize</span>, <span class='va'>...</span><span class='op'>)</span>
+
+<span class='co'># S4 method for ModifierSet,GRanges</span>
+<span class='fu'>plotCompareByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>normalize</span>, <span class='va'>...</span><span class='op'>)</span>
+
+<span class='co'># S4 method for ModifierSet,GRangesList</span>
+<span class='fu'>plotCompareByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>normalize</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -232,14 +232,15 @@ character, it must match one of the names in the <code>ModifierSet</code>.</p></
   <code>Activity</code> this is included in the results as well.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>msi</span>,<span class='kw'>package</span><span class='kw'>=</span><span class='st'>"RNAmodR"</span>)
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>msi</span>,package<span class='op'>=</span><span class='st'>"RNAmodR"</span><span class='op'>)</span>
 <span class='co'># constructing a GRanges obejct to mark positive positions</span>
-<span class='no'>mod</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='modify.html'>modifications</a></span>(<span class='no'>msi</span>)
-<span class='no'>coord</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/unlist.html'>unlist</a></span>(<span class='no'>mod</span>))
-<span class='no'>coord</span>$<span class='no'>score</span> <span class='kw'>&lt;-</span> <span class='kw'>NULL</span>
-<span class='no'>coord</span>$<span class='no'>sd</span> <span class='kw'>&lt;-</span> <span class='kw'>NULL</span>
+<span class='va'>mod</span> <span class='op'>&lt;-</span> <span class='fu'><a href='modify.html'>modifications</a></span><span class='op'>(</span><span class='va'>msi</span><span class='op'>)</span>
+<span class='va'>coord</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/unlist.html'>unlist</a></span><span class='op'>(</span><span class='va'>mod</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>coord</span><span class='op'>$</span><span class='va'>score</span> <span class='op'>&lt;-</span> <span class='cn'>NULL</span>
+<span class='va'>coord</span><span class='op'>$</span><span class='va'>sd</span> <span class='op'>&lt;-</span> <span class='cn'>NULL</span>
 <span class='co'># return a DataFrame</span>
-<span class='fu'>compareByCoord</span>(<span class='no'>msi</span>,<span class='no'>coord</span>)</div><div class='output co'>#&gt; DataFrame with 6 rows and 6 columns
+<span class='fu'>compareByCoord</span><span class='op'>(</span><span class='va'>msi</span>,<span class='va'>coord</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; DataFrame with 6 rows and 6 columns
 #&gt;   SampleSet1 SampleSet2 SampleSet3    names positions         mod
 #&gt;    &lt;numeric&gt;  &lt;numeric&gt;  &lt;numeric&gt; &lt;factor&gt;  &lt;factor&gt; &lt;character&gt;
 #&gt; 1   0.900932   0.998134   0.953651       2         34           I
@@ -248,7 +249,8 @@ character, it must match one of the names in the <code>ModifierSet</code>.</p></
 #&gt; 4   0.934553   0.942905   0.943773       7         67           I
 #&gt; 5   0.709758   0.766484   0.681451       9         7            I
 #&gt; 6   0.874027   0.971474   0.954782       11        35           I</div><div class='input'><span class='co'># plot the comparison as a heatmap</span>
-<span class='fu'>plotCompareByCoord</span>(<span class='no'>msi</span>,<span class='no'>coord</span>)</div><div class='img'><img src='compareByCoord-1.png' alt='' width='700' height='433' /></div></pre>
+<span class='fu'>plotCompareByCoord</span><span class='op'>(</span><span class='va'>msi</span>,<span class='va'>coord</span><span class='op'>)</span>
+</div><div class='img'><img src='compareByCoord-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -264,7 +266,7 @@ character, it must match one of the names in the <code>ModifierSet</code>.</p></
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

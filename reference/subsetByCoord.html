@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Subsetting data from a <code>SequenceData</code>, <code>SequenceDataSet</code>,
-<code>SequenceDataList</code>, <code>Modifier</code> or <code>ModifierSet</code> object. — subsetByCoord • RNAmodR</title>
+<title>Subsetting data from a SequenceData, SequenceDataSet,
+SequenceDataList, Modifier or ModifierSet object. — subsetByCoord • RNAmodR</title>
 
 
 <!-- jquery -->
@@ -40,8 +40,8 @@
 
 
 
-<meta property="og:title" content="Subsetting data from a <code>SequenceData</code>, <code>SequenceDataSet</code>,
-<code>SequenceDataList</code>, <code>Modifier</code> or <code>ModifierSet</code> object. — subsetByCoord" />
+<meta property="og:title" content="Subsetting data from a SequenceData, SequenceDataSet,
+SequenceDataList, Modifier or ModifierSet object. — subsetByCoord" />
 <meta property="og:description" content="With the subsetByCoord function data from a SequenceData,
 SequenceDataSet, SequenceDataList, Modifier or
 ModifierSet object can be subset to positions as defined in
@@ -86,7 +86,7 @@ selected positions." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RNAmodR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.2</span>
       </span>
     </div>
 
@@ -94,7 +94,7 @@ selected positions." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -120,7 +120,7 @@ selected positions." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/FelixErnst/RNAmodR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -159,84 +159,84 @@ data plus the <code>labels</code> column, which contains logical values to indic
 selected positions.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>subsetByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>subsetByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>labelByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>labelByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier,GRanges</span>
-<span class='fu'>subsetByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>subsetByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier,GRangesList</span>
-<span class='fu'>subsetByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>subsetByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>x</span>, <span class='no'>name</span>, <span class='kw'>pos</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='no'>...</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>name</span>, pos <span class='op'>=</span> <span class='fl'>1L</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet,GRanges</span>
-<span class='fu'>subsetByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>subsetByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet,GRangesList</span>
-<span class='fu'>subsetByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>subsetByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier,GRanges</span>
-<span class='fu'>labelByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>labelByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier,GRangesList</span>
-<span class='fu'>labelByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>labelByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet,GRanges</span>
-<span class='fu'>labelByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>labelByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet,GRangesList</span>
-<span class='fu'>labelByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>labelByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SplitDataFrameList,GRanges</span>
-<span class='fu'>subsetByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>subsetByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceData</span>
-<span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>x</span>, <span class='no'>name</span>, <span class='kw'>pos</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='no'>...</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>name</span>, pos <span class='op'>=</span> <span class='fl'>1L</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceData,GRanges</span>
-<span class='fu'>subsetByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>subsetByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceData,GRangesList</span>
-<span class='fu'>subsetByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>subsetByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataSet</span>
-<span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>x</span>, <span class='no'>name</span>, <span class='kw'>pos</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='no'>...</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>name</span>, pos <span class='op'>=</span> <span class='fl'>1L</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataSet,GRanges</span>
-<span class='fu'>subsetByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>subsetByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataSet,GRangesList</span>
-<span class='fu'>subsetByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>subsetByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataList</span>
-<span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>x</span>, <span class='no'>name</span>, <span class='kw'>pos</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='no'>...</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>name</span>, pos <span class='op'>=</span> <span class='fl'>1L</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataList,GRanges</span>
-<span class='fu'>subsetByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>subsetByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataList,GRangesList</span>
-<span class='fu'>subsetByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>subsetByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceData,GRanges</span>
-<span class='fu'>labelByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>labelByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceData,GRangesList</span>
-<span class='fu'>labelByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>labelByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataSet,GRanges</span>
-<span class='fu'>labelByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>labelByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataSet,GRangesList</span>
-<span class='fu'>labelByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>labelByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataList,GRanges</span>
-<span class='fu'>labelByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)
+<span class='fu'>labelByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataList,GRangesList</span>
-<span class='fu'>labelByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>labelByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -296,12 +296,13 @@ with elments per transcript.</p></li>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>msi</span>,<span class='kw'>package</span><span class='kw'>=</span><span class='st'>"RNAmodR"</span>)
-<span class='no'>mod</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='modify.html'>modifications</a></span>(<span class='no'>msi</span>)
-<span class='no'>coord</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/unlist.html'>unlist</a></span>(<span class='no'>mod</span>))
-<span class='no'>coord</span>$<span class='no'>score</span> <span class='kw'>&lt;-</span> <span class='kw'>NULL</span>
-<span class='no'>coord</span>$<span class='no'>sd</span> <span class='kw'>&lt;-</span> <span class='kw'>NULL</span>
-<span class='fu'>subsetByCoord</span>(<span class='no'>msi</span>,<span class='no'>coord</span>)</div><div class='output co'>#&gt; $SampleSet1
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>msi</span>,package<span class='op'>=</span><span class='st'>"RNAmodR"</span><span class='op'>)</span>
+<span class='va'>mod</span> <span class='op'>&lt;-</span> <span class='fu'><a href='modify.html'>modifications</a></span><span class='op'>(</span><span class='va'>msi</span><span class='op'>)</span>
+<span class='va'>coord</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/unlist.html'>unlist</a></span><span class='op'>(</span><span class='va'>mod</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>coord</span><span class='op'>$</span><span class='va'>score</span> <span class='op'>&lt;-</span> <span class='cn'>NULL</span>
+<span class='va'>coord</span><span class='op'>$</span><span class='va'>sd</span> <span class='op'>&lt;-</span> <span class='cn'>NULL</span>
+<span class='fu'>subsetByCoord</span><span class='op'>(</span><span class='va'>msi</span>,<span class='va'>coord</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $SampleSet1
 #&gt; SplitDataFrameList of length 6
 #&gt; $`2`
 #&gt; DataFrame with 1 row and 1 column
@@ -433,7 +434,7 @@ with elments per transcript.</p></li>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -1,8 +1,8 @@
 pandoc: 2.7.3
-pkgdown: 1.5.1
+pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   RNAmodR: RNAmodR.html
   RNAmodR.creation: RNAmodR.creation.html
-last_built: 2020-08-30T19:09Z
+last_built: 2020-12-15T23:22Z
 

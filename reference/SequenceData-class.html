@@ -109,7 +109,7 @@ drop argument is ignored for column subsetting." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RNAmodR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.2</span>
       </span>
     </div>
 
@@ -117,7 +117,7 @@ drop argument is ignored for column subsetting." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -143,7 +143,7 @@ drop argument is ignored for column subsetting." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/FelixErnst/RNAmodR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -207,48 +207,48 @@ used to store the unlisted data within a
     </div>
 
     <pre class="usage"><span class='co'># S4 method for SequenceData</span>
-<span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span>(<span class='no'>...</span>, <span class='kw'>deparse.level</span> <span class='kw'>=</span> <span class='fl'>1</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span><span class='va'>...</span>, deparse.level <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceData</span>
-<span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>rbind</a></span>(<span class='no'>...</span>, <span class='kw'>deparse.level</span> <span class='kw'>=</span> <span class='fl'>1</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>rbind</a></span><span class='op'>(</span><span class='va'>...</span>, deparse.level <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
 
-<span class='fu'>SequenceData</span>(<span class='no'>dataType</span>, <span class='no'>bamfiles</span>, <span class='no'>annotation</span>, <span class='no'>sequences</span>, <span class='no'>seqinfo</span>, <span class='no'>...</span>)
+<span class='fu'>SequenceData</span><span class='op'>(</span><span class='va'>dataType</span>, <span class='va'>bamfiles</span>, <span class='va'>annotation</span>, <span class='va'>sequences</span>, <span class='va'>seqinfo</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for character,character</span>
-<span class='fu'>SequenceData</span>(<span class='no'>dataType</span>, <span class='no'>bamfiles</span>, <span class='no'>annotation</span>, <span class='no'>sequences</span>, <span class='no'>seqinfo</span>, <span class='no'>...</span>)
+<span class='fu'>SequenceData</span><span class='op'>(</span><span class='va'>dataType</span>, <span class='va'>bamfiles</span>, <span class='va'>annotation</span>, <span class='va'>sequences</span>, <span class='va'>seqinfo</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for character,BSgenome</span>
-<span class='fu'>SequenceData</span>(<span class='no'>dataType</span>, <span class='no'>bamfiles</span>, <span class='no'>annotation</span>, <span class='no'>sequences</span>, <span class='no'>seqinfo</span>, <span class='no'>...</span>)
+<span class='fu'>SequenceData</span><span class='op'>(</span><span class='va'>dataType</span>, <span class='va'>bamfiles</span>, <span class='va'>annotation</span>, <span class='va'>sequences</span>, <span class='va'>seqinfo</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for TxDb,character</span>
-<span class='fu'>SequenceData</span>(<span class='no'>dataType</span>, <span class='no'>bamfiles</span>, <span class='no'>annotation</span>, <span class='no'>sequences</span>, <span class='no'>seqinfo</span>, <span class='no'>...</span>)
+<span class='fu'>SequenceData</span><span class='op'>(</span><span class='va'>dataType</span>, <span class='va'>bamfiles</span>, <span class='va'>annotation</span>, <span class='va'>sequences</span>, <span class='va'>seqinfo</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for TxDb,BSgenome</span>
-<span class='fu'>SequenceData</span>(<span class='no'>dataType</span>, <span class='no'>bamfiles</span>, <span class='no'>annotation</span>, <span class='no'>sequences</span>, <span class='no'>seqinfo</span>, <span class='no'>...</span>)
+<span class='fu'>SequenceData</span><span class='op'>(</span><span class='va'>dataType</span>, <span class='va'>bamfiles</span>, <span class='va'>annotation</span>, <span class='va'>sequences</span>, <span class='va'>seqinfo</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for GRangesList,character</span>
-<span class='fu'>SequenceData</span>(<span class='no'>dataType</span>, <span class='no'>bamfiles</span>, <span class='no'>annotation</span>, <span class='no'>sequences</span>, <span class='no'>seqinfo</span>, <span class='no'>...</span>)
+<span class='fu'>SequenceData</span><span class='op'>(</span><span class='va'>dataType</span>, <span class='va'>bamfiles</span>, <span class='va'>annotation</span>, <span class='va'>sequences</span>, <span class='va'>seqinfo</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for GRangesList,BSgenome</span>
-<span class='fu'>SequenceData</span>(<span class='no'>dataType</span>, <span class='no'>bamfiles</span>, <span class='no'>annotation</span>, <span class='no'>sequences</span>, <span class='no'>seqinfo</span>, <span class='no'>...</span>)
+<span class='fu'>SequenceData</span><span class='op'>(</span><span class='va'>dataType</span>, <span class='va'>bamfiles</span>, <span class='va'>annotation</span>, <span class='va'>sequences</span>, <span class='va'>seqinfo</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for GFF3File,BSgenome</span>
-<span class='fu'>SequenceData</span>(<span class='no'>dataType</span>, <span class='no'>bamfiles</span>, <span class='no'>annotation</span>, <span class='no'>sequences</span>, <span class='no'>seqinfo</span>, <span class='no'>...</span>)
+<span class='fu'>SequenceData</span><span class='op'>(</span><span class='va'>dataType</span>, <span class='va'>bamfiles</span>, <span class='va'>annotation</span>, <span class='va'>sequences</span>, <span class='va'>seqinfo</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for GFF3File,character</span>
-<span class='fu'>SequenceData</span>(<span class='no'>dataType</span>, <span class='no'>bamfiles</span>, <span class='no'>annotation</span>, <span class='no'>sequences</span>, <span class='no'>seqinfo</span>, <span class='no'>...</span>)
+<span class='fu'>SequenceData</span><span class='op'>(</span><span class='va'>dataType</span>, <span class='va'>bamfiles</span>, <span class='va'>annotation</span>, <span class='va'>sequences</span>, <span class='va'>seqinfo</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for character,FaFile</span>
-<span class='fu'>SequenceData</span>(<span class='no'>dataType</span>, <span class='no'>bamfiles</span>, <span class='no'>annotation</span>, <span class='no'>sequences</span>, <span class='no'>seqinfo</span>, <span class='no'>...</span>)
+<span class='fu'>SequenceData</span><span class='op'>(</span><span class='va'>dataType</span>, <span class='va'>bamfiles</span>, <span class='va'>annotation</span>, <span class='va'>sequences</span>, <span class='va'>seqinfo</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for GFF3File,FaFile</span>
-<span class='fu'>SequenceData</span>(<span class='no'>dataType</span>, <span class='no'>bamfiles</span>, <span class='no'>annotation</span>, <span class='no'>sequences</span>, <span class='no'>seqinfo</span>, <span class='no'>...</span>)
+<span class='fu'>SequenceData</span><span class='op'>(</span><span class='va'>dataType</span>, <span class='va'>bamfiles</span>, <span class='va'>annotation</span>, <span class='va'>sequences</span>, <span class='va'>seqinfo</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for TxDb,FaFile</span>
-<span class='fu'>SequenceData</span>(<span class='no'>dataType</span>, <span class='no'>bamfiles</span>, <span class='no'>annotation</span>, <span class='no'>sequences</span>, <span class='no'>seqinfo</span>, <span class='no'>...</span>)
+<span class='fu'>SequenceData</span><span class='op'>(</span><span class='va'>dataType</span>, <span class='va'>bamfiles</span>, <span class='va'>annotation</span>, <span class='va'>sequences</span>, <span class='va'>seqinfo</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for GRangesList,FaFile</span>
-<span class='fu'>SequenceData</span>(<span class='no'>dataType</span>, <span class='no'>bamfiles</span>, <span class='no'>annotation</span>, <span class='no'>sequences</span>, <span class='no'>seqinfo</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>SequenceData</span><span class='op'>(</span><span class='va'>dataType</span>, <span class='va'>bamfiles</span>, <span class='va'>annotation</span>, <span class='va'>sequences</span>, <span class='va'>seqinfo</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -311,7 +311,7 @@ subset the transcripts analyzed on a chromosome basis.</p></td>
 
     
 
-<dl'>
+<dl>
 <dt><code>sequencesType</code></dt><dd><p>a <code>character</code> value for the class name of
 <code>sequences</code>. Either <code>RNAStringSet</code>, <code>ModRNAStringSet</code>,
 <code>DNAStringSet</code> or <code>ModDNAStringSet</code>.</p></dd>
@@ -336,7 +336,7 @@ quality of reads to be used.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

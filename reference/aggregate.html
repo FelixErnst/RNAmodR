@@ -88,7 +88,7 @@ classes wrapper of the aggregate function exist as well." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RNAmodR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.2</span>
       </span>
     </div>
 
@@ -96,7 +96,7 @@ classes wrapper of the aggregate function exist as well." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -122,7 +122,7 @@ classes wrapper of the aggregate function exist as well." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/FelixErnst/RNAmodR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -164,40 +164,40 @@ can be checked using the <code>hasAggregateData</code> function.</p>
 classes wrapper of the <code>aggregate</code> function exist as well.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>aggregate</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>aggregate</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>aggregateData</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+<span class='fu'>aggregateData</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>getAggregateData</span>(<span class='no'>x</span>)
+<span class='fu'>getAggregateData</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
-<span class='fu'>hasAggregateData</span>(<span class='no'>x</span>)
-
-<span class='co'># S4 method for SequenceData</span>
-<span class='fu'>aggregate</span>(<span class='no'>x</span>, <span class='kw'>condition</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>())
+<span class='fu'>hasAggregateData</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceData</span>
-<span class='fu'>aggregateData</span>(<span class='no'>x</span>, <span class='no'>condition</span>)
+<span class='fu'>aggregate</span><span class='op'>(</span><span class='va'>x</span>, condition <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='co'># S4 method for SequenceData</span>
+<span class='fu'>aggregateData</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>condition</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataSet</span>
-<span class='fu'>aggregate</span>(<span class='no'>x</span>, <span class='kw'>condition</span> <span class='kw'>=</span> <span class='st'>"Treated"</span>)
+<span class='fu'>aggregate</span><span class='op'>(</span><span class='va'>x</span>, condition <span class='op'>=</span> <span class='st'>"Treated"</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataList</span>
-<span class='fu'>aggregate</span>(<span class='no'>x</span>, <span class='kw'>condition</span> <span class='kw'>=</span> <span class='st'>"Treated"</span>)
+<span class='fu'>aggregate</span><span class='op'>(</span><span class='va'>x</span>, condition <span class='op'>=</span> <span class='st'>"Treated"</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>aggregate</span>(<span class='no'>x</span>, <span class='kw'>force</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'>aggregate</span><span class='op'>(</span><span class='va'>x</span>, force <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>aggregateData</span>(<span class='no'>x</span>)
+<span class='fu'>aggregateData</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>getAggregateData</span>(<span class='no'>x</span>)
+<span class='fu'>getAggregateData</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>hasAggregateData</span>(<span class='no'>x</span>)
+<span class='fu'>hasAggregateData</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'>aggregate</span>(<span class='no'>x</span>, <span class='kw'>force</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+<span class='fu'>aggregate</span><span class='op'>(</span><span class='va'>x</span>, force <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -256,12 +256,13 @@ object. The data can be accessed by using the <code>aggregateData</code> functio
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>e5sd</span>,<span class='kw'>package</span><span class='kw'>=</span><span class='st'>"RNAmodR"</span>)
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>msi</span>,<span class='kw'>package</span><span class='kw'>=</span><span class='st'>"RNAmodR"</span>)
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>e5sd</span>,package<span class='op'>=</span><span class='st'>"RNAmodR"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>msi</span>,package<span class='op'>=</span><span class='st'>"RNAmodR"</span><span class='op'>)</span>
 <span class='co'># modify() triggers the search for modifications in the data contained in</span>
 <span class='co'># the Modifier or ModifierSet object</span>
-<span class='no'>sdfl</span> <span class='kw'>&lt;-</span> <span class='fu'>aggregate</span>(<span class='no'>e5sd</span>)
-<span class='no'>mi</span> <span class='kw'>&lt;-</span> <span class='fu'>aggregate</span>(<span class='no'>msi</span><span class='kw'>[[</span><span class='fl'>1</span>]])</div></pre>
+<span class='va'>sdfl</span> <span class='op'>&lt;-</span> <span class='fu'>aggregate</span><span class='op'>(</span><span class='va'>e5sd</span><span class='op'>)</span>
+<span class='va'>mi</span> <span class='op'>&lt;-</span> <span class='fu'>aggregate</span><span class='op'>(</span><span class='va'>msi</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -277,7 +278,7 @@ object. The data can be accessed by using the <code>aggregateData</code> functio
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

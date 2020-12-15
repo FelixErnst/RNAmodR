@@ -6,9 +6,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Visualizing data data from a <code>SequenceData</code>, 
-<code>SequenceDataSet</code>, <code>SequenceDataList</code>, <code>Modifier</code> or 
-<code>ModifierSet</code> object. — plotData • RNAmodR</title>
+<title>Visualizing data data from a SequenceData, 
+SequenceDataSet, SequenceDataList, Modifier or 
+ModifierSet object. — plotData • RNAmodR</title>
 
 
 <!-- jquery -->
@@ -41,9 +41,9 @@
 
 
 
-<meta property="og:title" content="Visualizing data data from a <code>SequenceData</code>, 
-<code>SequenceDataSet</code>, <code>SequenceDataList</code>, <code>Modifier</code> or 
-<code>ModifierSet</code> object. — plotData" />
+<meta property="og:title" content="Visualizing data data from a SequenceData, 
+SequenceDataSet, SequenceDataList, Modifier or 
+ModifierSet object. — plotData" />
 <meta property="og:description" content="With the plotData and plotDataByCoord functions data
 from a SequenceData, SequenceDataSet, SequenceDataList,
 Modifier or ModifierSet object can be visualized.
@@ -84,7 +84,7 @@ for which x has to contain data." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RNAmodR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.2</span>
       </span>
     </div>
 
@@ -92,7 +92,7 @@ for which x has to contain data." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -118,7 +118,7 @@ for which x has to contain data." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/FelixErnst/RNAmodR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -154,100 +154,100 @@ from the <code>Gviz</code> package.</p>
 for which <code>x</code> has to contain data.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>plotData</span>(<span class='no'>x</span>, <span class='no'>name</span>, <span class='kw'>from</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='fl'>30L</span>, <span class='no'>type</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>plotData</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>name</span>, from <span class='op'>=</span> <span class='fl'>1L</span>, to <span class='op'>=</span> <span class='fl'>30L</span>, <span class='va'>type</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>plotDataByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='no'>type</span>, <span class='kw'>window.size</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='no'>...</span>)
+<span class='fu'>plotDataByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, <span class='va'>type</span>, window.size <span class='op'>=</span> <span class='fl'>15L</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>getDataTrack</span>(<span class='no'>x</span>, <span class='no'>name</span>, <span class='no'>...</span>)
+<span class='fu'>getDataTrack</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>name</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier,GRanges</span>
-<span class='fu'>plotDataByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>window.size</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='no'>...</span>)
+<span class='fu'>plotDataByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, type <span class='op'>=</span> <span class='cn'>NA</span>, window.size <span class='op'>=</span> <span class='fl'>15L</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>plotData</span>(
-  <span class='no'>x</span>,
-  <span class='no'>name</span>,
-  <span class='no'>from</span>,
-  <span class='no'>to</span>,
-  <span class='kw'>type</span> <span class='kw'>=</span> <span class='fl'>NA</span>,
-  <span class='kw'>showSequenceData</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>showSequence</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>showAnnotation</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='no'>...</span>
-)
+<span class='fu'>plotData</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  <span class='va'>name</span>,
+  <span class='va'>from</span>,
+  <span class='va'>to</span>,
+  type <span class='op'>=</span> <span class='cn'>NA</span>,
+  showSequenceData <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  showSequence <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  showAnnotation <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>getDataTrack</span>(<span class='no'>x</span>, <span class='kw'>name</span> <span class='kw'>=</span> <span class='no'>name</span>, <span class='no'>...</span>)
+<span class='fu'>getDataTrack</span><span class='op'>(</span><span class='va'>x</span>, name <span class='op'>=</span> <span class='va'>name</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet,GRanges</span>
-<span class='fu'>plotDataByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>window.size</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='no'>...</span>)
+<span class='fu'>plotDataByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, type <span class='op'>=</span> <span class='cn'>NA</span>, window.size <span class='op'>=</span> <span class='fl'>15L</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'>plotData</span>(
-  <span class='no'>x</span>,
-  <span class='no'>name</span>,
-  <span class='no'>from</span>,
-  <span class='no'>to</span>,
-  <span class='kw'>type</span> <span class='kw'>=</span> <span class='fl'>NA</span>,
-  <span class='kw'>showSequenceData</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>showSequence</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>showAnnotation</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='no'>...</span>
-)
+<span class='fu'>plotData</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  <span class='va'>name</span>,
+  <span class='va'>from</span>,
+  <span class='va'>to</span>,
+  type <span class='op'>=</span> <span class='cn'>NA</span>,
+  showSequenceData <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  showSequence <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  showAnnotation <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceData,GRanges</span>
-<span class='fu'>plotDataByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>window.size</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='no'>...</span>)
+<span class='fu'>plotDataByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, type <span class='op'>=</span> <span class='cn'>NA</span>, window.size <span class='op'>=</span> <span class='fl'>15L</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceData</span>
-<span class='fu'>plotData</span>(
-  <span class='no'>x</span>,
-  <span class='no'>name</span>,
-  <span class='no'>from</span>,
-  <span class='no'>to</span>,
-  <span class='kw'>perTranscript</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>showSequence</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>showAnnotation</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='no'>...</span>
-)
+<span class='fu'>plotData</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  <span class='va'>name</span>,
+  <span class='va'>from</span>,
+  <span class='va'>to</span>,
+  perTranscript <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  showSequence <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  showAnnotation <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceData</span>
-<span class='fu'>getDataTrack</span>(<span class='no'>x</span>, <span class='kw'>name</span> <span class='kw'>=</span> <span class='no'>name</span>, <span class='no'>...</span>)
+<span class='fu'>getDataTrack</span><span class='op'>(</span><span class='va'>x</span>, name <span class='op'>=</span> <span class='va'>name</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataList</span>
-<span class='fu'>getDataTrack</span>(<span class='no'>x</span>, <span class='kw'>name</span> <span class='kw'>=</span> <span class='no'>name</span>, <span class='no'>...</span>)
+<span class='fu'>getDataTrack</span><span class='op'>(</span><span class='va'>x</span>, name <span class='op'>=</span> <span class='va'>name</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataList,GRanges</span>
-<span class='fu'>plotDataByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>window.size</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='no'>...</span>)
+<span class='fu'>plotDataByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, type <span class='op'>=</span> <span class='cn'>NA</span>, window.size <span class='op'>=</span> <span class='fl'>15L</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataList</span>
-<span class='fu'>plotData</span>(
-  <span class='no'>x</span>,
-  <span class='no'>name</span>,
-  <span class='no'>from</span>,
-  <span class='no'>to</span>,
-  <span class='kw'>perTranscript</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>showSequence</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>showAnnotation</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='no'>...</span>
-)
+<span class='fu'>plotData</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  <span class='va'>name</span>,
+  <span class='va'>from</span>,
+  <span class='va'>to</span>,
+  perTranscript <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  showSequence <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  showAnnotation <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataSet</span>
-<span class='fu'>getDataTrack</span>(<span class='no'>x</span>, <span class='kw'>name</span> <span class='kw'>=</span> <span class='no'>name</span>, <span class='no'>...</span>)
+<span class='fu'>getDataTrack</span><span class='op'>(</span><span class='va'>x</span>, name <span class='op'>=</span> <span class='va'>name</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataSet,GRanges</span>
-<span class='fu'>plotDataByCoord</span>(<span class='no'>x</span>, <span class='no'>coord</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>window.size</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='no'>...</span>)
+<span class='fu'>plotDataByCoord</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>coord</span>, type <span class='op'>=</span> <span class='cn'>NA</span>, window.size <span class='op'>=</span> <span class='fl'>15L</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S4 method for SequenceDataSet</span>
-<span class='fu'>plotData</span>(
-  <span class='no'>x</span>,
-  <span class='no'>name</span>,
-  <span class='no'>from</span>,
-  <span class='no'>to</span>,
-  <span class='kw'>perTranscript</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>showSequence</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>showAnnotation</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='no'>...</span>
-)</pre>
+<span class='fu'>plotData</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  <span class='va'>name</span>,
+  <span class='va'>from</span>,
+  <span class='va'>to</span>,
+  perTranscript <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  showSequence <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  showAnnotation <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -327,10 +327,12 @@ per transcript? (default: <code>perTranscript = FALSE</code>)</p></td>
     <p>a plot send to the active graphic device</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>msi</span>,<span class='kw'>package</span><span class='kw'>=</span><span class='st'>"RNAmodR"</span>)
-<span class='fu'>plotData</span>(<span class='no'>msi</span><span class='kw'>[[</span><span class='fl'>1</span>]], <span class='st'>"2"</span>, <span class='kw'>from</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='fl'>45L</span>)</div><div class='img'><img src='plotData-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'>plotData</span>(<span class='no'>msi</span>, <span class='st'>"2"</span>, <span class='kw'>from</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='fl'>45L</span>)
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>msi</span>,package<span class='op'>=</span><span class='st'>"RNAmodR"</span><span class='op'>)</span>
+<span class='fu'>plotData</span><span class='op'>(</span><span class='va'>msi</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span>, <span class='st'>"2"</span>, from <span class='op'>=</span> <span class='fl'>10L</span>, to <span class='op'>=</span> <span class='fl'>45L</span><span class='op'>)</span>
+</div><div class='img'><img src='plotData-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'>plotData</span><span class='op'>(</span><span class='va'>msi</span>, <span class='st'>"2"</span>, from <span class='op'>=</span> <span class='fl'>10L</span>, to <span class='op'>=</span> <span class='fl'>45L</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -346,7 +348,7 @@ per transcript? (default: <code>perTranscript = FALSE</code>)</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

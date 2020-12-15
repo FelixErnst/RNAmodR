@@ -80,7 +80,7 @@ ModInosine." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RNAmodR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.2</span>
       </span>
     </div>
 
@@ -88,7 +88,7 @@ ModInosine." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -114,7 +114,7 @@ ModInosine." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/FelixErnst/RNAmodR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -148,9 +148,9 @@ the class needs to be modified.</p>
 <code>ModInosine</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ModInosine</span>(<span class='no'>x</span>, <span class='no'>annotation</span>, <span class='no'>sequences</span>, <span class='no'>seqinfo</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>ModInosine</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>annotation</span>, <span class='va'>sequences</span>, <span class='va'>seqinfo</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>ModSetInosine</span>(<span class='no'>x</span>, <span class='kw'>annotation</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>sequences</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>seqinfo</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>ModSetInosine</span><span class='op'>(</span><span class='va'>x</span>, annotation <span class='op'>=</span> <span class='cn'>NA</span>, sequences <span class='op'>=</span> <span class='cn'>NA</span>, seqinfo <span class='op'>=</span> <span class='cn'>NA</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -202,22 +202,30 @@ sequences to be analyzed on a per chromosome basis.</p></td>
     <p><code>ModInosine</code> score: the scores for reported Inosine positions are 
 between 0 and 1. They are calculated as the relative amount of called G bases 
 (<code>(G / N)</code>) and only saved for genomic A positions.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Felix G.M. Ernst [aut]</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># construction of ModInosine object</span>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>RNAmodR.Data</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>rtracklayer</span>)
-<span class='no'>annotation</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/rtracklayer/man/GFFFile-class.html'>GFF3File</a></span>(<span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/example.man.fasta.html'>RNAmodR.Data.example.man.gff3</a></span>())</div><div class='output co'>#&gt; <span class='message'>snapshotDate(): 2020-08-26</span></div><div class='output co'>#&gt; <span class='message'>see ?RNAmodR.Data and browseVignettes('RNAmodR.Data') for documentation</span></div><div class='output co'>#&gt; <span class='message'>loading from cache</span></div><div class='input'><span class='no'>sequences</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/example.man.fasta.html'>RNAmodR.Data.example.man.fasta</a></span>()</div><div class='output co'>#&gt; <span class='message'>snapshotDate(): 2020-08-26</span></div><div class='output co'>#&gt; <span class='message'>see ?RNAmodR.Data and browseVignettes('RNAmodR.Data') for documentation</span></div><div class='output co'>#&gt; <span class='message'>loading from cache</span></div><div class='input'><span class='no'>files</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>treated</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html'>RNAmodR.Data.example.wt.1</a></span>())</div><div class='output co'>#&gt; <span class='message'>snapshotDate(): 2020-08-26</span></div><div class='output co'>#&gt; <span class='message'>see ?RNAmodR.Data and browseVignettes('RNAmodR.Data') for documentation</span></div><div class='output co'>#&gt; <span class='message'>loading from cache</span></div><div class='input'><span class='no'>mi</span> <span class='kw'>&lt;-</span> <span class='fu'>ModInosine</span>(<span class='no'>files</span>,<span class='kw'>annotation</span> <span class='kw'>=</span> <span class='no'>annotation</span> ,<span class='kw'>sequences</span> <span class='kw'>=</span> <span class='no'>sequences</span>)</div><div class='output co'>#&gt; <span class='message'>Import genomic features from the file as a GRanges object ... </span></div><div class='output co'>#&gt; <span class='message'>OK</span></div><div class='output co'>#&gt; <span class='message'>Prepare the 'metadata' data frame ... </span></div><div class='output co'>#&gt; <span class='message'>OK</span></div><div class='output co'>#&gt; <span class='message'>Make the TxDb object ... </span></div><div class='output co'>#&gt; <span class='message'>OK</span></div><div class='output co'>#&gt; <span class='message'>Loading Pileup data from BAM files ... </span></div><div class='output co'>#&gt; <span class='message'>OK</span></div><div class='output co'>#&gt; <span class='message'>Aggregating data and calculating scores ... </span></div><div class='output co'>#&gt; <span class='message'>Starting to search for 'Inosine' ... </span></div><div class='output co'>#&gt; <span class='message'>done.</span></div><div class='input'><span class='co'># construction of ModSetInosine object</span>
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='no'>files</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='st'>"SampleSet1"</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>treated</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html'>RNAmodR.Data.example.wt.1</a></span>(),
-                               <span class='kw'>treated</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html'>RNAmodR.Data.example.wt.2</a></span>(),
-                               <span class='kw'>treated</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html'>RNAmodR.Data.example.wt.3</a></span>()),
-              <span class='st'>"SampleSet2"</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>treated</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html'>RNAmodR.Data.example.bud23.1</a></span>(),
-                               <span class='kw'>treated</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html'>RNAmodR.Data.example.bud23.2</a></span>()),
-              <span class='st'>"SampleSet3"</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>treated</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html'>RNAmodR.Data.example.trm8.1</a></span>(),
-                               <span class='kw'>treated</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html'>RNAmodR.Data.example.trm8.2</a></span>()))
-<span class='no'>msi</span> <span class='kw'>&lt;-</span> <span class='fu'>ModSetInosine</span>(<span class='no'>files</span>, <span class='kw'>annotation</span> <span class='kw'>=</span> <span class='no'>annotation</span>, <span class='kw'>sequences</span> <span class='kw'>=</span> <span class='no'>sequences</span>)
-}</div></pre>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/FelixErnst/RNAmodR.Data'>RNAmodR.Data</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>rtracklayer</span><span class='op'>)</span>
+<span class='va'>annotation</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/rtracklayer/man/GFFFile-class.html'>GFF3File</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/example.man.fasta.html'>RNAmodR.Data.example.man.gff3</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>snapshotDate(): 2020-12-14</span></div><div class='output co'>#&gt; <span class='message'>see ?RNAmodR.Data and browseVignettes('RNAmodR.Data') for documentation</span></div><div class='output co'>#&gt; <span class='message'>loading from cache</span></div><div class='input'><span class='va'>sequences</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/example.man.fasta.html'>RNAmodR.Data.example.man.fasta</a></span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>snapshotDate(): 2020-12-14</span></div><div class='output co'>#&gt; <span class='message'>see ?RNAmodR.Data and browseVignettes('RNAmodR.Data') for documentation</span></div><div class='output co'>#&gt; <span class='message'>loading from cache</span></div><div class='input'><span class='va'>files</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>treated <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html'>RNAmodR.Data.example.wt.1</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>snapshotDate(): 2020-12-14</span></div><div class='output co'>#&gt; <span class='message'>see ?RNAmodR.Data and browseVignettes('RNAmodR.Data') for documentation</span></div><div class='output co'>#&gt; <span class='message'>loading from cache</span></div><div class='input'><span class='va'>mi</span> <span class='op'>&lt;-</span> <span class='fu'>ModInosine</span><span class='op'>(</span><span class='va'>files</span>,annotation <span class='op'>=</span> <span class='va'>annotation</span> ,sequences <span class='op'>=</span> <span class='va'>sequences</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Import genomic features from the file as a GRanges object ... </span></div><div class='output co'>#&gt; <span class='message'>OK</span></div><div class='output co'>#&gt; <span class='message'>Prepare the 'metadata' data frame ... </span></div><div class='output co'>#&gt; <span class='message'>OK</span></div><div class='output co'>#&gt; <span class='message'>Make the TxDb object ... </span></div><div class='output co'>#&gt; <span class='message'>OK</span></div><div class='output co'>#&gt; <span class='message'>Loading Pileup data from BAM files ... </span></div><div class='output co'>#&gt; <span class='message'>OK</span></div><div class='output co'>#&gt; <span class='message'>Aggregating data and calculating scores ... </span></div><div class='output co'>#&gt; <span class='message'>Starting to search for 'Inosine' ... </span></div><div class='output co'>#&gt; <span class='message'>done.</span></div><div class='input'><span class='co'># construction of ModSetInosine object</span>
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>files</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='st'>"SampleSet1"</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>treated <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html'>RNAmodR.Data.example.wt.1</a></span><span class='op'>(</span><span class='op'>)</span>,
+                               treated <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html'>RNAmodR.Data.example.wt.2</a></span><span class='op'>(</span><span class='op'>)</span>,
+                               treated <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html'>RNAmodR.Data.example.wt.3</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>,
+              <span class='st'>"SampleSet2"</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>treated <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html'>RNAmodR.Data.example.bud23.1</a></span><span class='op'>(</span><span class='op'>)</span>,
+                               treated <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html'>RNAmodR.Data.example.bud23.2</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>,
+              <span class='st'>"SampleSet3"</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>treated <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html'>RNAmodR.Data.example.trm8.1</a></span><span class='op'>(</span><span class='op'>)</span>,
+                               treated <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html'>RNAmodR.Data.example.trm8.2</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>msi</span> <span class='op'>&lt;-</span> <span class='fu'>ModSetInosine</span><span class='op'>(</span><span class='va'>files</span>, annotation <span class='op'>=</span> <span class='va'>annotation</span>, sequences <span class='op'>=</span> <span class='va'>sequences</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -233,7 +241,7 @@ between 0 and 1. They are calculated as the relative amount of called G bases
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

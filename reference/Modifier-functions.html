@@ -77,7 +77,7 @@ aggregate or the modify function." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RNAmodR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.2</span>
       </span>
     </div>
 
@@ -85,7 +85,7 @@ aggregate or the modify function." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -111,7 +111,7 @@ aggregate or the modify function." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/FelixErnst/RNAmodR/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -142,110 +142,110 @@ loaded. This potentially invalidates them. To update the data, run the
 <code>aggregate</code> or the <code>modify</code> function.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>bamfiles</span>(<span class='no'>x</span>)
+    <pre class="usage"><span class='fu'>bamfiles</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
-<span class='fu'>mainScore</span>(<span class='no'>x</span>)
+<span class='fu'>mainScore</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
-<span class='fu'>modifierType</span>(<span class='no'>x</span>)
+<span class='fu'>modifierType</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
-<span class='fu'>modType</span>(<span class='no'>x</span>)
+<span class='fu'>modType</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
-<span class='fu'>dataType</span>(<span class='no'>x</span>)
+<span class='fu'>dataType</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
-<span class='fu'>sequenceData</span>(<span class='no'>x</span>)
+<span class='fu'>sequenceData</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
-<span class='fu'>sequences</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+<span class='fu'>sequences</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>validAggregate</span>(<span class='no'>x</span>)
+<span class='fu'>validAggregate</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
-<span class='fu'>validModification</span>(<span class='no'>x</span>)
-
-<span class='co'># S4 method for Modifier</span>
-<span class='fu'>show</span>(<span class='no'>object</span>)
+<span class='fu'>validModification</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>bamfiles</span>(<span class='no'>x</span>)
+<span class='fu'>show</span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'><a href='https://rdrr.io/r/base/conditions.html'>conditions</a></span>(<span class='no'>object</span>)
+<span class='fu'>bamfiles</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>mainScore</span>(<span class='no'>x</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/conditions.html'>conditions</a></span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>modifierType</span>(<span class='no'>x</span>)
+<span class='fu'>mainScore</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>modType</span>(<span class='no'>x</span>)
+<span class='fu'>modifierType</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>dataType</span>(<span class='no'>x</span>)
+<span class='fu'>modType</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span>(<span class='no'>x</span>)
+<span class='fu'>dataType</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>ranges</span>(<span class='no'>x</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'><a href='SequenceData-functions.html'>replicates</a></span>(<span class='no'>x</span>)
+<span class='fu'>ranges</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>seqinfo</span>(<span class='no'>x</span>)
+<span class='fu'><a href='SequenceData-functions.html'>replicates</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>seqtype</span>(<span class='no'>x</span>)
+<span class='fu'>seqinfo</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>sequenceData</span>(<span class='no'>x</span>)
+<span class='fu'>seqtype</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>sequences</span>(<span class='no'>x</span>, <span class='kw'>modified</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'>sequenceData</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>validAggregate</span>(<span class='no'>x</span>)
+<span class='fu'>sequences</span><span class='op'>(</span><span class='va'>x</span>, modified <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
 <span class='co'># S4 method for Modifier</span>
-<span class='fu'>validModification</span>(<span class='no'>x</span>)
+<span class='fu'>validAggregate</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+
+<span class='co'># S4 method for Modifier</span>
+<span class='fu'>validModification</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'>show</span>(<span class='no'>object</span>)
+<span class='fu'>show</span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'>bamfiles</span>(<span class='no'>x</span>)
+<span class='fu'>bamfiles</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'><a href='https://rdrr.io/r/base/conditions.html'>conditions</a></span>(<span class='no'>object</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/conditions.html'>conditions</a></span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'>mainScore</span>(<span class='no'>x</span>)
+<span class='fu'>mainScore</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'><a href='modify.html'>modifications</a></span>(<span class='no'>x</span>, <span class='kw'>perTranscript</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'><a href='modify.html'>modifications</a></span><span class='op'>(</span><span class='va'>x</span>, perTranscript <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'>modifierType</span>(<span class='no'>x</span>)
+<span class='fu'>modifierType</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'>modType</span>(<span class='no'>x</span>)
+<span class='fu'>modType</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'>dataType</span>(<span class='no'>x</span>)
+<span class='fu'>dataType</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'>ranges</span>(<span class='no'>x</span>)
+<span class='fu'>ranges</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'><a href='SequenceData-functions.html'>replicates</a></span>(<span class='no'>x</span>)
+<span class='fu'><a href='SequenceData-functions.html'>replicates</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'>seqinfo</span>(<span class='no'>x</span>)
+<span class='fu'>seqinfo</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'>seqtype</span>(<span class='no'>x</span>)
+<span class='fu'>seqtype</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># S4 method for ModifierSet</span>
-<span class='fu'>sequences</span>(<span class='no'>x</span>, <span class='kw'>modified</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+<span class='fu'>sequences</span><span class='op'>(</span><span class='va'>x</span>, modified <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -303,9 +303,15 @@ current settings are the same for which modification were found</p></li>
     <div class='dont-index'><p><code><a href='settings.html'>settings</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>msi</span>,<span class='kw'>package</span><span class='kw'>=</span><span class='st'>"RNAmodR"</span>)
-<span class='no'>mi</span> <span class='kw'>&lt;-</span> <span class='no'>msi</span><span class='kw'>[[</span><span class='fl'>1</span>]]
-<span class='fu'>modifierType</span>(<span class='no'>mi</span>) <span class='co'># The class name of the Modifier object</span></div><div class='output co'>#&gt; [1] "ModInosine"</div><div class='input'><span class='fu'>modifierType</span>(<span class='no'>msi</span>)</div><div class='output co'>#&gt; [1] "ModInosine"</div><div class='input'><span class='fu'>seqtype</span>(<span class='no'>mi</span>)</div><div class='output co'>#&gt; [1] "RNA"</div><div class='input'><span class='fu'>modType</span>(<span class='no'>mi</span>)</div><div class='output co'>#&gt; [1] "I"</div><div class='input'><span class='fu'>mainScore</span>(<span class='no'>mi</span>)</div><div class='output co'>#&gt; [1] "score"</div><div class='input'><span class='fu'>sequenceData</span>(<span class='no'>mi</span>)</div><div class='output co'>#&gt; PileupSequenceData with 11 elements containing 15 data columns and 3 metadata columns
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>msi</span>,package<span class='op'>=</span><span class='st'>"RNAmodR"</span><span class='op'>)</span>
+<span class='va'>mi</span> <span class='op'>&lt;-</span> <span class='va'>msi</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span>
+<span class='fu'>modifierType</span><span class='op'>(</span><span class='va'>mi</span><span class='op'>)</span> <span class='co'># The class name of the Modifier object</span>
+</div><div class='output co'>#&gt; [1] "ModInosine"</div><div class='input'><span class='fu'>modifierType</span><span class='op'>(</span><span class='va'>msi</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "ModInosine"</div><div class='input'><span class='fu'>seqtype</span><span class='op'>(</span><span class='va'>mi</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "RNA"</div><div class='input'><span class='fu'>modType</span><span class='op'>(</span><span class='va'>mi</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "I"</div><div class='input'><span class='fu'>mainScore</span><span class='op'>(</span><span class='va'>mi</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "score"</div><div class='input'><span class='fu'>sequenceData</span><span class='op'>(</span><span class='va'>mi</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; PileupSequenceData with 11 elements containing 15 data columns and 3 metadata columns
 #&gt; - Data columns:
 #&gt;  pileup.treated.1.- pileup.treated.1.G pileup.treated.1.A pileup.treated.1.T
 #&gt;           &lt;integer&gt;          &lt;integer&gt;          &lt;integer&gt;          &lt;integer&gt;
@@ -315,7 +321,8 @@ current settings are the same for which modification were found</p></li>
 #&gt;           &lt;integer&gt;          &lt;integer&gt;          &lt;integer&gt;          &lt;integer&gt;
 #&gt;  pileup.treated.3.A pileup.treated.3.T pileup.treated.3.C
 #&gt;           &lt;integer&gt;          &lt;integer&gt;          &lt;integer&gt;
-#&gt; -  Seqinfo object with 11 sequences from an unspecified genome; no seqlengths:</div><div class='input'><span class='fu'><a href='modify.html'>modifications</a></span>(<span class='no'>mi</span>)</div><div class='output co'>#&gt; GRanges object with 6 ranges and 5 metadata columns:
+#&gt; -  Seqinfo object with 11 sequences from an unspecified genome; no seqlengths:</div><div class='input'><span class='fu'><a href='modify.html'>modifications</a></span><span class='op'>(</span><span class='va'>mi</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; GRanges object with 6 ranges and 5 metadata columns:
 #&gt;       seqnames    ranges strand |         mod      source        type     score
 #&gt;          &lt;Rle&gt; &lt;IRanges&gt;  &lt;Rle&gt; | &lt;character&gt; &lt;character&gt; &lt;character&gt; &lt;numeric&gt;
 #&gt;   [1]     chr2        34      + |           I     RNAmodR      RNAMOD  0.900932
@@ -334,7 +341,8 @@ current settings are the same for which modification were found</p></li>
 #&gt;   [6]          11
 #&gt;   -------
 #&gt;   seqinfo: 11 sequences from an unspecified genome; no seqlengths</div><div class='input'><span class='co'># general accessors</span>
-<span class='fu'>seqinfo</span>(<span class='no'>mi</span>)</div><div class='output co'>#&gt; Seqinfo object with 11 sequences from an unspecified genome; no seqlengths:
+<span class='fu'>seqinfo</span><span class='op'>(</span><span class='va'>mi</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; Seqinfo object with 11 sequences from an unspecified genome; no seqlengths:
 #&gt;   seqnames seqlengths isCircular genome
 #&gt;   chr1             NA         NA   &lt;NA&gt;
 #&gt;   chr2             NA         NA   &lt;NA&gt;
@@ -346,19 +354,21 @@ current settings are the same for which modification were found</p></li>
 #&gt;   chr8             NA         NA   &lt;NA&gt;
 #&gt;   chr9             NA         NA   &lt;NA&gt;
 #&gt;   chr10            NA         NA   &lt;NA&gt;
-#&gt;   chr11            NA         NA   &lt;NA&gt;</div><div class='input'><span class='fu'>sequences</span>(<span class='no'>mi</span>)</div><div class='output co'>#&gt; RNAStringSet object of length 11:
+#&gt;   chr11            NA         NA   &lt;NA&gt;</div><div class='input'><span class='fu'>sequences</span><span class='op'>(</span><span class='va'>mi</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; RNAStringSet object of length 11:
 #&gt;      width seq                                              names               
-#&gt;  [1]  1800 <span style='color: #000000;background-color: #BBBBBB;'>UAUCUGGUUGAUCCUGCCAGUAG</span><span>...</span><span style='color: #000000;background-color: #BBBBBB;'>UGAACCUGCGGAAGGAUCAUUA</span><span> 1
-#&gt;  [2]    85 </span><span style='color: #000000;background-color: #BBBBBB;'>GGCAACUUGGCCGAGUGGUUAAG</span><span>...</span><span style='color: #000000;background-color: #BBBBBB;'>UCGAGUCCUGCAGUUGUCGCCA</span><span> 2
-#&gt;  [3]    76 </span><span style='color: #000000;background-color: #BBBBBB;'>GCGGAUUUAGCUCAGUUGGGAGA</span><span>...</span><span style='color: #000000;background-color: #BBBBBB;'>UCGAUCCACAGAAUUCGCACCA</span><span> 3
-#&gt;  [4]    77 </span><span style='color: #000000;background-color: #BBBBBB;'>GGUCUCUUGGCCCAGUUGGUUAA</span><span>...</span><span style='color: #000000;background-color: #BBBBBB;'>UCGAUCCCGCUAGAGACCACCA</span><span> 4
-#&gt;  [5]    74 </span><span style='color: #000000;background-color: #BBBBBB;'>GCGCAAGUGGUUUAGUGGUAAAA</span><span>...</span><span style='color: #000000;background-color: #BBBBBB;'>UCGAUUCCGGGCUUGCGCACCA</span><span> 5
+#&gt;  [1]  1800 UAUCUGGUUGAUCCUGCCAGUAG...UGAACCUGCGGAAGGAUCAUUA 1
+#&gt;  [2]    85 GGCAACUUGGCCGAGUGGUUAAG...UCGAGUCCUGCAGUUGUCGCCA 2
+#&gt;  [3]    76 GCGGAUUUAGCUCAGUUGGGAGA...UCGAUCCACAGAAUUCGCACCA 3
+#&gt;  [4]    77 GGUCUCUUGGCCCAGUUGGUUAA...UCGAUCCCGCUAGAGACCACCA 4
+#&gt;  [5]    74 GCGCAAGUGGUUUAGUGGUAAAA...UCGAUUCCGGGCUUGCGCACCA 5
 #&gt;  ...   ... ...
-#&gt;  [7]    75 </span><span style='color: #000000;background-color: #BBBBBB;'>GGUUUUAUAGUGUAGUGGUUAUC</span><span>...</span><span style='color: #000000;background-color: #BBBBBB;'>UCGAAUCCGGGUAAGACCUCCA</span><span> 7
-#&gt;  [8]    75 </span><span style='color: #000000;background-color: #BBBBBB;'>GCUCGUAUGGCGCAGUGGUAGCG</span><span>...</span><span style='color: #000000;background-color: #BBBBBB;'>UCGAUCCUGAGUGCGAGCUCCA</span><span> 8
-#&gt;  [9]    75 </span><span style='color: #000000;background-color: #BBBBBB;'>UCCGAUAUAGUGUAACGGCUAUC</span><span>...</span><span style='color: #000000;background-color: #BBBBBB;'>UCGACUCCCCGUAUCGGAGCCA</span><span> 9
-#&gt; [10]    85 </span><span style='color: #000000;background-color: #BBBBBB;'>GGCACUAUGGCCGAGUGGUUAAG</span><span>...</span><span style='color: #000000;background-color: #BBBBBB;'>UCAAAUCCUGCUGGUGUCGCCA</span><span> 10
-#&gt; [11]    77 </span><span style='color: #000000;background-color: #BBBBBB;'>GGUUUCGUGGUCUAGUCGGUUAU</span><span>...</span><span style='color: #000000;background-color: #BBBBBB;'>UCGAUCCUGGGCGAAAUCACCA</span><span> 11</div><div class='input'><span class='fu'>ranges</span>(<span class='no'>mi</span>)</div><div class='output co'>#&gt; GRangesList object of length 11:
+#&gt;  [7]    75 GGUUUUAUAGUGUAGUGGUUAUC...UCGAAUCCGGGUAAGACCUCCA 7
+#&gt;  [8]    75 GCUCGUAUGGCGCAGUGGUAGCG...UCGAUCCUGAGUGCGAGCUCCA 8
+#&gt;  [9]    75 UCCGAUAUAGUGUAACGGCUAUC...UCGACUCCCCGUAUCGGAGCCA 9
+#&gt; [10]    85 GGCACUAUGGCCGAGUGGUUAAG...UCAAAUCCUGCUGGUGUCGCCA 10
+#&gt; [11]    77 GGUUUCGUGGUCUAGUCGGUUAU...UCGAUCCUGGGCGAAAUCACCA 11</div><div class='input'><span class='fu'>ranges</span><span class='op'>(</span><span class='va'>mi</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; GRangesList object of length 11:
 #&gt; $`1`
 #&gt; GRanges object with 1 range and 3 metadata columns:
 #&gt;       seqnames    ranges strand |   exon_id   exon_name exon_rank
@@ -384,8 +394,9 @@ current settings are the same for which modification were found</p></li>
 #&gt;   seqinfo: 11 sequences from an unspecified genome; no seqlengths
 #&gt; 
 #&gt; ...
-#&gt; &lt;8 more elements&gt;</div><div class='input'><span class='fu'>bamfiles</span>(<span class='no'>mi</span>)</div><div class='output co'>#&gt; BamFileList of length 3
-#&gt; names(3): treated treated treated</div></span></pre>
+#&gt; &lt;8 more elements&gt;</div><div class='input'><span class='fu'>bamfiles</span><span class='op'>(</span><span class='va'>mi</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; BamFileList of length 3
+#&gt; names(3): treated treated treated</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -401,7 +412,7 @@ current settings are the same for which modification were found</p></li>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
