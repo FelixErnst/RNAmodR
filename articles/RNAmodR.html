@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RNAmodR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.3</span>
       </span>
     </div>
 
@@ -85,7 +85,7 @@
       <h1 data-toc-skip>RNAmodR: analyzing high throughput sequencing data for post-transcriptional RNA modification footprints</h1>
                         <h4 class="author">Felix G.M. Ernst and Denis L.J. Lafontaine</h4>
             
-            <h4 class="date">2021-01-10</h4>
+            <h4 class="date">2021-01-12</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/FelixErnst/RNAmodR/blob/master/vignettes/RNAmodR.Rmd"><code>vignettes/RNAmodR.Rmd</code></a></small>
       <div class="hidden name"><code>RNAmodR.Rmd</code></div>
@@ -113,8 +113,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>Since similar pattern can be observed from some of these techniques, overlaps of the bioinformatical pipeline already are and will become more frequent with new emerging sequencing techniques.</p>
 <p><code>RNAmodR</code> implements classes and a workflow to detect post-transcriptional RNA modifications in high throughput sequencing data. It is easily adaptable to new methods and can help during the phase of initial method development as well as more complex screenings.</p>
 <p>Briefly, from the <code>SequenceData</code>, specific subclasses are derived for accessing specific aspects of aligned reads, e.g. 5’-end positions or pileup data. With this a <code>Modifier</code> class can be used to detect specific patterns for individual types of modifications. The <code>SequenceData</code> classes can be shared by different <code>Modifier</code> classes allowing easy adaptation to new methods.</p>
-<pre><code>## using temporary cache /tmp/Rtmp0tjliP/BiocFileCache</code></pre>
-<pre><code>## snapshotDate(): 2021-01-07</code></pre>
+<pre><code>## using temporary cache /tmp/RtmpIq6VZI/BiocFileCache</code></pre>
+<pre><code>## snapshotDate(): 2021-01-11</code></pre>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rtracklayer</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bioconductor.org/packages/Rsamtools">Rsamtools</a></span><span class="op">)</span>
@@ -336,9 +336,9 @@ document.addEventListener("DOMContentLoaded", function() {
 <code class="sourceCode R"><span class="va">msi</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></code></pre></div>
 <pre><code>## A ModInosine object containing PileupSequenceData with 11 elements.
 ## | Input files:
-##    - treated: /tmp/Rtmp0tjliP/BiocFileCache/17b4af0f46b_2544
-##    - treated: /tmp/Rtmp0tjliP/BiocFileCache/17b4317e384_2546
-##    - treated: /tmp/Rtmp0tjliP/BiocFileCache/17b7f64d72d_2548
+##    - treated: /tmp/RtmpIq6VZI/BiocFileCache/b151d3b766f_2544
+##    - treated: /tmp/RtmpIq6VZI/BiocFileCache/b156e3f0ed3_2546
+##    - treated: /tmp/RtmpIq6VZI/BiocFileCache/b157ea2317_2548
 ## | Nucleotide - Modification type(s):  RNA  -  I 
 ## | Modifications found: yes (6) 
 ## | Settings:
@@ -551,7 +551,7 @@ Distribution of lengths for reads used in the analysis
 ## [8] methods   base     
 ## 
 ## other attached packages:
-##  [1] RNAmodR_1.5.2            Modstrings_1.7.1         RNAmodR.Data_1.5.0      
+##  [1] RNAmodR_1.5.3            Modstrings_1.7.1         RNAmodR.Data_1.5.0      
 ##  [4] ExperimentHubData_1.17.0 AnnotationHubData_1.21.2 futile.logger_1.4.3     
 ##  [7] ExperimentHub_1.17.0     AnnotationHub_2.23.0     BiocFileCache_1.15.1    
 ## [10] dbplyr_2.0.0             GenomicFeatures_1.43.3   AnnotationDbi_1.53.0    
@@ -598,7 +598,7 @@ Distribution of lengths for reads used in the analysis
 ##  [69] tools_4.1.0                   generics_0.1.0               
 ##  [71] RSQLite_2.2.2                 evaluate_0.14                
 ##  [73] stringr_1.4.0                 fastmap_1.0.1                
-##  [75] yaml_2.2.1                    ragg_0.4.0                   
+##  [75] yaml_2.2.1                    ragg_0.4.1                   
 ##  [77] knitr_1.30                    bit64_4.0.5                  
 ##  [79] fs_1.5.0                      purrr_0.3.4                  
 ##  [81] AnnotationFilter_1.15.0       RBGL_1.67.0                  
