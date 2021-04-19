@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RNAmodR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.5</span>
       </span>
     </div>
 
@@ -79,13 +79,13 @@
 
       
 
-      </header><script src="RNAmodR_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="RNAmodR_files/header-attrs-2.7/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>RNAmodR: analyzing high throughput sequencing data for post-transcriptional RNA modification footprints</h1>
                         <h4 class="author">Felix G.M. Ernst and Denis L.J. Lafontaine</h4>
             
-            <h4 class="date">2021-01-12</h4>
+            <h4 class="date">2021-04-19</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/FelixErnst/RNAmodR/blob/master/vignettes/RNAmodR.Rmd"><code>vignettes/RNAmodR.Rmd</code></a></small>
       <div class="hidden name"><code>RNAmodR.Rmd</code></div>
@@ -113,9 +113,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>Since similar pattern can be observed from some of these techniques, overlaps of the bioinformatical pipeline already are and will become more frequent with new emerging sequencing techniques.</p>
 <p><code>RNAmodR</code> implements classes and a workflow to detect post-transcriptional RNA modifications in high throughput sequencing data. It is easily adaptable to new methods and can help during the phase of initial method development as well as more complex screenings.</p>
 <p>Briefly, from the <code>SequenceData</code>, specific subclasses are derived for accessing specific aspects of aligned reads, e.g. 5’-end positions or pileup data. With this a <code>Modifier</code> class can be used to detect specific patterns for individual types of modifications. The <code>SequenceData</code> classes can be shared by different <code>Modifier</code> classes allowing easy adaptation to new methods.</p>
-<pre><code>## using temporary cache /tmp/RtmpvOupvP/BiocFileCache</code></pre>
-<pre><code>## snapshotDate(): 2021-01-12</code></pre>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<pre><code>## snapshotDate(): 2021-04-08</code></pre>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rtracklayer</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bioconductor.org/packages/Rsamtools">Rsamtools</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bioconductor.org/packages/GenomicFeatures">GenomicFeatures</a></span><span class="op">)</span>
@@ -125,21 +124,21 @@ document.addEventListener("DOMContentLoaded", function() {
 <h2 class="hasAnchor">
 <a href="#sequencedata" class="anchor"></a>SequenceData</h2>
 <p>Each <code>SequenceData</code> object is created with a named character vector, which can be coerced to a <code>BamFileList</code>, or named <code>BamFileList</code>. The names must be either “treated” or “control” describing the condition the data file belongs to. Multiple files can be given per condition and are used as replicates.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">annotation</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/rtracklayer/man/GFFFile-class.html">GFF3File</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.example.html">RNAmodR.Data.example.gff3</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="va">sequences</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.example.html">RNAmodR.Data.example.fasta</a></span><span class="op">(</span><span class="op">)</span>
 <span class="va">files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>Treated <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.example.html">RNAmodR.Data.example.bam.1</a></span><span class="op">(</span><span class="op">)</span>,
            Treated <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.example.html">RNAmodR.Data.example.bam.2</a></span><span class="op">(</span><span class="op">)</span>,
            Treated <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.example.html">RNAmodR.Data.example.bam.3</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>For <code>annotation</code> and <code>sequences</code> several input are accepted. <code>annotation</code> can be a <code>GRangesList</code>, a <code>GFF3File</code> or a <code>TxDb</code> object. Internally, a <code>GFF3File</code> is converted to a <code>TxDb</code> object and a <code>GRangesList</code> is retrieved using the <code>exonsBy</code> function.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">seqdata</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/EndSequenceData-class.html">End5SequenceData</a></span><span class="op">(</span><span class="va">files</span>, annotation <span class="op">=</span> <span class="va">annotation</span>, 
                             sequences <span class="op">=</span> <span class="va">sequences</span><span class="op">)</span></code></pre></div>
 <pre><code>## Import genomic features from the file as a GRanges object ... OK
 ## Prepare the 'metadata' data frame ... OK
 ## Make the TxDb object ... OK
 ## Loading 5'-end position data from BAM files ... OK</code></pre>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">seqdata</span></code></pre></div>
 <pre><code>## End5SequenceData with 60 elements containing 3 data columns and 3 metadata columns
 ## - Data columns:
@@ -147,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ##       &lt;integer&gt;      &lt;integer&gt;      &lt;integer&gt;
 ## -  Seqinfo object with 84 sequences from an unspecified genome; no seqlengths:</code></pre>
 <p><code>SequenceData</code> extends from a <code>CompressedSplitDataFrameList</code> and contains the data per transcript alongside the annotation information and the sequence. The additional data stored within the <code>SequenceData</code> can be accessed by several functions.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">seqdata</span><span class="op">)</span> <span class="co"># matches the transcript names as returned by a TxDb object</span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">seqdata</span><span class="op">)</span> <span class="co"># returns a CharacterList of all column names</span>
 <span class="fu"><a href="../reference/Modifier-functions.html">bamfiles</a></span><span class="op">(</span><span class="va">seqdata</span><span class="op">)</span>
@@ -167,14 +166,14 @@ document.addEventListener("DOMContentLoaded", function() {
 </ul>
 <p>The data types and names of the columns are different for most of the <code>SequenceData</code> classes. As a naming convenction a descriptor is combined with the condition as defined in the files input and the replicate number. For more details please have a look at the man pages, e.g. <code><a href="../reference/EndSequenceData-class.html">?End5SequenceData</a></code>.</p>
 <p><code>SequenceData</code> objects can be subset like a <code>CompressedSplitDataFrameList</code>. Elements are returned as a <code>SequenceDataFrame</code> dependent of the type of <code>SequenceData</code> used. For each <code>SequenceData</code> class a matching <code>SequenceDataFrame</code> is implemented.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">seqdata</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></code></pre></div>
 <pre><code>## End5SequenceData with 1 elements containing 3 data columns and 3 metadata columns
 ## - Data columns:
 ##  end5.treated.1 end5.treated.2 end5.treated.3
 ##       &lt;integer&gt;      &lt;integer&gt;      &lt;integer&gt;
 ## -  Seqinfo object with 84 sequences from an unspecified genome; no seqlengths:</code></pre>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sdf</span> <span class="op">&lt;-</span> <span class="va">seqdata</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>
 <span class="va">sdf</span></code></pre></div>
 <pre><code>## End5SequenceDataFrame with 1649 rows and 3 columns
@@ -202,12 +201,12 @@ document.addEventListener("DOMContentLoaded", function() {
 ## and a 1649-letter RNAString object
 ## seq: GUAAAAAAUUUAUAAGAAUAUGAUGUUGGUUCAGAU...UGCGGUGGGCUUAUAAAUAUCUUAAAUAUUCUUACA</code></pre>
 <p>The <code>SequenceDataFrame</code> objects retains some accessor functions from the <code>SequenceData</code> class.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">sdf</span><span class="op">)</span> <span class="co"># this returns the columns names of the data</span>
 <span class="fu">ranges</span><span class="op">(</span><span class="va">sdf</span><span class="op">)</span>
 <span class="fu"><a href="../reference/Modifier-functions.html">sequences</a></span><span class="op">(</span><span class="va">sdf</span><span class="op">)</span></code></pre></div>
 <p>Subsetting of a <code>SequenceDataFrame</code> returns a <code>SequenceDataFrame</code> or <code>DataFrame</code>, depending on whether it is subset by a column or row, respectively. The <code>drop</code> argument is ignored for column subsetting.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sdf</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span></code></pre></div>
 <pre><code>## End5SequenceDataFrame with 1649 rows and 2 columns
 ##      end5.treated.1 end5.treated.2
@@ -233,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ## 
 ## and a 1649-letter RNAString object
 ## seq: GUAAAAAAUUUAUAAGAAUAUGAUGUUGGUUCAGAU...UGCGGUGGGCUUAUAAAUAUCUUAAAUAUUCUUACA</code></pre>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sdf</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>,<span class="op">]</span></code></pre></div>
 <pre><code>## DataFrame with 3 rows and 3 columns
 ##   end5.treated.1 end5.treated.2 end5.treated.3
@@ -257,7 +256,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </ul>
 <p><code>Modifier</code> objects can use and wrap multiple <code>SequenceData</code> objects as elements of a <code>SequenceDataSet</code> class. The elements of this class are different types of <code>SequenceData</code>, which are required by the specific <code>Modifier</code> class. However, they are required to contain data for the same annotation and sequence data.</p>
 <p><code>Modifier</code> objects are created with the same arguments as <code>SequenceData</code> objects and will start loading the necessary <code>SequenceData</code> objects from these. In addition they will automatically start to calculate any additional scores (aggregation) and then start to search for modifications, if the optional argument <code>find.mod</code> is not set to <code>FALSE</code>.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mi</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ModInosine.html">ModInosine</a></span><span class="op">(</span><span class="va">files</span>, annotation <span class="op">=</span> <span class="va">annotation</span>, sequences <span class="op">=</span> <span class="va">sequences</span><span class="op">)</span></code></pre></div>
 <pre><code>## Import genomic features from the file as a GRanges object ... OK
 ## Prepare the 'metadata' data frame ... OK
@@ -266,7 +265,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ## Aggregating data and calculating scores ... Starting to search for 'Inosine' ... done.</code></pre>
 <p>(Hint: If you use an artificial genome, name the chromosomes chr1-chrN. It will make some things easier for subsequent visualization, which relies on the <code>Gviz</code> package)</p>
 <p>Since the <code>Modifier</code> class wraps a <code>SequenceData</code> object the accessors to data contained within work similarly to the <code>SequenceData</code> accessors described above. What type of conditions the <code>Modifier</code> class expects/supports is usually described in the man pages of the Modifier class.</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">mi</span><span class="op">)</span> <span class="co"># matches the transcript names as returned by a TxDb object</span>
 <span class="fu"><a href="../reference/Modifier-functions.html">bamfiles</a></span><span class="op">(</span><span class="va">mi</span><span class="op">)</span>
 <span class="fu">ranges</span><span class="op">(</span><span class="va">mi</span><span class="op">)</span> <span class="co"># generated from a TxDb object</span>
@@ -277,7 +276,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <h3 class="hasAnchor">
 <a href="#settings" class="anchor"></a>Settings</h3>
 <p>The behavior of a <code>Modifier</code> class can be fine tuned using settings. The <code><a href="../reference/settings.html">settings()</a></code> function is a getter/setter for arguments used in the analysis and my differ between different <code>Modifier</code> classes depending on the particular strategy and whether they are implemented as flexible settings.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/settings.html">settings</a></span><span class="op">(</span><span class="va">mi</span><span class="op">)</span></code></pre></div>
 <pre><code>## $minCoverage
 ## [1] 10
@@ -290,10 +289,10 @@ document.addEventListener("DOMContentLoaded", function() {
 ## 
 ## $minScore
 ## [1] 0.4</code></pre>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/settings.html">settings</a></span><span class="op">(</span><span class="va">mi</span>,<span class="st">"minScore"</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 0.4</code></pre>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/settings.html">settings</a></span><span class="op">(</span><span class="va">mi</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>minScore <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span>
 <span class="fu"><a href="../reference/settings.html">settings</a></span><span class="op">(</span><span class="va">mi</span>,<span class="st">"minScore"</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 0.5</code></pre>
@@ -304,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <a href="#modifierset" class="anchor"></a>ModifierSet</h2>
 <p>Each <code>Modifier</code> object is able to represent one sample set with multiple replicates of data. To easily compare multiple sample sets the <code>ModifierSet</code> class is implemented.</p>
 <p>The <code>ModifierSet</code> object is created from a named list of named character vectors or <code>BamFileList</code> objects. Each element in the list is a sample type with a corresponding name. Each entry in the character vector/<code>BamFileList</code> is a replicate (Alternatively a <code>ModifierSet</code> can also be created from a <code>list</code> of <code>Modifier</code> objects, if they are of the same type).</p>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sequences</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html">RNAmodR.Data.example.AAS.fasta</a></span><span class="op">(</span><span class="op">)</span>
 <span class="va">annotation</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/rtracklayer/man/GFFFile-class.html">GFF3File</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html">RNAmodR.Data.example.AAS.gff3</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="va">files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"SampleSet1"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>treated <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html">RNAmodR.Data.example.wt.1</a></span><span class="op">(</span><span class="op">)</span>,
@@ -314,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                treated <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html">RNAmodR.Data.example.bud23.2</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>,
               <span class="st">"SampleSet3"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>treated <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html">RNAmodR.Data.example.trm8.1</a></span><span class="op">(</span><span class="op">)</span>,
                                treated <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/RNAmodR.Data/man/RNAmodR.Data.AAS.html">RNAmodR.Data.example.trm8.2</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">msi</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ModInosine.html">ModSetInosine</a></span><span class="op">(</span><span class="va">files</span>, annotation <span class="op">=</span> <span class="va">annotation</span>, sequences <span class="op">=</span> <span class="va">sequences</span><span class="op">)</span></code></pre></div>
 <pre><code>## Import genomic features from the file as a GRanges object ... OK
 ## Prepare the 'metadata' data frame ... OK
@@ -329,16 +328,16 @@ document.addEventListener("DOMContentLoaded", function() {
 ## Loading Pileup data from BAM files ... OK
 ## Aggregating data and calculating scores ... Starting to search for 'Inosine' ... done.</code></pre>
 <p>The creation of the <code>ModifierSet</code> will itself trigger the creation of a <code>Modifier</code> object each containing data from one sample set. This step is parallelized using the <code>BiocParallel</code> package. If a <code>Modifier</code> class itself uses parallel computing for its analysis, it is switched off unless <code>internalBP = TRUE</code> is set. In this case each <code>Modifier</code> object is created in sequence, allowing parallel computing during the creation of each object.</p>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">msi</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "SampleSet1" "SampleSet2" "SampleSet3"</code></pre>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">msi</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></code></pre></div>
 <pre><code>## A ModInosine object containing PileupSequenceData with 11 elements.
 ## | Input files:
-##    - treated: /tmp/RtmpvOupvP/BiocFileCache/96270facdf5_2544
-##    - treated: /tmp/RtmpvOupvP/BiocFileCache/9624df9a324_2546
-##    - treated: /tmp/RtmpvOupvP/BiocFileCache/9622b1a3ef5_2548
+##    - treated: /github/home/.cache/R/ExperimentHub/799f561ab41f_2544
+##    - treated: /github/home/.cache/R/ExperimentHub/799f7f49138c_2546
+##    - treated: /github/home/.cache/R/ExperimentHub/799f6cee0e5e_2548
 ## | Nucleotide - Modification type(s):  RNA  -  I 
 ## | Modifications found: yes (6) 
 ## | Settings:
@@ -346,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ##     &lt;integer&gt;    &lt;integer&gt; &lt;logical&gt; &lt;numeric&gt;
 ##            10            1      TRUE       0.4</code></pre>
 <p>Again accessors remain mostly the same as described above for the <code>Modifier</code> class returning a list of results, one element for each <code>Modifier</code> object.</p>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/Modifier-functions.html">bamfiles</a></span><span class="op">(</span><span class="va">msi</span><span class="op">)</span>
 <span class="fu">ranges</span><span class="op">(</span><span class="va">msi</span><span class="op">)</span> <span class="co"># generate from a TxDb object</span>
 <span class="fu"><a href="../reference/Modifier-functions.html">sequences</a></span><span class="op">(</span><span class="va">msi</span><span class="op">)</span>
@@ -357,7 +356,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <h1 class="hasAnchor">
 <a href="#analysis-of-detected-modifications" class="anchor"></a>Analysis of detected modifications</h1>
 <p>Found modifications can be retrieved from a <code>Modifier</code> or <code>ModifierSet</code> object via the <code><a href="../reference/modify.html">modifications()</a></code> function. The function returns a <code>GRanges</code> or <code>GRangesList</code> object, respectively, which contains the coordinates of the modifications with respect to the genome used. For example if a transcript starts at position 100 and contains a modified nucleotide at position 50 of the transcript, the returned coordinate will 150.</p>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/modify.html">modifications</a></span><span class="op">(</span><span class="va">msi</span><span class="op">)</span>
 <span class="va">mod</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></code></pre></div>
 <pre><code>## GRanges object with 6 ranges and 5 metadata columns:
@@ -380,7 +379,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ##   -------
 ##   seqinfo: 11 sequences from an unspecified genome; no seqlengths</code></pre>
 <p>To retrieve the coordinates with respect to the transcript boundaries, use the optional argument <code>perTranscript = TRUE</code>. In the example provided here, this will yield the same coordinates, since a custom genome was used for mapping of the example, which does not contain transcripts on the negative strand and per transcript chromosomes.</p>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/modify.html">modifications</a></span><span class="op">(</span><span class="va">msi</span>, perTranscript <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="va">mod</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></code></pre></div>
 <pre><code>## GRanges object with 6 ranges and 5 metadata columns:
@@ -406,7 +405,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <h2 class="hasAnchor">
 <a href="#compairing-results" class="anchor"></a>Compairing results</h2>
 <p>To compare results between samples, a <code>ModifierSet</code> as well as a definition of positions to compare are required. To construct a set of positions, we will use the intersection of all modifications found as an example.</p>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/modify.html">modifications</a></span><span class="op">(</span><span class="va">msi</span><span class="op">)</span>
 <span class="va">coord</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span><span class="op">)</span>
 <span class="va">coord</span><span class="op">$</span><span class="va">score</span> <span class="op">&lt;-</span> <span class="cn">NULL</span>
@@ -422,15 +421,15 @@ document.addEventListener("DOMContentLoaded", function() {
 ## 5   0.709758   0.766484   0.681451       9         7            I
 ## 6   0.874027   0.971474   0.954782       11        35           I</code></pre>
 <p>The result can also be plotted using <code>plotCompareByCoord</code>, which accepts an optional argument <code>alias</code> to allow transcript ids to be converted to other identifiers. For this step it is probably helpful to construct a <code>TxDb</code> object right at the beginning and use it for constructing the <code>Modifier</code>/<code>ModifierSet</code> object as the <code>annotation</code> argument.</p>
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">txdb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/GenomicFeatures/man/makeTxDbFromGFF.html">makeTxDbFromGFF</a></span><span class="op">(</span><span class="va">annotation</span><span class="op">)</span></code></pre></div>
 <pre><code>## Import genomic features from the file as a GRanges object ... OK
 ## Prepare the 'metadata' data frame ... OK
 ## Make the TxDb object ... OK</code></pre>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">alias</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>tx_id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/GenomicFeatures/man/id2name.html">id2name</a></span><span class="op">(</span><span class="va">txdb</span><span class="op">)</span><span class="op">)</span>,
                     name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/GenomicFeatures/man/id2name.html">id2name</a></span><span class="op">(</span><span class="va">txdb</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/compare.html">plotCompareByCoord</a></span><span class="op">(</span><span class="va">msi</span>, <span class="va">coord</span>, alias <span class="op">=</span> <span class="va">alias</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="RNAmodR_files/figure-html/plot1-1.png" alt="Heatmap for identified Inosine positions." width="700"><p class="caption">
@@ -438,7 +437,7 @@ Heatmap for identified Inosine positions.
 </p>
 </div>
 <p>Additionally, the order of sample sets can be adjusted, normalized to any of the sample sets and the numbering of positions shown per transcript.</p>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/compare.html">plotCompareByCoord</a></span><span class="op">(</span><span class="va">msi</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">]</span>, <span class="va">coord</span>, alias <span class="op">=</span> <span class="va">alias</span>, normalize <span class="op">=</span> <span class="st">"SampleSet3"</span>,
                    perTranscript <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <div class="figure">
@@ -447,14 +446,14 @@ Heatmap for identified Inosine positions with normalized scores.
 </p>
 </div>
 <p>The calculated scores and data can be visualized along the transcripts or chunks of the transcript. With the optional argument <code>showSequenceData</code> the plotting of the sequence data in addition to the score data can be triggered by setting it to <code>TRUE</code>.</p>
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/plotData.html">plotData</a></span><span class="op">(</span><span class="va">msi</span>, <span class="st">"2"</span>, from <span class="op">=</span> <span class="fl">10L</span>, to <span class="op">=</span> <span class="fl">45L</span>, alias <span class="op">=</span> <span class="va">alias</span><span class="op">)</span> <span class="co"># showSequenceData = FALSE</span></code></pre></div>
 <div class="figure">
 <img src="RNAmodR_files/figure-html/plot3-1.png" alt="Scores along a transcript containing a A to G conversion indicating the presence of Inosine." width="700"><p class="caption">
 Scores along a transcript containing a A to G conversion indicating the presence of Inosine.
 </p>
 </div>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/plotData.html">plotData</a></span><span class="op">(</span><span class="va">msi</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span>, <span class="st">"2"</span>, from <span class="op">=</span> <span class="fl">10L</span>, to <span class="op">=</span> <span class="fl">45L</span>, showSequenceData <span class="op">=</span> <span class="cn">TRUE</span>, alias <span class="op">=</span> <span class="va">alias</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="RNAmodR_files/figure-html/plot4-1.png" alt="Scores along a transcript containing a A to G conversion indicating the presence of Inosine. This figure includes the detailed pileup sequence data." width="700"><p class="caption">
@@ -468,7 +467,7 @@ Scores along a transcript containing a A to G conversion indicating the presence
 <a href="#performance-measurements" class="anchor"></a>Performance measurements</h1>
 <p>Since the detection of modifications from high throughput sequencing data relies usually on thresholds for calling modifications, there is considerable interest in analyzing the performance of the method based on scores chosen and available samples. To analyse the performance, the function <code><a href="../reference/plotROC.html">plotROC()</a></code> is implemented, which is a wrapper around the functionality of the <code>ROCR</code> package <span class="citation">(Sing et al. 2005)</span>(#References).</p>
 <p>For the example data used in this vignette, the information gained is rather limited and the following figure should be regarded just as a proof of concept. In addition, the use of found modifications sites as an input for <code>plotROC</code> is strongly discouraged, since defeats the purpose of the test. Therefore, please regard this aspect of the next chunk as proof of concept as well.</p>
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/plotROC.html">plotROC</a></span><span class="op">(</span><span class="va">msi</span>, <span class="va">coord</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="RNAmodR_files/figure-html/plot5-1.png" alt="TPR vs. FPR plot." width="700"><p class="caption">
@@ -481,31 +480,31 @@ TPR vs. FPR plot.
 <h1 class="hasAnchor">
 <a href="#additional-informations" class="anchor"></a>Additional informations</h1>
 <p>To have a look at metadata of reads for an analysis with <code>RNAmodR</code> the function <code><a href="../reference/stats.html">stats()</a></code> can be used. It can be used with a bunch of object types: <code>SequenceData</code>, <code>SequenceDataList</code>, <code>SequenceDataSet</code>, <code>Modifier</code> or <code>ModifierSet</code>. For <code>SequenceData*</code> objects, the <code>BamFile</code> to be analyzed must be provided as well, which automatically done for <code>Modifier*</code> objects. For more details have a look at <code><a href="../reference/stats.html">?stats</a></code>.</p>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">stats</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/stats.html">stats</a></span><span class="op">(</span><span class="va">msi</span><span class="op">)</span>
 <span class="va">stats</span></code></pre></div>
 <pre><code>## List of length 3
 ## names(3): SampleSet1 SampleSet2 SampleSet3</code></pre>
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">stats</span><span class="op">[[</span><span class="st">"SampleSet1"</span><span class="op">]</span><span class="op">]</span></code></pre></div>
 <pre><code>## DataFrameList of length 3
 ## names(3): treated treated treated</code></pre>
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">stats</span><span class="op">[[</span><span class="st">"SampleSet1"</span><span class="op">]</span><span class="op">]</span><span class="op">[[</span><span class="st">"treated"</span><span class="op">]</span><span class="op">]</span></code></pre></div>
-<pre><code>## DataFrame with 11 rows and 6 columns
-##    seqnames seqlength    mapped  unmapped          used     used_distro
-##    &lt;factor&gt; &lt;integer&gt; &lt;numeric&gt; &lt;numeric&gt; &lt;IntegerList&gt;          &lt;List&gt;
-## 1     chr1       1800    197050         0        159782 83,1252,860,...
-## 2     chr2         85      5863         0          2459     2,16,16,...
-## 3     chr3         76     76905         0         63497 35,478,4106,...
-## 4     chr4         77      8299         0          6554     6,27,36,...
-## 5     chr5         74     11758         0          8818  520,105,93,...
-## 6     chr6         76      3504         0          2427     1,38,45,...
-## 7     chr7         75     14556         0         12243  1532,46,12,...
-## 8     chr8         75    144293         0        143068    14,44,48,...
-## 9     chr9         75     13790         0          9753     1,49,43,...
-## 10    chr10        85     19861         0         17729    35,21,10,...
-## 11    chr11        77     10532         0          9086   53,92,185,...</code></pre>
+<pre><code>## DataFrame with 12 rows and 6 columns
+##     seqnames seqlength    mapped  unmapped          used     used_distro
+##     &lt;factor&gt; &lt;integer&gt; &lt;numeric&gt; &lt;numeric&gt; &lt;IntegerList&gt;          &lt;List&gt;
+## 1       chr1      1800    197050         0        159782 83,1252,860,...
+## 2       chr2        85      5863         0          2459     2,16,16,...
+## 3       chr3        76     76905         0         63497 35,478,4106,...
+## 4       chr4        77      8299         0          6554     6,27,36,...
+## 5       chr5        74     11758         0          8818  520,105,93,...
+## ...      ...       ...       ...       ...           ...             ...
+## 8      chr8         75    144293         0        143068    14,44,48,...
+## 9      chr9         75     13790         0          9753     1,49,43,...
+## 10     chr10        85     19861         0         17729    35,21,10,...
+## 11     chr11        77     10532         0          9086   53,92,185,...
+## 12     *             0         0    961095            NA              NA</code></pre>
 <p>The data returned by <code><a href="../reference/stats.html">stats()</a></code> is a <code>DataFrame</code>, which can be wrapped as a <code>DataFrameList</code> or a <code>SimpleList</code> depending on the input type. Analysis of the data must be manually done and can be used to produced output like the following plot for distribution of lengths for reads analyzed.</p>
 <div class="figure">
 <img src="RNAmodR_files/figure-html/plot6-1.png" alt="Distribution of lengths for reads used in the analysis" width="700"><p class="caption">
@@ -529,11 +528,11 @@ Distribution of lengths for reads used in the analysis
 <div id="sessioninfo" class="section level1">
 <h1 class="hasAnchor">
 <a href="#sessioninfo" class="anchor"></a>Sessioninfo</h1>
-<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code>## R Under development (unstable) (2021-01-07 r79806)
+<pre><code>## R Under development (unstable) (2021-04-15 r80175)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
-## Running under: Ubuntu 20.04.1 LTS
+## Running under: Ubuntu 20.04.2 LTS
 ## 
 ## Matrix products: default
 ## BLAS/LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.8.so
@@ -551,102 +550,104 @@ Distribution of lengths for reads used in the analysis
 ## [8] methods   base     
 ## 
 ## other attached packages:
-##  [1] RNAmodR_1.5.3            Modstrings_1.7.1         RNAmodR.Data_1.5.0      
-##  [4] ExperimentHubData_1.17.0 AnnotationHubData_1.21.2 futile.logger_1.4.3     
-##  [7] ExperimentHub_1.17.0     AnnotationHub_2.23.0     BiocFileCache_1.15.1    
-## [10] dbplyr_2.0.0             GenomicFeatures_1.43.3   AnnotationDbi_1.53.0    
-## [13] Biobase_2.51.0           Rsamtools_2.7.0          Biostrings_2.59.2       
-## [16] XVector_0.31.1           rtracklayer_1.51.3       GenomicRanges_1.43.1    
-## [19] GenomeInfoDb_1.27.3      IRanges_2.25.6           S4Vectors_0.29.6        
-## [22] BiocGenerics_0.37.0      BiocStyle_2.19.1        
+##  [1] RNAmodR_1.5.5            Modstrings_1.7.1         RNAmodR.Data_1.5.0      
+##  [4] ExperimentHubData_1.17.4 AnnotationHubData_1.21.8 futile.logger_1.4.3     
+##  [7] ExperimentHub_1.99.5     AnnotationHub_2.99.5     BiocFileCache_1.99.6    
+## [10] dbplyr_2.1.1             GenomicFeatures_1.43.8   AnnotationDbi_1.53.1    
+## [13] Biobase_2.51.0           Rsamtools_2.7.2          Biostrings_2.59.2       
+## [16] XVector_0.31.1           rtracklayer_1.51.5       GenomicRanges_1.43.4    
+## [19] GenomeInfoDb_1.27.11     IRanges_2.25.9           S4Vectors_0.29.15       
+## [22] BiocGenerics_0.37.2      BiocStyle_2.19.2        
 ## 
 ## loaded via a namespace (and not attached):
-##   [1] backports_1.2.1               Hmisc_4.4-2                  
-##   [3] systemfonts_0.3.2             plyr_1.8.6                   
+##   [1] backports_1.2.1               Hmisc_4.5-0                  
+##   [3] systemfonts_1.0.1             plyr_1.8.6                   
 ##   [5] lazyeval_0.2.2                splines_4.1.0                
-##   [7] BiocParallel_1.25.2           ggplot2_3.3.3                
-##   [9] digest_0.6.27                 ensembldb_2.15.1             
-##  [11] htmltools_0.5.1               checkmate_2.0.0              
-##  [13] magrittr_2.0.1                memoise_1.1.0                
-##  [15] BSgenome_1.59.2               cluster_2.1.0                
-##  [17] ROCR_1.0-11                   matrixStats_0.57.0           
-##  [19] askpass_1.1                   pkgdown_1.6.1                
+##   [7] BiocParallel_1.25.5           ggplot2_3.3.3                
+##   [9] digest_0.6.27                 ensembldb_2.15.2             
+##  [11] htmltools_0.5.1.1             fansi_0.4.2                  
+##  [13] checkmate_2.0.0               magrittr_2.0.1               
+##  [15] memoise_2.0.0                 BSgenome_1.59.2              
+##  [17] cluster_2.1.2                 ROCR_1.0-11                  
+##  [19] matrixStats_0.58.0            pkgdown_1.6.1                
 ##  [21] prettyunits_1.1.1             jpeg_0.1-8.1                 
 ##  [23] colorspace_2.0-0              blob_1.2.1                   
-##  [25] rappdirs_0.3.1                textshaping_0.2.1            
-##  [27] xfun_0.20                     dplyr_1.0.2                  
-##  [29] crayon_1.3.4                  RCurl_1.98-1.2               
+##  [25] rappdirs_0.3.3                textshaping_0.3.3            
+##  [27] xfun_0.22                     dplyr_1.0.5                  
+##  [29] crayon_1.4.1                  RCurl_1.98-1.3               
 ##  [31] jsonlite_1.7.2                graph_1.69.0                 
-##  [33] VariantAnnotation_1.37.1      survival_3.2-7               
+##  [33] VariantAnnotation_1.37.1      survival_3.2-10              
 ##  [35] glue_1.4.2                    gtable_0.3.0                 
-##  [37] zlibbioc_1.37.0               DelayedArray_0.17.7          
+##  [37] zlibbioc_1.37.0               DelayedArray_0.17.10         
 ##  [39] scales_1.1.1                  futile.options_1.0.1         
-##  [41] DBI_1.1.0                     Rcpp_1.0.5                   
+##  [41] DBI_1.1.1                     Rcpp_1.0.6                   
 ##  [43] htmlTable_2.1.0               xtable_1.8-4                 
 ##  [45] progress_1.2.2                foreign_0.8-81               
 ##  [47] bit_4.0.4                     OrganismDbi_1.33.0           
-##  [49] Formula_1.2-4                 AnnotationForge_1.33.1       
+##  [49] Formula_1.2-4                 AnnotationForge_1.33.3       
 ##  [51] htmlwidgets_1.5.3             httr_1.4.2                   
 ##  [53] getopt_1.20.3                 RColorBrewer_1.1-2           
-##  [55] ellipsis_0.3.1                farver_2.0.3                 
-##  [57] pkgconfig_2.0.3               XML_3.99-0.5                 
-##  [59] nnet_7.3-14                   Gviz_1.35.3                  
-##  [61] labeling_0.4.2                reshape2_1.4.4               
-##  [63] tidyselect_1.1.0              rlang_0.4.10                 
-##  [65] later_1.1.0.1                 munsell_0.5.0                
-##  [67] biocViews_1.59.1              BiocVersion_3.13.1           
-##  [69] tools_4.1.0                   generics_0.1.0               
-##  [71] RSQLite_2.2.2                 evaluate_0.14                
-##  [73] stringr_1.4.0                 fastmap_1.0.1                
-##  [75] yaml_2.2.1                    ragg_0.4.1                   
-##  [77] knitr_1.30                    bit64_4.0.5                  
-##  [79] fs_1.5.0                      purrr_0.3.4                  
-##  [81] AnnotationFilter_1.15.0       RBGL_1.67.0                  
-##  [83] mime_0.9                      formatR_1.7                  
-##  [85] xml2_1.3.2                    biomaRt_2.47.1               
-##  [87] rstudioapi_0.13               compiler_4.1.0               
-##  [89] filelock_1.0.2                curl_4.3                     
-##  [91] png_0.1-7                     interactiveDisplayBase_1.29.0
-##  [93] tibble_3.0.4                  stringi_1.5.3                
-##  [95] highr_0.8                     desc_1.2.0                   
-##  [97] lattice_0.20-41               ProtGenerics_1.23.6          
-##  [99] Matrix_1.3-2                  vctrs_0.3.6                  
-## [101] stringdist_0.9.6.3            pillar_1.4.7                 
-## [103] BiocCheck_1.27.2              lifecycle_0.2.0              
-## [105] RUnit_0.4.32                  optparse_1.6.6               
-## [107] BiocManager_1.30.10           data.table_1.13.6            
-## [109] bitops_1.0-6                  colorRamps_2.3               
-## [111] httpuv_1.5.4                  R6_2.5.0                     
-## [113] BiocIO_1.1.2                  latticeExtra_0.6-29          
-## [115] bookdown_0.21                 promises_1.1.1               
-## [117] gridExtra_2.3                 codetools_0.2-18             
-## [119] dichromat_2.0-0               lambda.r_1.2.4               
-## [121] assertthat_0.2.1              SummarizedExperiment_1.21.1  
-## [123] openssl_1.4.3                 rprojroot_2.0.2              
-## [125] rjson_0.2.20                  withr_2.3.0                  
-## [127] rBiopaxParser_2.31.0          GenomicAlignments_1.27.2     
-## [129] GenomeInfoDbData_1.2.4        hms_0.5.3                    
-## [131] rpart_4.1-15                  grid_4.1.0                   
-## [133] rmarkdown_2.6                 MatrixGenerics_1.3.0         
-## [135] biovizBase_1.39.0             base64enc_0.1-3              
-## [137] shiny_1.5.0                   restfulr_0.0.13</code></pre>
+##  [55] ellipsis_0.3.1                farver_2.1.0                 
+##  [57] pkgconfig_2.0.3               XML_3.99-0.6                 
+##  [59] nnet_7.3-15                   Gviz_1.35.5                  
+##  [61] sass_0.3.1                    utf8_1.2.1                   
+##  [63] labeling_0.4.2                reshape2_1.4.4               
+##  [65] tidyselect_1.1.0              rlang_0.4.10                 
+##  [67] later_1.1.0.1                 munsell_0.5.0                
+##  [69] biocViews_1.59.3              BiocVersion_3.13.1           
+##  [71] tools_4.1.0                   cachem_1.0.4                 
+##  [73] generics_0.1.0                RSQLite_2.2.6                
+##  [75] evaluate_0.14                 stringr_1.4.0                
+##  [77] fastmap_1.1.0                 yaml_2.2.1                   
+##  [79] ragg_1.1.2                    knitr_1.32                   
+##  [81] bit64_4.0.5                   fs_1.5.0                     
+##  [83] purrr_0.3.4                   AnnotationFilter_1.15.0      
+##  [85] KEGGREST_1.31.1               RBGL_1.67.0                  
+##  [87] mime_0.10                     formatR_1.9                  
+##  [89] biomaRt_2.47.7                rstudioapi_0.13              
+##  [91] compiler_4.1.0                filelock_1.0.2               
+##  [93] curl_4.3                      png_0.1-7                    
+##  [95] interactiveDisplayBase_1.29.0 tibble_3.1.1                 
+##  [97] bslib_0.2.4                   stringi_1.5.3                
+##  [99] highr_0.9                     desc_1.3.0                   
+## [101] lattice_0.20-41               ProtGenerics_1.23.9          
+## [103] Matrix_1.3-2                  vctrs_0.3.7                  
+## [105] stringdist_0.9.6.3            pillar_1.6.0                 
+## [107] BiocCheck_1.27.13             lifecycle_1.0.0              
+## [109] RUnit_0.4.32                  optparse_1.6.6               
+## [111] BiocManager_1.30.12           jquerylib_0.1.3              
+## [113] data.table_1.14.0             bitops_1.0-6                 
+## [115] colorRamps_2.3                httpuv_1.5.5                 
+## [117] R6_2.5.0                      BiocIO_1.1.2                 
+## [119] latticeExtra_0.6-29           bookdown_0.21                
+## [121] promises_1.2.0.1              gridExtra_2.3                
+## [123] codetools_0.2-18              dichromat_2.0-0              
+## [125] lambda.r_1.2.4                assertthat_0.2.1             
+## [127] SummarizedExperiment_1.21.3   rprojroot_2.0.2              
+## [129] rjson_0.2.20                  withr_2.4.2                  
+## [131] GenomicAlignments_1.27.2      GenomeInfoDbData_1.2.4       
+## [133] hms_1.0.0                     rpart_4.1-15                 
+## [135] grid_4.1.0                    rmarkdown_2.7                
+## [137] MatrixGenerics_1.3.1          biovizBase_1.39.0            
+## [139] base64enc_0.1-3               shiny_1.6.0                  
+## [141] restfulr_0.0.13</code></pre>
 <p><a name="References"></a></p>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
-<div id="refs" class="references">
-<div id="ref-Birkedal-2015">
-<p>Birkedal, Ulf, Mikkel Christensen-Dalsgaard, Nicolai Krogh, Radhakrishnan Sabarinathan, Jan Gorodkin, and Henrik Nielsen. 2015. “Profiling of Ribose Methylations in Rna by High-Throughput Sequencing.” <em>Angewandte Chemie (International Ed. In English)</em> 54 (2): 451–55. <a href="https://doi.org/10.1002/anie.201408362">https://doi.org/10.1002/anie.201408362</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Birkedal-2015" class="csl-entry">
+Birkedal, Ulf, Mikkel Christensen-Dalsgaard, Nicolai Krogh, Radhakrishnan Sabarinathan, Jan Gorodkin, and Henrik Nielsen. 2015. <span>“Profiling of Ribose Methylations in RNA by High-Throughput Sequencing.”</span> <em>Angewandte Chemie (International Ed. In English)</em> 54 (2): 451–55. <a href="https://doi.org/10.1002/anie.201408362">https://doi.org/10.1002/anie.201408362</a>.
 </div>
-<div id="ref-Carlile-2014">
-<p>Carlile, Thomas M., Maria F. Rojas-Duran, Boris Zinshteyn, Hakyung Shin, Kristen M. Bartoli, and Wendy V. Gilbert. 2014. “Pseudouridine Profiling Reveals Regulated mRNA Pseudouridylation in Yeast and Human Cells.” <em>Nature</em> 515 (7525): 143–46.</p>
+<div id="ref-Carlile-2014" class="csl-entry">
+Carlile, Thomas M., Maria F. Rojas-Duran, Boris Zinshteyn, Hakyung Shin, Kristen M. Bartoli, and Wendy V. Gilbert. 2014. <span>“Pseudouridine Profiling Reveals Regulated mRNA Pseudouridylation in Yeast and Human Cells.”</span> <em>Nature</em> 515 (7525): 143–46.
 </div>
-<div id="ref-Marchand-2018">
-<p>Marchand, Virginie, Lilia Ayadi, Felix G. M. Ernst, Jasmin Hertler, Valérie Bourguignon-Igel, Adeline Galvanin, Annika Kotter, Mark Helm, Denis L. J. Lafontaine, and Yuri Motorin. 2018. “AlkAniline-Seq: Profiling of m7G and m3C Rna Modifications at Single Nucleotide Resolution.” <em>Angewandte Chemie International Edition</em> 57 (51): 16785–90. <a href="https://doi.org/10.1002/anie.201810946">https://doi.org/10.1002/anie.201810946</a>.</p>
+<div id="ref-Marchand-2018" class="csl-entry">
+Marchand, Virginie, Lilia Ayadi, Felix G. M. Ernst, Jasmin Hertler, Valérie Bourguignon-Igel, Adeline Galvanin, Annika Kotter, Mark Helm, Denis L. J. Lafontaine, and Yuri Motorin. 2018. <span>“AlkAniline-Seq: Profiling of m7G and m3C RNA Modifications at Single Nucleotide Resolution.”</span> <em>Angewandte Chemie International Edition</em> 57 (51): 16785–90. <a href="https://doi.org/10.1002/anie.201810946">https://doi.org/10.1002/anie.201810946</a>.
 </div>
-<div id="ref-Sing-2005">
-<p>Sing, Tobias, Oliver Sander, Niko Beerenwinkel, and Thomas Lengauer. 2005. “ROCR: Visualizing Classifier Performance in R.” <em>Bioinformatics (Oxford, England)</em> 21 (20): 3940–1. <a href="https://doi.org/10.1093/bioinformatics/bti623">https://doi.org/10.1093/bioinformatics/bti623</a>.</p>
+<div id="ref-Sing-2005" class="csl-entry">
+Sing, Tobias, Oliver Sander, Niko Beerenwinkel, and Thomas Lengauer. 2005. <span>“ROCR: Visualizing Classifier Performance in r.”</span> <em>Bioinformatics (Oxford, England)</em> 21 (20): 3940–41. <a href="https://doi.org/10.1093/bioinformatics/bti623">https://doi.org/10.1093/bioinformatics/bti623</a>.
 </div>
 </div>
 </div>
