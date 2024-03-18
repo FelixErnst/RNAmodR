@@ -24,6 +24,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -36,18 +38,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">RNAmodR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.7.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.17.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="articles/RNAmodR.html">Get started</a>
 </li>
@@ -55,7 +51,7 @@
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -69,7 +65,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/FelixErnst/RNAmodR/">
+  <a href="https://github.com/FelixErnst/RNAmodR/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -87,9 +83,8 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
-<div id="rnamodr-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#rnamodr-" class="anchor"></a>RNAmodR <img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/RNAmodR/RNAmodR.png" height="300" align="right">
+<div class="section level1">
+<div class="page-header"><h1 id="rnamodr-">RNAmodR <img src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/RNAmodR/RNAmodR.png" height="300" align="right"><a class="anchor" aria-label="anchor" href="#rnamodr-"></a>
 </h1></div>
 <!-- badges: start -->
 
@@ -97,37 +92,31 @@
 <p>With the increased availability of high throughput sequencing, these classical methods were adapted to high throughput methods allowing more RNA molecules to be accessed at the same time. With these advances post-transcriptional modifications were also detected on mRNA. Among these high throughput techniques are for example Pseudo-Seq (<a href="#Literature">Carlile et al. 2014</a>), RiboMethSeq (<a href="#Literature">Birkedal et al. 2015</a>) and AlkAnilineSeq (<a href="#Literature">Marchand et al. 2018</a>) each able to detect a specific type of modification from footprints in RNA-Seq data prepared with the selected methods.</p>
 <p>Since similar pattern can be observed from some of these techniques, overlaps of the bioinformatical pipeline already are and will become more frequent with new emerging sequencing techniques.</p>
 </div>
-<div id="installation" class="section level1">
-<h1 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h1>
+<div class="section level1">
+<h1 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h1>
 <p>The current version of the <code>RNAmodR</code> package is available from Bioconductor.</p>
-<pre><code>if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-
-BiocManager::install("RNAmodR")
-library(RNAmodR)</code></pre>
+<pre><code><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"BiocManager"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://bioconductor.github.io/BiocManager/reference/install.html" class="external-link">install</a></span><span class="op">(</span><span class="st">"RNAmodR"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/FelixErnst/RNAmodR" class="external-link">RNAmodR</a></span><span class="op">)</span></span></code></pre>
 </div>
-<div id="introduction" class="section level1">
-<h1 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h1>
+<div class="section level1">
+<h1 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h1>
 <p><code>RNAmodR</code> implements classes and a workflow to detect post-transcriptional RNA modifications in high throughput sequencing data. It can be easily adapted for new methods and can help during the phase of initial method development as well as more complex screenings.</p>
 <p>Briefly, from the <code>SequenceData</code> and <code>SequenceDataFrame</code> classes, specific subclasses are derived for accessing specific aspects of aligned reads, e.g.  5’-end positions or pileup data. With these, a <code>Modifier</code> class can be used to detect specific patterns for individual types of modifications. The <code>SequenceData</code> classes can be shared by different <code>Modifier</code> classes enabling easy adaptation to new methods and benefiting from other efforts in method development.</p>
 <p>Whereas, the <code>SequenceData</code> classes are used to hold the data, <code>Modifier</code> classes are used to detect certain features within high throughput sequencing data to assign the presence of specific modifications for an established pattern. The <code>Modifier</code> class is virtual and can be adapted for individual methods, whereas the type of nucleotide under investigation is specified by inheriting from the virtual <code>RNAModifier</code> and <code>DNAModifier</code> classes. To fix the data processing and detection strategy, for each type of sequencing method a <code>Modifier</code> class can be developed alongside to detect modifications.</p>
-<p>For further details have a look at the vignette or the additional packages for implementation examples:</p>
-<ul>
-<li><a href="https://doi.org/doi:10.18129/B9.bioc.RNAmodR.RiboMethSeq">RNAmodR.RiboMethSeq</a></li>
-<li><a href="https://doi.org/doi:10.18129/B9.bioc.RNAmodR.AlkAnilineSeq">RNAmodR.AlkAnilineSeq</a></li>
-<li>
-<a href="https://doi.org/doi:10.18129/B9.bioc.RNAmodR.ML">RNAmodR.ML</a> for classes fascilitating machine learning approaches</li>
-</ul>
+<p>For further details have a look at the vignette or the additional packages for implementation examples: - <a href="https://doi.org/doi:10.18129/B9.bioc.RNAmodR.RiboMethSeq" class="external-link">RNAmodR.RiboMethSeq</a> - <a href="https://doi.org/doi:10.18129/B9.bioc.RNAmodR.AlkAnilineSeq" class="external-link">RNAmodR.AlkAnilineSeq</a> - <a href="https://doi.org/doi:10.18129/B9.bioc.RNAmodR.ML" class="external-link">RNAmodR.ML</a> for classes fascilitating machine learning approaches</p>
 </div>
-<div id="literature" class="section level1">
-<h1 class="hasAnchor">
-<a href="#literature" class="anchor"></a>Literature</h1>
+<div class="section level1">
+<h1 id="literature">Literature<a class="anchor" aria-label="anchor" href="#literature"></a>
+</h1>
 <ul>
 <li><p>Carlile, Thomas M., Maria F. Rojas-Duran, Boris Zinshteyn, Hakyung Shin, Kristen M. Bartoli, and Wendy V. Gilbert (2014): “Pseudouridine Profiling Reveals Regulated mRNA Pseudouridylation in Yeast and Human Cells.” Nature 515 (7525): 143–46.</p></li>
-<li><p>Birkedal, Ulf, Mikkel Christensen-Dalsgaard, Nicolai Krogh, Radhakrishnan Sabarinathan, Jan Gorodkin, and Henrik Nielsen (2015): “Profiling of Ribose Methylations in Rna by High-Throughput Sequencing.” Angewandte Chemie (International Ed. In English) 54 (2): 451–55. <a href="https://doi.org/10.1002/anie.201408362" class="uri">https://doi.org/10.1002/anie.201408362</a>.</p></li>
-<li><p>Marchand, Virginie, Lilia Ayadi, <strong>Felix G. M. Ernst</strong>, Jasmin Hertler, Valérie Bourguignon-Igel, Adeline Galvanin, Annika Kotter, Mark Helm, <strong>Denis L. J. Lafontaine</strong>, and Yuri Motorin (2018): “AlkAniline-Seq: Profiling of m7G and m3C Rna Modifications at Single Nucleotide Resolution.” Angewandte Chemie International Edition 57 (51): 16785–90. <a href="https://doi.org/10.1002/anie.201810946" class="uri">https://doi.org/10.1002/anie.201810946</a>.</p></li>
+<li><p>Birkedal, Ulf, Mikkel Christensen-Dalsgaard, Nicolai Krogh, Radhakrishnan Sabarinathan, Jan Gorodkin, and Henrik Nielsen (2015): “Profiling of Ribose Methylations in Rna by High-Throughput Sequencing.” Angewandte Chemie (International Ed. In English) 54 (2): 451–55. <a href="https://doi.org/10.1002/anie.201408362" class="external-link uri">https://doi.org/10.1002/anie.201408362</a>.</p></li>
+<li><p>Marchand, Virginie, Lilia Ayadi, <strong>Felix G. M. Ernst</strong>, Jasmin Hertler, Valérie Bourguignon-Igel, Adeline Galvanin, Annika Kotter, Mark Helm, <strong>Denis L. J. Lafontaine</strong>, and Yuri Motorin (2018): “AlkAniline-Seq: Profiling of m7G and m3C Rna Modifications at Single Nucleotide Resolution.” Angewandte Chemie International Edition 57 (51): 16785–90. <a href="https://doi.org/10.1002/anie.201810946" class="external-link uri">https://doi.org/10.1002/anie.201810946</a>.</p></li>
 </ul>
 </div>
 
@@ -135,55 +124,59 @@ library(RNAmodR)</code></pre>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from BIOC at <br><a href="https://www.bioconductor.org/packages/RNAmodR">https://​www.bioconductor.org/​packages/​RNAmodR</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/FelixErnst/RNAmodR/">https://​github.com/​FelixErnst/​RNAmodR/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/FelixErnst/RNAmodR/issues">https://​github.com/​FelixErnst/​RNAmodR/​issues</a>
-</li>
+<li><a href="https://www.bioconductor.org/packages/RNAmodR" class="external-link">View on Bioconductor</a></li>
+<li><a href="https://github.com/FelixErnst/RNAmodR/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/FelixErnst/RNAmodR/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/Artistic-2.0">Artistic-2.0</a></li>
+<li><a href="https://www.r-project.org/Licenses/Artistic-2.0" class="external-link">Artistic-2.0</a></li>
 </ul>
 </div>
+
+
 <div class="citation">
-<h2>Citation</h2>
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html">Citing RNAmodR</a></li>
+<li><a href="authors.html#citation">Citing RNAmodR</a></li>
 </ul>
 </div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Felix G.M. Ernst <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-5064-0928" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Felix G.M. Ernst <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-5064-0928" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Denis L.J. Lafontaine <br><small class="roles"> Contributor, funder </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/FelixErnst/RNAmodR/actions/"><img src="https://github.com/FelixErnst/RNAmodR/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="http://bioconductor.org/checkResults/devel/bioc-LATEST/RNAmodR/"><img src="https://bioconductor.org/shields/build/devel/bioc/RNAmodR.svg" alt="BioC Build"></a></li>
-<li><a href="https://codecov.io/gh/FelixErnst/RNAmodR"><img src="https://codecov.io/gh/FelixErnst/RNAmodR/branch/master/graph/badge.svg" alt="codecov"></a></li>
-<li><a href="https://doi.org/doi:10.18129/B9.bioc.RNAmodR"><img src="https://bioconductor.org/shields/years-in-bioc/RNAmodR.svg" alt="BioC Years"></a></li>
+<li><a href="https://github.com/FelixErnst/RNAmodR/actions/" class="external-link"><img src="https://github.com/FelixErnst/RNAmodR/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="http://bioconductor.org/checkResults/devel/bioc-LATEST/RNAmodR/" class="external-link"><img src="https://bioconductor.org/shields/build/devel/bioc/RNAmodR.svg" alt="BioC Build"></a></li>
+<li><a href="https://codecov.io/gh/FelixErnst/RNAmodR" class="external-link"><img src="https://codecov.io/gh/FelixErnst/RNAmodR/branch/master/graph/badge.svg" alt="codecov"></a></li>
+<li><a href="https://doi.org/doi:10.18129/B9.bioc.RNAmodR" class="external-link"><img src="https://bioconductor.org/shields/years-in-bioc/RNAmodR.svg" alt="BioC Years"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Felix G.M. Ernst, Denis L.J. Lafontaine.</p>
+  <p></p>
+<p>Developed by Felix G.M. Ernst, Denis L.J. Lafontaine.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
@@ -191,6 +184,8 @@ library(RNAmodR)</code></pre>
 
   
 
+
+  
 
   </body>
 </html>
