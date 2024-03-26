@@ -152,21 +152,11 @@ if <code>x</code> is a <code><a href="SequenceData-class.html">SequenceData</a><
 <span class="r-msg co"><span class="r-pr">#&gt;</span> see ?RNAmodR.Data and browseVignettes('RNAmodR.Data') for documentation</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> loading from cache</span>
 <span class="r-in"><span><span class="va">msi</span> <span class="op">&lt;-</span> <span class="fu"><a href="ModInosine.html">ModSetInosine</a></span><span class="op">(</span><span class="va">files</span>, annotation <span class="op">=</span> <span class="va">annotation</span>, sequences <span class="op">=</span> <span class="va">sequences</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>makeTxDbFromGFF() has moved to the txdbmaker package. Please call</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span>   txdbmaker::makeTxDbFromGFF() to get rid of this warning.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Import genomic features from the file as a GRanges object ... </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> OK</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Prepare the 'metadata' data frame ... </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> OK</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Make the TxDb object ... </span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Direct call of 'as.data.frame.factor()' is deprecated.  Use 'as.data.frame.vector()' or 'as.data.frame()' instead</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Direct call of 'as.data.frame.factor()' is deprecated.  Use 'as.data.frame.vector()' or 'as.data.frame()' instead</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Direct call of 'as.data.frame.factor()' is deprecated.  Use 'as.data.frame.vector()' or 'as.data.frame()' instead</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Direct call of 'as.data.frame.factor()' is deprecated.  Use 'as.data.frame.vector()' or 'as.data.frame()' instead</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Direct call of 'as.data.frame.factor()' is deprecated.  Use 'as.data.frame.vector()' or 'as.data.frame()' instead</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Direct call of 'as.data.frame.factor()' is deprecated.  Use 'as.data.frame.vector()' or 'as.data.frame()' instead</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Direct call of 'as.data.frame.factor()' is deprecated.  Use 'as.data.frame.vector()' or 'as.data.frame()' instead</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Direct call of 'as.data.frame.factor()' is deprecated.  Use 'as.data.frame.vector()' or 'as.data.frame()' instead</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> OK</span>
 <span class="r-in"><span><span class="co"># smallest chunk of information</span></span></span>
 <span class="r-in"><span><span class="fu">stats</span><span class="op">(</span><span class="fu"><a href="Modifier-functions.html">sequenceData</a></span><span class="op">(</span><span class="va">msi</span><span class="op">[[</span><span class="fl">1L</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>,<span class="fu"><a href="Modifier-functions.html">bamfiles</a></span><span class="op">(</span><span class="va">msi</span><span class="op">[[</span><span class="fl">1L</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">[[</span><span class="fl">1L</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span></span>
